@@ -1,0 +1,39 @@
+<div class="action-plan-search-header">
+    {{title}}
+    <span class="down-arrow"></span>
+</div>
+<div class="container">
+    <div class="action-plan-search">
+        <app-icon size="medium-small"
+                  staticSize="true"
+                  [icon]="currentFilter === '' ? 'search' : 'close'"
+                  [color]="currentFilter === '' ? '' : 'grey'"
+                  (click)="clearFilter()"
+                  [style]="{ 'padding': '7px' }"
+                  [ngClass]="{'close': currentFilter !== ''}"></app-icon>
+        <input type="text"
+               tabindex="100"
+               #searchInput
+               placeholder="Search"
+               (keyup)="updateSearchFilter($event.target.value)"
+               [(ngModel)]="currentFilter" />
+    </div>
+    <div class="action-plan-list">
+        <perfect-scrollbar>
+            <app-search-list-item *ngFor="let item of filteredItems"
+                                  tabindex="110"
+                                  [item]="item"
+                                  [active]="isRowActive(item)"
+                                  (click)="selectItem(item)"
+                                  (keyup.enter)="selectItem(item)"
+                                  (keyup.space)="selectItem(item)"
+                                  (close)="selectItem(null)"
+                                  (mouseenter)="hoveredId = item.id"
+                                  (mouseleave)="hoveredId = null"></app-search-list-item>
+        </perfect-scrollbar>
+    </div>
+    <div class="grey-subheader"
+         *ngIf="filteredItems.length === 0">
+        <div>No results found</div>
+    </div>
+</div>
