@@ -19,7 +19,7 @@
     - [2.4 Conventional Data Work Flow](#24-conventional-data-work-flow)
         - [2.4.1 Work flow with Simulator](#241-work-flow-with-simulator)
         - [2.4.2 Work flow with Devices](#242-work-flow-with-devices)
-    - [2.5 Azure Components Functionality](#25-Azure Components Functionality)
+    - [2.5 Azure Components Functionality](#25-azure-components-functionality)
         - [2.5.1 IoT Hub](#251-iot-hub)
         - [2.5.2 Notification Hub](#252-notification-hub)
         - [2.5.3 Azure Active Directory](#253-azure-active-directory)
