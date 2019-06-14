@@ -180,25 +180,42 @@ Select user then you will redirect to selected user profile and copy the Object 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d12.png)
  
 {
-	"allowedMemberTypes": [
-	"User"
-	],
-	"displayName": "Admin",
-	"id": "**<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>**",
-	"isEnabled": true,
-	"description": "Administrators can manage the tenant",
-	"value": "Admin"
+"allowedMemberTypes": [
+	
+"User"
+	
+],
+"displayName": "Admin",
+
+"id": **"<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>"**,
+	
+"isEnabled": true,
+
+"description": "Administrators can manage the tenant",
+
+"value": "Admin"
+
 },
+
 {
-	"allowedMemberTypes": [
-	"User"
-	],
-	"displayName": "Consumer",
-	"id": "<**xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx**>",
-	"isEnabled": true,
-	"description": "Regular users of the app",
-	"value": "Consumer"
-	}
+
+"allowedMemberTypes": [
+
+"User"
+
+],
+
+"displayName": "Consumer",
+
+"id": **"<xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx>"**,
+
+"isEnabled": true,
+
+"description": "Regular users of the app",
+
+"value": "Consumer"
+
+}
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d13.png)
 
