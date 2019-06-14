@@ -6,7 +6,7 @@
 
 <!--ts-->
  - [1.0 Introduction](#10-introduction)
-     - [1.1 The Internet of Things](#11-the-internet-of-things)
+     - [1.1 The Internet of Things](#11-The-internet-of-things)
      - [1.2 Overview of Smart Buildings Solution](#12-overview-of-smart-buildings-solution)
      - [1.3 Core components](#13-core-components)
   - [2.0 IoT Solutions](#20-iot-solutions)
@@ -46,7 +46,7 @@
 
 The process for notifying authorities of an emergency is standardized and dates back to the 1960s.  The process for communicating into a crisis to the persons affected, however, is fragmented and not optimized.  Project Edison, a Safe Buildings solution, is a platform designed to manage this process and a way to speak into and monitor areas during a crisis event.
 
-### 1.1 The Internet of Things (IoT)
+### 1.1 The Internet of Things
 
 The Internet of Things (IoT) has created a buzz in the marketplace in the recent years. The IOT brings with it a concept of connecting any device to the internet and other connected devices to the network. 
 
