@@ -94,7 +94,7 @@ Azure Kubernetes Service will host the microservices for event processing, stori
 
 Below Diagram explains the Core architecture for Smart Buildings solution.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g1.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g1.png)
  
 Core Architecture components:
 
@@ -144,7 +144,7 @@ Basic solution will have all core components, in addition this solution also con
 
 *	OMS Log Analytics provide monitoring for IoT hub, Cosmos DB, Kubernetes, Redis Cache, Service Bus.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g2.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g2.png)
  
 Basic Architecture comprises of following components:
 
@@ -182,7 +182,7 @@ We have IoT Hub manual failover, Cosmos DB geo replication, Service Bus Geo Reco
 
 The main use of this solution is whenever disaster recovery occurs the redeployment components will deploy in another region, user need to manually add the obtained Admin IP address and API IP address after running the ingresses as an endpoint to the Traffic Manager.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g3.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g3.png)
 
 Standard Architecture comprises of following components:
 
@@ -242,7 +242,7 @@ All the components get deployed at once.
 
 We have IoT Hub manual failover, Cosmos DB geo replication, Service Bus Geo Recovery.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g4.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g4.png)
  
 Premium Architecture comprises of following components:
 
@@ -276,11 +276,11 @@ Premium Architecture comprises of following components:
 
 #### 2.4.1 Work flow with Simulator 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g5.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g5.png)
  
 #### 2.4.2 Work flow with Devices
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g6.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/g6.png)
 
 ### 2.5 Azure Components Functionality
 
