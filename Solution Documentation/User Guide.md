@@ -254,11 +254,11 @@ Initially there are no events triggered.
 
 1. For **configuring raspberry pi** and devices follow below documentation. 
 
-[Device Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/docuents/deviceconfiguration.docx)
+[Device Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/deviceconfiguration.docx)
 
 2. Follow the below document to **configure the simulator**.
 
-[Simulator](https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/documents/simulator.docx)
+[Simulator](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/simulator.docx)
 
 3. Once any **events** gets triggered from devices or simulator it will get reflected in the **Edison admin portal** as shown below.
 
@@ -318,7 +318,7 @@ We need to create an application in the Firebase from which will get an API Key 
 
 1. Click on the below link to follow the steps to create a project in Firebase.
 
-[Firebase](https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/documents/firebase.docx)
+[Firebase](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/firebase.docx)
 
 2. In the Firebase console, select the **settings** icon for your project. Then select Project Settings.
 
@@ -342,7 +342,7 @@ We need to create an application in the Firebase from which will get an API Key 
 
 1. Follow the below link to configure and build the User mobile application.
 
-[Mobile Application Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/documents/mobile_application.docx)
+[Mobile Application Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/mobile_application.docx)
 
 2. Navigate to Portal -> **Notification Hub** -> Select **Google** from Settings and **paste** the **Legacy Server Key** copied from step 6 of section 5 in API Key. Click on **Save**.
 
@@ -437,4 +437,3 @@ We need to create an application in the Firebase from which will get an API Key 
 21.	Similarly, when we create any **Activated Response** in the Edison Admin Portal then we will get alert popup for it in User Mobile application, as shown below.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/69.png)
-
