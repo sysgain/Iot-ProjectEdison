@@ -25,6 +25,8 @@
             "type": "string",
             "defaultValue": "",
             "allowedValues": [
+                "EastUS",
+                "WestUS",
                 "EastUS2",
                 "CentralUS",
                 "WestUS2",
@@ -45,7 +47,7 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/"
+                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
             }
         },
         "signalRlocation": {
@@ -186,7 +188,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "...................Used for Bot deployment"
+                "description": "Used for Bot deployment"
             }
         },
         "adObjectId": {
@@ -525,7 +527,7 @@
             "trafficRoutingMethod": "Priority",
             "solutionType": "[parameters('solutionType')]"
         },
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 4)]",
         "virtualNetworkName1": "[concat('edisonVnet', variables('suffix'))]",
         "subnetName1": "edisonSubnet",
@@ -547,6 +549,8 @@
         "aksClusterName1": "[concat('aks' , variables('suffix'))]",
         "aksClusterNameDr": "[concat('aks' , variables('suffix'), 'Dr')]",
         "EastUS2": "CentralUS",
+        "EastUS": "WestUS",
+        "WestUS": "EastUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
         "WestCentralUS": "WestUS2",
@@ -857,39 +861,11 @@
         {
             "name": "IotHubR1",
             "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Standard')]",
+            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
             "apiVersion": "2016-02-01",
             "dependsOn": [
                 "OMSWorkSpace",
                 "ServiceBusR1"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/iothub-ha-wm.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "iotHubSettings": {
-                        "value": "[variables('iotHubSettings')]"
-                    },
-                    "serviceBusProperties": {
-                        "value": "[variables('serviceBusProperties')]"
-                    },
-                    "omsSettings": {
-                        "value": "[variables('omsSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "IotHubR2",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [
-                "OMSWorkSpace",
-                "ServiceBusR2"
             ],
             "properties": {
                 "mode": "Incremental",
