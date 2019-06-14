@@ -268,7 +268,7 @@ Premium Architecture comprises of following components:
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g5.png)
  
-#### 2.4.2.	Work flow with Devices
+#### 2.4.2 Work flow with Devices
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g6.png)
 
