@@ -233,7 +233,7 @@
             "aliasName": "[concat('servicebusgeo-alias',variables('suffix'))]"
         },
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
         "EastUS2": "CentralUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",

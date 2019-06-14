@@ -186,7 +186,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "...................Used for Bot deployment"
+                "description": "Used for Bot deployment"
             }
         },
         "adObjectId": {
@@ -525,7 +525,7 @@
             "trafficRoutingMethod": "Priority",
             "solutionType": "[parameters('solutionType')]"
         },
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 4)]",
         "virtualNetworkName1": "[concat('edisonVnet', variables('suffix'))]",
         "subnetName1": "edisonSubnet",
