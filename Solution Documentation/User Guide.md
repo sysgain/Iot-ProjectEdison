@@ -91,11 +91,20 @@ Install **unzip command** using the below command.
 
 5. Create **secrets** using the below commands:
 
-` kubectl create secret tls <adminsecret name> --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key `
+``` 
+kubectl create secret tls <adminsecret name> --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key 
 
-` kubectl create secret tls <apisecret name> --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key `
+```
+
+```
+kubectl create secret tls <apisecret name> --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key
+
+```
     	
-` kubectl get secrets `
+```
+kubectl get secrets 
+
+```
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/10.png)
 
@@ -437,3 +446,5 @@ We need to create an application in the Firebase from which will get an API Key 
 21.	Similarly, when we create any **Activated Response** in the Edison Admin Portal then we will get alert popup for it in User Mobile application, as shown below.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/69.png)
+
+
