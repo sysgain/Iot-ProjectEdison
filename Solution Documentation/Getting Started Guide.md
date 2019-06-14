@@ -35,7 +35,7 @@
         - [2.5.13 Redis Cache](#2513-redis-cache)
         - [2.5.14 Azure Bot](#2514-azure-bot)
         - [2.5.15 Application Insights](#2515-application-insights)
-  - [4.0 What are paired regions?](#40-what-are-paired-regions?)
+  - [4.0 What are paired regions](#40-what-are-paired-regions)
   - [5.0 Deployment Guide for the Solution](#50-deployment-guide-for-the-solution)
   - [6.0 User Guide for the Solution](#60-user-guide-for-the-solution)
   - [7.0 Admin Guide for the Solution](#70-admin-guide-for-the-solution)
