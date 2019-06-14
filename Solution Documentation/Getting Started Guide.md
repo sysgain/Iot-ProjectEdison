@@ -1,6 +1,5 @@
 # Smart Buildings Solution
 
-![alt text](https://github.com/Iot-ProjectEdison/blob/master/Documentation/images/0.png)
 
 ### Table of Contents 
 
