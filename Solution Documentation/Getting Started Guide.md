@@ -80,7 +80,7 @@ Azure Kubernetes Service will host the microservices for event processing, stori
 
 ## 2 IoT Solutions
 
-### 2.1.	Core Architecture (Current)
+### 2.1 Core Architecture (Current)
 
 Below Diagram explains the Core architecture for Smart Buildings solution.
 
@@ -124,9 +124,9 @@ In addition, this solution consists:
 
 *	Traffic Manager delivers high availability for critical web applications by monitoring the endpoints and providing automatic failover when an endpoint goes down.
 
-### 2.3.	Architectures
+### 2.3 Architectures
 
-#### 2.3.1.	Basic Architecture
+#### 2.3.1 Basic Architecture
 
 Basic solution will have all core components, in addition this solution also consists monitoring components like Application Insights and OMS Log Analytics. 
 
