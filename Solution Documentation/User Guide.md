@@ -262,7 +262,7 @@ Initially there are no events triggered.
 
 3. Once any **events** gets triggered from devices or simulator it will get reflected in the **Edison admin portal** as shown below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/28.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/28.jpg)
 
 4. To **view the devices** which got created or onboarded click on the **wi-fi** icon as shown below. Here you can also see the location, type, current response of the devices.
 
