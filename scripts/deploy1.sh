@@ -8,6 +8,8 @@ GIT_URL="$1"
 GIT_PATH=`pwd`
 
 #Installing Azure CLI
+apt-get update
+sleep 60
 sudo apt-get install apt-transport-https lsb-release ca-certificates curl software-properties-common gnupg2 pass jq -y
 sleep 60
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
