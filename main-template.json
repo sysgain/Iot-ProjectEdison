@@ -45,7 +45,7 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
+                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/"
             }
         },
         "signalRlocation": {
@@ -889,7 +889,7 @@
             "apiVersion": "2016-02-01",
             "dependsOn": [
                 "OMSWorkSpace",
-                "ServiceBusR1"
+                "ServiceBusR2"
             ],
             "properties": {
                 "mode": "Incremental",
