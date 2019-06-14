@@ -29,6 +29,8 @@ This Document explains about how to use the solution. In this we are building th
 
 **Imagesupdate6.sh** script: To build the images and push them to ACR container repositories.
 
+` sh imagesupdate6.sh `
+
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/1.png)
 
 Navigate to **Azure portal** -> **Resource Group** -> **Container Registry** > **Repositories** and check for the images which have been pushed.
@@ -41,11 +43,15 @@ Navigate to **Azure portal** -> **Resource Group** -> **Container Registry** > *
 
 **clusterconnect7.sh** script: Connect to the cluster.
 
+` sh clusterconnect7.sh `
+
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/3.png)
 
 ### 2.3. Execute set-kubernetes-config8.sh
 
 **set-kubernetes-config8.sh** script: Creates config maps.
+
+` sh set-kubernetes-config8.sh `
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/4.png)
 
@@ -57,11 +63,15 @@ Check the **config maps** using the below command.
 
 **Updateyaml9.sh** script: Creates Pods and Services.
 
+` sh updateyaml9.sh `
+
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/5.png)
 
 ### 2.5. Execute ingress_custom10.sh 
 
 **ingress_custom10.sh** script: Installs helm.
+
+` sh ingress_custom10.sh `
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/6.png)
 
@@ -263,11 +273,11 @@ Initially there are no events triggered.
 
 1. For **configuring raspberry pi** and devices follow below documentation. 
 
-[Device Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/deviceconfiguration.docx)
+[Device Configuration Documentation](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/deviceconfiguration.docx)
 
 2. Follow the below document to **configure the simulator**.
 
-[Simulator](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/simulator.docx)
+[Simulator Documentation](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/simulator.docx)
 
 3. Once any **events** gets triggered from devices or simulator it will get reflected in the **Edison admin portal** as shown below.
 
@@ -327,7 +337,7 @@ We need to create an application in the Firebase from which will get an API Key 
 
 1. Click on the below link to follow the steps to create a project in Firebase.
 
-[Firebase](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/firebase.docx)
+[Firebase Documentation](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/firebase.docx)
 
 2. In the Firebase console, select the **settings** icon for your project. Then select Project Settings.
 
@@ -446,5 +456,4 @@ We need to create an application in the Firebase from which will get an API Key 
 21.	Similarly, when we create any **Activated Response** in the Edison Admin Portal then we will get alert popup for it in User Mobile application, as shown below.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/69.png)
-
 
