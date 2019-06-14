@@ -6,7 +6,7 @@
 
 <!--ts-->
  - [1.0 Introduction](#10-introduction)
-     - [1.1 The Internet of Things](#11-the-internet-of-things)
+     - [1.1 ThenInternet of Things](#11-the-internet-of-things)
      - [1.2 Overview of Smart Buildings Solution](#12-overview-of-smart-buildings-solution)
      - [1.3 Core components](#13-core-components)
   - [2.0 IoT Solutions](#20-iot-solutions)
