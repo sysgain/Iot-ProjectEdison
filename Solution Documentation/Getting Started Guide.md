@@ -268,7 +268,7 @@ Premium Architecture comprises of following components:
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g5.png)
  
-2.4.2.	Work flow with Devices
+#### 2.4.2.	Work flow with Devices
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g6.png)
 
@@ -481,8 +481,6 @@ Application Insights monitor below:
 
 We are implementing Application Insights monitoring for Azure Service Bus, Services in the Kubernetes Container, Notification hub and Azure bot.
 
-
-
 ## 3.0 Solution Types and Cost Mechanism
 
 ### 3.1 Solutions and Associated Costs
@@ -649,7 +647,7 @@ The below Table explains the $ impact for the solutions by resources.
 | -------------              | ------------------------       | --------------------      | ------------ 
 | **Estimated monthly cost**            | **$ 603.36**            | **$ 1228.61**  	             | **$ 1228.61**
 
-## 4 What are paired regions? 
+## 4 What are paired regions
 
 Azure operates in multiple geographies around the world. An Azure geography is a defined area of the world that contains at least one Azure Region. An Azure region is an area within a geography, containing one or more datacenters. 
 
