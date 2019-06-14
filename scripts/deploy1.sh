@@ -8,7 +8,7 @@ GIT_URL="$1"
 GIT_PATH=`pwd`
 
 #Installing Azure CLI
-apt-get update
+sudo apt-get update
 sleep 10
 sudo apt-get install apt-transport-https lsb-release ca-certificates curl software-properties-common gnupg2 pass jq -y
 sleep 60
