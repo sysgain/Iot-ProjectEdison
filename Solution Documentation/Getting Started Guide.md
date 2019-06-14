@@ -35,7 +35,7 @@
         - [2.5.13 Redis Cache](#2513-redis-cache)
         - [2.5.14 Azure Bot](#2514-azure-bot)
         - [2.5.15 Application Insights](#2515-application-insights)
-- [3.0 Solution Type and Cost Mechanism](#30-solution-type-and-cost-mechanism)
+- [3.0 Solution Types and Cost Mechanism](#30-solution-types-and-cost-mechanism)
    - [3.1 Solutions and Associated Costs](#31-solutions-and-associated-costs)
         - [3.1.1 Basic](#311-basic)
         - [3.1.2 Standard](#312-standard)
