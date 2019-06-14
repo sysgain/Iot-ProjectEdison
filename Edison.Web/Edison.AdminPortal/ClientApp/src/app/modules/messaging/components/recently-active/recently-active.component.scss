@@ -1,0 +1,86 @@
+@import 'sizes';
+@import 'icons';
+@import 'colorScheme';
+:host {
+    max-width: 330px;
+    z-index: 2;
+    min-width: 330px;
+    -webkit-box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    font-family: 'Rubik';
+    .header {
+        font-size: 20px;
+        margin-top: 60px;
+        color: #3e3d4a;
+        cursor: pointer;
+        &:focus {
+            text-transform: underline;
+            color: #3322ff;
+            outline: 2px solid $blue;
+            outline-offset: 2px;
+            outline-style: inset;
+        }
+        &:hover {
+            text-transform: underline;
+            color: #3322ff;
+        }
+        &.active {
+            color: #3322ff;
+            border-right: 4px solid #3322ff;
+        }
+    }
+    .sub-header {
+        font-size: 10px;
+        color: #8886a0;
+        margin-top: 40px;
+    }
+    .people-container {
+        margin-top: 20px;
+        .person {
+            color: #3e3d4a;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+            &:focus {
+                text-transform: underline;
+                color: #3322ff;
+                outline: 2px solid $blue;
+                outline-offset: 2px;
+                outline-style: inset;
+            }
+            &:hover {
+                text-transform: underline;
+                color: #3322ff;
+            }
+            &.active {
+                color: #3322ff;
+                border-right: 4px solid #3322ff;
+            }
+            .icon-container {
+                min-width: 40px;
+            }
+            .unread {
+                height: 16px;
+                width: 28px;
+                border-radius: 5px;
+                background-color: #E0E0E6;
+                position: absolute;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                >div {
+                    font-family: 'Rubik';
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #3E3D4A;
+                }
+            }
+        }
+    }
+}

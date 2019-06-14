@@ -1,0 +1,13 @@
+<app-action-list-item-state [status]="context.status"
+                            [loading]="context.loading"></app-action-list-item-state>
+<app-icon icon="shield-plain"
+          color="red"
+          round="true"
+          size="large"></app-icon>
+<div class="content-container">
+    <div>{{context.description}}</div>
+    <div class="error"
+         *ngIf="context.status === actionStatus.Error || context.status === actionStatus.Skipped">{{context.errorMessage}}</div>
+</div>
+<div class="line-hider"
+     *ngIf="last"></div>

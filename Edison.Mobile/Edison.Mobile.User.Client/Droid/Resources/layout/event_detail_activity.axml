@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Including Navigation Drawer Layout as work around Android bug when adjusting 
+		 sizes due to keyboard opening within a Bottom Sheet-->
+<android.support.v4.widget.DrawerLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	>
+	<!-- Page Content Area - includes App Bar Definition  -->
+	<android.support.design.widget.CoordinatorLayout
+		android:id="@+id/nav_coordinator_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+		<!-- App Bar Definition  -->
+		<include layout="@layout/app_bar"/>
+
+		<!-- Content Area    -->
+		<android.support.constraint.ConstraintLayout
+			android:id="@+id/page_container"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:elevation="@dimen/content_elevation"
+			android:clipChildren="false"
+			android:clipToPadding="false"
+			android:background="@color/app_background_darkgrey"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior"
+			>
+
+			<!-- Map  -->
+			<com.google.android.gms.maps.MapView
+				android:id="@+id/map_container"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintHeight_default="percent"
+				app:layout_constraintHeight_percent="@dimen/detailed_map_height_percent"
+				android:background="@color/white"
+				app:layout_behavior="@string/appbar_scrolling_view_behavior"
+				/>
+			<!-- Action Plan Title -->
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/message_area_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:layout_constraintTop_toBottomOf="@+id/map_container"
+				android:layout_marginLeft="16dp"
+				android:layout_marginTop="10dp"
+				android:layout_gravity="left"
+				android:lines="1"
+				android:textAllCaps="true"
+				android:text="@string/_alert_updates"
+				android:textColor="@color/white"
+				android:textSize="20dp"
+				/>
+
+			<!-- Side bar lines -->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:orientation="horizontal"
+				app:layout_constraintTop_toBottomOf="@+id/message_area_title"
+				app:layout_constraintBottom_toBottomOf="parent"
+				android:weightSum="1"
+				android:paddingTop="10dp"
+				>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:orientation="vertical"
+					android:layout_weight=".1"
+					>
+					<View
+						android:id="@+id/event_cell_left_line"
+						android:background="@color/background_floating_material_dark"
+						android:layout_height="match_parent"
+						android:layout_width="1dp"
+						android:layout_gravity="center_horizontal"
+						android:layout_marginTop="0dp"
+						/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_weight=".9"
+					android:layout_marginTop="0dp"
+					>
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						/>
+				</LinearLayout>
+			</LinearLayout>
+
+			<!-- Action Plan List -->
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/detailed_message_list"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				app:layout_constraintTop_toBottomOf="@+id/message_area_title"
+				app:layout_constraintBottom_toBottomOf="parent"
+				android:overScrollMode="always"
+				android:orientation="vertical"
+				app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+				android:paddingTop="10dp"
+				/>
+			
+			<!-- Event Type Icon -->
+			<android.support.v7.widget.AppCompatImageView
+				android:id="@+id/event_detail_image"
+				android:background="@drawable/circular_image_background"
+				android:layout_width="@dimen/circular_detail_icon_size"
+				android:layout_height="@dimen/circular_detail_icon_size"
+				app:layout_constraintBottom_toBottomOf="@id/message_area_title"
+				app:layout_constraintRight_toRightOf="parent"
+				android:layout_marginRight="16dp"
+				android:padding="@dimen/notification_circular_button_padding"
+				android:tint="@color/white"
+				/>
+		</android.support.constraint.ConstraintLayout>
+
+
+		<!-- Floating Action Button    -->
+		<!---<include layout="@layout/floating_action_button"/>-->
+
+		<!-- Bottom Sheet  -->
+		<include layout="@layout/bottom_sheet"/>
+
+	</android.support.design.widget.CoordinatorLayout>
+
+	
+	<!-- No Navigation Area  -->
+
+</android.support.v4.widget.DrawerLayout>

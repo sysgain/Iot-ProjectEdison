@@ -1,0 +1,31 @@
+<div class="container"
+     [style.opacity]="mapLoaded ? 1 : 0"
+     [style.maxHeight]="defaultOptions.height">
+    <app-select-location *ngIf="showSelectingLocation"
+                         (onSetLocation)="setLocation()"
+                         (onCancel)="hideSelectLocation()"
+                         (onConfirmLocation)="confirmLocation()"
+                         (onRestart)="restartSetLocation()"
+                         [confirmSelection]="selectedLocation"></app-select-location>
+    <div class="map-container"
+         [style.height]="defaultOptions.height"
+         [ngClass]="{'selecting': selectingLocation}">
+        <app-zoom (zoomOut)="onZoomOut()"
+                  (zoomIn)="onZoomIn()"
+                  *ngIf="defaultOptions.showZoomControls"></app-zoom>
+        <div [attr.id]="defaultOptions.mapId"
+             class="map"
+             [style.height]="defaultOptions.height"></div>
+    </div>
+</div>
+<!-- <app-activate-response *ngIf="showActivateResponse"></app-activate-response> -->
+<div class="spinner-container"
+     [@fadeInOut]
+     *ngIf="!mapLoaded"
+     [style.height]="defaultOptions.height">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="overlay-container"
+     [@fadeInOutHalfOpacity]
+     *ngIf="showOverlay && showActivateResponse"
+     [style.height]="defaultOptions.height"></div>
