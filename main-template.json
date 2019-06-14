@@ -25,8 +25,6 @@
             "type": "string",
             "defaultValue": "",
             "allowedValues": [
-                "EastUS",
-                "WestUS",
                 "EastUS2",
                 "CentralUS",
                 "WestUS2",
@@ -377,7 +375,6 @@
             "locationDr": "[variables('locationDr')]",
             "containerName": "logs",
             "storageAccountType": "Standard_LRS",
-            "storageAccountType1": "Standard_GRS",
             "storageAccountNameDr": "[variables('storageAccountNameDr')]",
             "containerNameDr": "logsdr"
         },
@@ -550,8 +547,6 @@
         "aksClusterName1": "[concat('aks' , variables('suffix'))]",
         "aksClusterNameDr": "[concat('aks' , variables('suffix'), 'Dr')]",
         "EastUS2": "CentralUS",
-        "EastUS": "WestUS",
-        "WestUS": "EastUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
         "WestCentralUS": "WestUS2",
@@ -803,6 +798,25 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "uri": "[concat(variables('baseUrl'), 'nested/storageblob-r1.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageBlobSettings": {
+                        "value": "[variables('storageBlobSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "StorageBlobR2",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/storageblob-r2.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -1085,7 +1099,7 @@
             "condition": "[and(equals(parameters('deploymenttype'),'Premium'),equals(parameters('dockerVM'),'Yes'))]",
             "apiVersion": "2016-02-01",
             "dependsOn": [
-                "AzureContainerRegistryR1",
+                "AzureContainerRegistry",
                 "StorageBlobR1"
             ],
             "properties": {
@@ -1278,7 +1292,7 @@
             "apiVersion": "2016-02-01",
             "condition": "[equals(parameters('deploymenttype'),'Premium')]",
             "dependsOn": [
-                "StorageBlobR1"
+                "StorageBlobR2"
             ],
             "properties": {
                 "mode": "Incremental",

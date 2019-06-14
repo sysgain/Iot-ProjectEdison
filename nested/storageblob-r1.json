@@ -16,7 +16,7 @@
                 "IotSuiteType": "[parameters('storageBlobSettings').solutionType]"
             },
             "sku":{
-                "name":"[parameters('storageBlobSettings').storageAccountType1]"
+                "name":"[parameters('storageBlobSettings').storageAccountType]"
             },
                 "kind": "StorageV2",
             "properties": {
