@@ -25,6 +25,8 @@
             "type": "string",
             "defaultValue": "",
             "allowedValues": [
+                "EastUS",
+                "WestUS",
                 "EastUS2",
                 "CentralUS",
                 "WestUS2",
@@ -548,6 +550,8 @@
         "aksClusterName1": "[concat('aks' , variables('suffix'))]",
         "aksClusterNameDr": "[concat('aks' , variables('suffix'), 'Dr')]",
         "EastUS2": "CentralUS",
+        "EastUS": "WestUS",
+        "WestUS": "EastUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
         "WestCentralUS": "WestUS2",
