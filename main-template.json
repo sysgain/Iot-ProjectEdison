@@ -888,8 +888,8 @@
             "condition": "[equals(parameters('deploymenttype'),'Premium')]",
             "apiVersion": "2016-02-01",
             "dependsOn": [
-                "OMSWorkSpaceR2",
-                "ServiceBusR2"
+                "OMSWorkSpace",
+                "ServiceBusR1"
             ],
             "properties": {
                 "mode": "Incremental",
