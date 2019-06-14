@@ -1,5 +1,6 @@
 # Smart Buildings Solution
 
+## Getting Started Guide
 
 ### Table of Contents 
 
