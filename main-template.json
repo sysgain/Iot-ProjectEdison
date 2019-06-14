@@ -1085,7 +1085,7 @@
             "condition": "[and(equals(parameters('deploymenttype'),'Premium'),equals(parameters('dockerVM'),'Yes'))]",
             "apiVersion": "2016-02-01",
             "dependsOn": [
-                "AzureContainerRegistry",
+                "AzureContainerRegistryR1",
                 "StorageBlobR1"
             ],
             "properties": {
