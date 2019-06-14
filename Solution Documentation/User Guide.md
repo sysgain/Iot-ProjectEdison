@@ -355,8 +355,6 @@ We need to create an application in the Firebase from which will get an API Key 
 
 5. **Copy** and **save** the **Legacy Server key** for later use. You use this value to configure your notification hub.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/44.png)
-
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/45.png)
 
 ## 6. Mobile Application Configuration
@@ -367,96 +365,97 @@ We need to create an application in the Firebase from which will get an API Key 
 
 2. Navigate to Portal -> **Notification Hub** -> Select **Google** from Settings and **paste** the **Legacy Server Key** copied from step 6 of section 5 in API Key. Click on **Save**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/46.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/44.png)
+
 
 3. We need to create **Emulator** of Android Version 8.1 in visual studio. Open Visual Studio and select the **Tools** -> **Android** -> **Android Device Manager**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/47.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/46.png)
 
 4. Select Yes from the pop-up window and then we will get the below screen.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/48.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/47.png)
 
 5. Click on **+ New** to create a new Emulator from right hand side menu.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/49.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/48.png)
 
 6. The below screen will appear, provide unique name to Emulator and modify the ram to 2GB and click on **create** button.
 
 **Note:** The Android os version should be 8.1-API 27
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/50.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/49.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/51.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/50.png)
 
 7. The Emulator will take few seconds to create, close the **Android Device Manager window**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/52.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/51.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/53.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/52.png)
 
 8. Re-open the Mobile application source code in Visual studio, the created Emulator will get displayed as shown below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/54.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/53.png)
 
 9. Click on the created **Emulator** to run the User Mobile application. 
 
 **Note:** Set the default project to **Edison.Mobile.User.Client.Droid** and select the **Android User** from top menu.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/55.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/54.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/56.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/55.png)
 
 10. Click on **Sign up** now for First time user in your Mobile.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/57.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/56.png)
 
 11.	Enter the details to create a **Login** and click on **Send Verification code**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/58.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/57.png)
 
 12. Once you mail is verified, click on **verify** code after entering the code for verification.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/59.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/58.png)
 
 13.	**Sign in** with the created username and password.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/60.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/59.png)
 
 14. Click on **report activity** to send message in case of any activity.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/61.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/60.png)
 
 15. Enter your message.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/62.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/61.png)
 
 16. The report will be activated in Edison Admin portal application.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/63.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/62.png)
 
 17. Similarly, the vice-versa communication can be done from Edison Admin Portal to User Mobile application.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/64.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/63.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/65.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/64.png)
 
 18.	The test notification message can be sent to User Mobile application using Notification Hub’s test send button as shown below. 
 
 **Note:** select Platforms to **Android** and click on **send** button.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/66.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/65.png)
 
 19.	Once the notification successfully sent will get the success notification message in portal.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/67.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/66.png)
 
 20.	We can see the notification alert in the user mobile application as below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/68.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/67.png)
 
 21.	Similarly, when we create any **Activated Response** in the Edison Admin Portal then we will get alert popup for it in User Mobile application, as shown below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/69.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/68.png)
 
 
