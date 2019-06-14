@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-grow: 2;
+    background-color: #F9F9FA;
+    position: relative;
+    .dashboard-container {
+        display: flex;
+        flex-grow: 2;
+        position: relative;
+        &.column-layout {
+            flex-direction: column-reverse;
+        }
+        .map-container {
+            display: flex;
+            flex-grow: 2;
+            position: relative;
+        }
+    }
+}

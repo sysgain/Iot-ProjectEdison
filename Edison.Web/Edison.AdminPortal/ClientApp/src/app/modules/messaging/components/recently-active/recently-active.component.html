@@ -1,0 +1,33 @@
+<div class="header"
+     #header
+     [ngClass]="{'active': activeUser.userId === '*'}"
+     (click)="selectAllChat()"
+     (keyup.space)="selectAllChat()"
+     (keyup.enter)="selectAllChat()"
+     tabindex="2">All Messages</div>
+<div class="sub-header">RECENTLY ACTIVE PEOPLE</div>
+<div class="people-container">
+    <div class="person"
+         [ngClass]="{'active': user.id === activeUserId}"
+         *ngFor="let user of activeUsers"
+         (click)="selectActiveUser(user)"
+         (keyup.space)="selectActiveUser(user)"
+         (keyup.enter)="selectActiveUser(user)"
+         tabindex="2">
+        <div class="icon-container">
+            <app-icon *ngIf="getActionPlan(user.id)"
+                      static="true"
+                      size="large-medium"
+                      round="true"
+                      [color]="getActionPlan(user.id).color"
+                      [icon]="getActionPlan(user.id).icon"></app-icon>
+        </div>
+        <div class="username">{{user.name}}</div>
+        <div class="unread"
+             *ngIf="getUnreadMessageCount(user.id) > 0">
+            <div>
+                {{getUnreadMessageCount(user.id)}}
+            </div>
+        </div>
+    </div>
+</div>
