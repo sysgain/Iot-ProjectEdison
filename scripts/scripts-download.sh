@@ -24,6 +24,8 @@ sudo wget -P /var/lib/waagent/custom-script/download/0 https://raw.githubusercon
 #downloading secrets_ingresscontrollers11.sh
 sudo wget -P /var/lib/waagent/custom-script/download/0 https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/scripts/secrets_ingresscontrollers11.sh
 
+sudo apt-get update
+sleep 40s
 cd /var/lib/waagent/custom-script/download/0
 chmod +x deploy1.sh configupdate2.sh commonupdate3.sh edisonwebenvupdate4.sh updateappsettings5.sh imagesupdate6.sh clusterconnect7.sh set-kubernetes-config8.sh updateyaml9.sh ingress_custom10.sh secrets_ingresscontrollers11.sh
 sh deploy1.sh https://github.com/litebulb/ProjectEdison.git
