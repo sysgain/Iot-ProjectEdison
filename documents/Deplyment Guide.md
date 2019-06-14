@@ -106,7 +106,7 @@ Any application that wants to use the capabilities of Azure AD must first be reg
 
 2.	In the left-hand navigation pane, click the **Azure Active Directory(symbol)** service, click **App registrations**, and click **+ New application registration**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d1.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d1.png)
 
 3.	When the **Create** page appears, enter your application's registration information:
 
@@ -120,48 +120,48 @@ Any application that wants to use the capabilities of Azure AD must first be reg
 
 4.	When finished, click **Create**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d2.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d2.png)
 
 #### 3.1.2 To get application ID and authentication key
 
 1.	From **App registrations** in Azure Active Directory, **select** your **application**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d3.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d3.png)
  
 2.	**Copy** the **Application ID** and **object ID**. The application ID value is referred as the **client ID**.
 
 3.	Save the **Application ID** and **object ID** which is highlighted in the below figure, this will be used while deploying the **ARM template**.
 
- ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d4.png)
+ ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d4.png)
 
 4.	Click on the **Settings** page of the application. Click on **Keys** section on the **Settings** page.
 
 
- ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d5.png)
+ ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d5.png)
 
 5.	Add a description for your key and Select duration, click on **Save**. 
 
- ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d6.png)
+ ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d6.png)
 
 6.	The right-most column will contain the key value, after you save the configuration changes. **Be sure to copy the key** for use in your client application code, as it is not accessible once you leave this page.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d7.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d7.png)
 
 #### 3.1.3 To Add Reply url
 
 1.	Click on **Settings -> Reply URLs**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d8.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d8.png)
  
 2.	Add the URL **<https://adminapp.cloudapp.azure.com>** and click Save. 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d9.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d9.png)
  
 #### 3.1.4 Add appRoles to Manifest File of Application
 
 1.	Click on **Manifest** of the created application and **click on Edit**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d10.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d10.png)
  
 2.	Paste the below content in the appRoles with your user object id under the allowedMemberTypes as shown below.
 
@@ -173,11 +173,11 @@ Go to **Azure Active Directory -> Users -> All users**
 
 Enter the user id to which you want to add in roles.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d11.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d11.png)
  
 Select user then you will redirect to selected user profile and copy the Object ID. 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d12.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d12.png)
  
 {
 "allowedMemberTypes": [
@@ -217,11 +217,11 @@ Select user then you will redirect to selected user profile and copy the Object 
 
 }
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d13.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d13.png)
 
 3.	Click on **Save**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d14.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d14.png)
 
 #### 3.1.5 To get Tenant ID
 
@@ -231,43 +231,43 @@ Select user then you will redirect to selected user profile and copy the Object 
 
 3.	**Note down** the Copied **Directory ID** which is highlighted in the below figure, this will be used while deploying the **ARM template**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d15.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d15.png)
  
 #### 3.1.6 To Assign owner permissions to the Application
 
 1.	Click on the **Managed application in local directory -> Owners**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d16.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d16.png)
  
 2.	Click on **+Add**. Assign the owner permission to the member by entering the name in search tab and click on **Select**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d17.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d17.png)
  
 3.	Then view the added member under Owners.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d18.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d18.png)
  
 #### 3.1.7 Add User to the Application
 
 1.	Click on **Users and Groups -> Add user**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d19.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d19.png)
  
 2.	Select **User**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d20.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d20.png)
  
 3.	Select role as **Admin**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d21.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d21.png)
  
 4.	Click **Assign**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d22.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d22.png)
  
 5.	Now you can see the added user under Users and Groups.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d23.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d23.png)
  
 ### 3.2 Creating session ID
 
@@ -276,13 +276,13 @@ Session ID is used to generate a unique id for creating a new job in Automation 
 1.	Use the below URL to generate GUID.
       https://www.guidgenerator.com/
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d24.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d24.png)
 
 2.	Click **Generate some GUIDs!** This will generate GUID in Results box. 
 
 3.	**Copy** and **Note down** the generated GUID which is highlighted in the below figure, this will be used while deploying the **ARM template**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d25.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d25.png)
 
 ### 3.3 To register a new application in Microsoft Bot Framework
 
@@ -292,33 +292,33 @@ https://apps.dev.microsoft.com/?referrer=https://portal.azure.com/#/appList
 
 2.	Sign in with you Microsoft account credentials.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d26.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d26.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d27.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d27.png)
  
 3.	You will be redirected to a page, Click on **Add an app** to register new app in application registration portal.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d28.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d28.png)
  
 4.	Enter the name of the app and then click **Create application**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d29.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d29.png)
  
 5.	To view the app in Azure Portal, Click on View this ap in the Azure portal else click on **Not now**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d30.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d30.png)
  
 6.	**Save** the **Application Id**, this application id is referred as bot client id which will be used while  deploying ARM template.
 
 7.	Click on **Generate New Password**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d31.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d31.png)
  
 8.	**Copy** the generated **key** as this is the only time it will displayed.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d32.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d32.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d33.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d33.png)
 
 ### 3.4 Azure B2C Tenant Creation and Configuration
 
@@ -328,59 +328,59 @@ Follow Below steps to create Azure AD B2C Tenant:
 
 1.	Create a new B2C tenant in **Azure Active Directory B2C**. You'll be shown a page with the information on Azure Active Directory B2C. Click Create at the bottom to start configuring your new Azure Active Directory B2C tenant.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d34.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d34.png)
 
 2.	Choose the **Organization name, Initial Domain name** and **Country of Region** for your Tenant.
 
 3.	Note down your entire **Tenant name** which you created. It will be used later.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d35.png) 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d35.png) 
 
 4.	 Once the B2C Tenant is created, Click **Directory and Subscription filter** on the top right to see your newly created tenant.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d36.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d36.png)
 
 5.	Switch to your created tenant by clicking on it. Type **Azure** in search column and select **Azure AD B2C**.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d37.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d37.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d38.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d38.png)
 
 6.	You can see the created tenant overview like below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d39.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d39.png)
  
 7.	Click on **sign-up or sign-in policies**. Then click on **Add** to add policy.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d40.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d40.png)
 
 8.	Provide the **name** and enter the details as shown below.
 
 9.	Note down the policy name that you are creating now, this will be used later.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d41.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d41.png)
 
 10.	Select all the **Sign-up** attributes as show below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d42.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d42.png)
  
 11.	Select all the **Application claims** as shown below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d43.png) 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d43.png) 
 
 12.	After filling all the required details, click on **Create**.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d44.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d44.png)
  
 13.	Once the deployment is complete, the below screen will appear with sign-up details.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d45.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d45.png)
 
 #### 3.4.1 Create an Application in Azure B2C 
 
 1.	Click on the **Applications** tab and click **Add** to create a new application
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d46.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d46.png)
 
 2.	Provide a name for the **application**.
 
@@ -390,11 +390,11 @@ Follow Below steps to create Azure AD B2C Tenant:
 
 5.	Before clicking on Create, note down the website name and Redirect URI.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d47.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d47.png)
 
 6.	Select the application you created and note down the **Application ID**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d48.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d48.png)
 
 ### 3.5 Create an Azure Service Principal with Azure CLI
 
@@ -403,22 +403,22 @@ Follow Below steps to create Azure AD B2C Tenant:
 2.	Login to your azure account using below command.
     **az login**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d49.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d49.png)
 
 3.	Set your subscription with below command
 **az account set --subscription <subscription ID>**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d50.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d50.png)
  
 4.	Create without a default role assignment.
 **az ad sp create-for-rbac -n <appname> --skip-assignment**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d51.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d51.png)
  
 5.	To retrieve the object ID of the created application.
 **az ad sp show --id <created app id> --query "objectId"**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d52.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d52.png)
 
 ### 3.6 Create a Twilio Account 
 
@@ -427,7 +427,7 @@ Browse to the below link and create a Twilio Account
 	
 After the Account is created, Navigate to settings (icon) and note down the Auth Token.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d53.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d53.png)
 
 ## 4 ARM Template Input Parameters
 
@@ -465,15 +465,15 @@ https://github.com/sysgain/Iot-ProjectEdison/blob/dev-ha
 
 2.	Select **main-template.json** from **dev-ha** branch as shown in the following figure.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d54.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d54.png)
  
 3.	Select **Raw** from the top right corner.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d55.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d55.png)
  
 4.	**Copy** the raw template and **paste** in your azure portal for template deployment.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d56.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d56.png)
   
 **To deploy a template for Azure Resource Manager, follow the below steps.**
 
@@ -483,25 +483,25 @@ https://github.com/sysgain/Iot-ProjectEdison/blob/dev-ha
 
 7.	Click **Create** button and click **Build your own Template in the editor** as shown in the following figure.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d57.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d57.png)
  
 8.	The **Edit template** page is displayed as shown in the following figure. 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d58.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d58.png)
  
 9.	**Replace / paste** the template and click Save button.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d59.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d59.png)
   
 10.	The **Custom deployment** page is displayed as shown in the following figure.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d60.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d60.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d61.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d61.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d62.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d62.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d63.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d63.png)
 
 #### 4.1.1 Inputs
 
@@ -513,13 +513,13 @@ If you want to deploy the **Basic Solution** you must enter the values for below
 
 For **basic solution**, select the geo-paired region for your template deployment and choose the values of **OMS Workspace Region, App Insights Location** or keep the default values as it is. It is not necessary to choose **High availability region of App Insights Location Dr**.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d64.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d64.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d65.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d65.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d66.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d66.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d67.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d67.png)
 
 **Parameters for Standard Solution:** 
 
@@ -527,13 +527,13 @@ If you want to deploy the **standard solution** you have to enter the below para
 
 For **standard solution**, select the geo-paired region for your template deployment and choose the values of **OMS Workspace Region, App Insights Location** and **High availability region of App Insights Location Dr** or keep the default values as it is.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d68.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d68.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d69.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d69.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d70.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d70.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d71.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d71.png)
  
 **Parameters for Premium solution:**
 
@@ -541,13 +541,13 @@ If you want to deploy the **Premium solution** you have to enter the below param
 
 For **Premium solution**, select the geo-paired region for your template deployment and choose the values of **OMS Workspace Region, App Insights Location** and **High availability region of App Insights Location Dr** or keep the default values as it is.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d72.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d72.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d73.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d73.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d74.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d74.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d75.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d75.png)
  
  
 11.	Once all the parameters are entered, check in the **terms and conditions** check box and click **Purchase**.
@@ -590,21 +590,21 @@ Expect IoT Hub, Cosmos DB, OMS Log Analytics, Automation Account, Run Book and S
 
 13.	Once the solution is deployed successfully, navigate to the resource group to view the list of resources that are created as shown below.
    
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d76.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d76.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d77.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d77.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d78.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d78.png)
 
 #### 4.1.2 Output
 
 1.	Go to **Resource Group -> Click Deployments> Click on Microsoft.Template**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d79.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d79.png)
 
 2.	Click on Outputs to view the output values.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d80.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d80.png)
 
 
 ### 4.2 ARM Template Deployment Using Azure CLI 
@@ -620,23 +620,23 @@ Deployment can proceed within the Azure Portal via Windows PowerShell.
 2.	Open **Windows PowerShell** and run the following command
        ** az login**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d81.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d81.png)
 
 3.	It will redirect to the login page. 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d82.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d82.png)
  
 4.	Enter your azure account user name then click **Next**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d83.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d83.png)
  
 5.	Enter Password and click **Sign in**.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d84.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d84.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d85.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d85.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d86.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d86.png)
  
  
 6.	Download the **main-template.parameters.json** in your local system from the below  URL, paste it in  an editor , update the values and save it.
@@ -713,7 +713,7 @@ It uses the name parameter to specify the name for resource group (-n) and locat
 
 **Syntax:   az group create -n <resource group name> -l <location> **
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d87.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d87.png)
 
 4.2.2.	Execute the Template Deployment  
 
@@ -727,13 +727,13 @@ Use the **az group deployment create** command to deploy the ARM template
 
 **Syntax:  az group deployment create --template-file './<main-template.json filename>' --parameters '@./<main-template.parameters.json filename>' -g < provide resource group name> -n deploy >> <provide the outputs filename>** 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d88.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d88.png)
 
  Deployment may take between 2 minutes depending on deployment size.  
 
  After successful deployment you can see the deployment outputs as follows. 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d89.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d89.png)
 
 ## 5 Post Deployment
 
@@ -745,53 +745,53 @@ apiURL-  https://<api url>/chat/messages
 
 Save the API URL , will be used to update the values in environment file.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d90.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d90.png)
  
 ### 5.2 Enable Enhance authentication options.
 
 1.	Navigate to **Resource Group >click on Bot Channel Registration > Channels>Click** on **Edit** in Azure portal.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d91.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d91.png)
  
 2.	Scroll up the Page, Click on **Show** to copy and note the secret keys.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d92.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d92.png)
  
 3.	Scroll down and **Enable** the Enhanced authentication options.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d93.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d93.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d94.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d94.png)
 
 4.	Click on **Add a trusted origin** and enter the **API URL** saved from step 5.1. Click on Done.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d95.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d95.png)
  
 ### 5.3 Login to Edison Virtual Machine
 
 1.	Navigate to deployed Virtual Machine and click on it.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d96.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d96.png)
  
 2.	Copy the public IP Address
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d97.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d97.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d98.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d98.png)
 
 3.	Enter the credentials to log in to VM.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d99.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d99.png)
  
 4.	Switch to root user using below command.
 
 **sudo -i**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d100.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d100.png)
  
 5.	Check the docker version using **docker -v** command.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d101.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d101.png)
  
 6.	Change the directory to view the downloaded scripts.
 
@@ -799,14 +799,14 @@ Save the API URL , will be used to update the values in environment file.
 
 **ls**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d102.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d102.png)
  
 7.	Open the **input.txt** file and Update the values to the corresponding key from the Azure Portal and Follow 4.1.2 section to see few values of Keys.
 
 Below is the link table containing the keys and references of the value to be taken from.
 https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d103.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d103.png)
 
 ### 5.4	Setting up the Environment
 
@@ -816,7 +816,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 **sh configupdate2.sh**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d104.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d104.png)
  
 #### 5.4.2 Execute commonupdate3.sh 
 
@@ -824,7 +824,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 **sh commonupdate3.sh**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d105.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d105.png)
  
 #### 5.4.3 Execute edsionwebenvupdate4.sh
 
@@ -832,7 +832,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 **sh edsionwebenvupdate4.sh**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d106.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d106.png)
  
 #### 5.4.4 Execute updateappsettings5.sh 
 
@@ -840,5 +840,5 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 **sh updateappsettings5.sh**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/d107.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d107.png)
 
