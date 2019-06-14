@@ -160,7 +160,7 @@ Basic Architecture comprises of following components:
 
 *	1- Redis Cache
 
-#### 2.3.2.	Standard Architecture
+#### 2.3.2 Standard Architecture
 
 Standard Architecture diagram will have two regions.
 
@@ -220,7 +220,7 @@ Standard Architecture comprises of following components:
 
 **Note**:  Deployment process will take some time around 30mins to complete deployment Successfully.
 
-#### 2.3.3.	Premium Architecture:
+#### 2.3.3 Premium Architecture:
 
 Premium Architecture diagram also have two regions.
 
@@ -262,9 +262,9 @@ Premium Architecture comprises of following components:
 
 *	1- Service Bus
 
-### 2.4.	Conventional Data Work Flow 
+### 2.4 Conventional Data Work Flow 
 
-#### 2.4.1.	Work flow with Simulator 
+#### 2.4.1 Work flow with Simulator 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g5.png)
  
@@ -272,7 +272,7 @@ Premium Architecture comprises of following components:
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/Solution%20Documentation/Images/g6.png)
 
-### 2.5.	Azure Components Functionality
+### 2.5 Azure Components Functionality
 
 Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Microsoft-managed data centers. It provides software as a service (SaaS), platform as a service (PaaS) and infrastructure as a service (IaaS) and supports many different programming languages, tools and frameworks, including both Microsoft-specific and third-party software and systems.
 
@@ -290,7 +290,7 @@ Microsoft lists over 600 Azure services, of which some are as below:
 
 *	IoT
 
-#### 2.5.1. IoT Hub
+#### 2.5.1 IoT Hub
 
 **Introduction**:
 
@@ -305,7 +305,7 @@ The Azure IoT Hub offers several services for connecting IoT devices with Azure 
 In this solution the IoT Hub receives the events from the SoundSensor, SmartBulb and IoTbutton devices or from the simulators, which will be pushed to Azure service bus and get populated in the Edison Admin Portal Application.
 
 
-#### 2.5.2. Notification Hub
+#### 2.5.2 Notification Hub
 
 **Introduction**:
 
@@ -317,7 +317,7 @@ Azure Notification Hubs are push notification software engines designed to alert
 
 The Notification Hub pushes the Alerts (Activated Responses) and messages to the User Mobile application.
 
-#### 2.5.3.	Azure Active Directory
+#### 2.5.3 Azure Active Directory
 
 **Introduction**:
 
@@ -327,7 +327,7 @@ Microsoft Azure Active Directory (Azure AD) is a cloud service that provides adm
 
 Azure Active directory is used to authenticate users to login to Admin Portal. Azure active Directory enables secure authentications to Admin Portal.
 
-#### 2.5.4.	Azure Automation
+#### 2.5.4 Azure Automation
 
 **Introduction**:
 
@@ -339,7 +339,7 @@ Runbooks in Azure Automation are based on Windows PowerShell or Windows PowerShe
 
 In this Solution Azure run books are used to create Database and collections in Document DB, it is also used to update reply URLs in Active Directory Application.
 
-#### 2.5.5.	Cosmos DB  
+#### 2.5.5 Cosmos DB  
 
 **Introduction**:
 
@@ -349,7 +349,7 @@ Azure Cosmos DB is a Microsoft cloud database that supports multiple ways of sto
 
 In this Solution, Cosmos DB have Templates, Messages and Groups Collections. The Messages collections will get updated with the telemetry data of the Device.
 
-#### 2.5.6.	OMS Log Analytics
+#### 2.5.6 OMS Log Analytics
 
 **Introduction**:
 
@@ -365,7 +365,7 @@ Log analytics to provide monitoring for Cosmos DB, IoT Hub, Kubernetes, Redis Ca
 
 Log analytics store the logs, which will be helpful to trace the working of these resources. OMS log analytics provides in detailed insights using solutions
 
-#### 2.5.7.	Storage Account
+#### 2.5.7 Storage Account
 
 **Introduction**:
 
@@ -375,7 +375,7 @@ An Azure storage account contains all your Azure Storage data objects: blobs, fi
 
 The older events (actions and telemetry) will be stored in Blob Storage/Table storage for auditing purposes.
 
-### 2.5.8. Azure Kubernetes
+### 2.5.8 Azure Kubernetes
 
 **Introduction**:
 
@@ -385,7 +385,7 @@ Kubernetes provides a container-centric management environment. It orchestrates 
 
 Azure Kubernetes Service will host the microservices for event processing, storing, sending notifications to mobile applications and managing devices
 
-#### 2.5.9. Azure Container Registry
+#### 2.5.9 Azure Container Registry
 
 **Introduction**:
 
@@ -395,7 +395,7 @@ Azure Container Registry is a private registry for hosting container images. Usi
 
 Control image names for all container deployments. Use Kubernetes commands to push images into a repository or pull an image from a repository. In addition to container images, Azure Container Registry stores images used to deploy applications to Kubernetes.
 
-#### 2.5.10. Virtual Machine
+#### 2.5.10 Virtual Machine
 
 **Introduction**:
 
@@ -407,7 +407,7 @@ Each virtual machine provides its own virtual hardware, including CPUs, memory, 
 
 Execute scripts which updates the configurations, environments of Microservices buy building the docker images and pushing them to Azure Container Registry also installs helm, ingress controllers making it responsible to access Admin Portal.
 
-#### 2.5.11. Service Bus
+#### 2.5.11 Service Bus
 
 **Introduction**:
 
@@ -417,7 +417,7 @@ Microsoft Azure Service Bus is a fully managed enterprise integration message br
 
 The Events message which got triggered from the Devices and sent to IoT Hub, Service Bus is pulling data from IoTHub and sends to the services deployed in the Kubernetes.
 
-#### 2.5.12. Signal R
+#### 2.5.12 Signal R
 
 **Introduction**:
 
@@ -427,7 +427,7 @@ Azure SignalR Service simplifies the process of adding real-time web functionali
 
 The notification and alerts which from sent from Edison Admin Portal is begin sent to User Mobile application and to the devices.
 
-#### 2.5.13. Redis Cache
+#### 2.5.13 Redis Cache
 
 **Introduction**:
 
@@ -439,7 +439,7 @@ Azure Cache for Redis can also be used as an in-memory data structure store, dis
 
 Azure Service Bus messages which are pulled from IoT Hub are being sent to Redis Cache, which will also get populated in the Cosmos DB’s collections.
 
-#### 2.5.14. Azure Bot:
+#### 2.5.14 Azure Bot:
 
 **Introduction**:
 
@@ -449,7 +449,7 @@ Azure Bot Service provides tools to build, test, deploy, and manage intelligent 
 
 Azure Bot is used for communication between User Mobile Application and Edison Admin Portal Application, for sending messages, activities and notifications.
 
-#### 2.5.15. Application Insights
+#### 2.5.15 Application Insights
 
 **Introduction**:
 
