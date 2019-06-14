@@ -42,21 +42,21 @@
  <!--te--> 
     
     
-## 1.	Introduction
+## 1.0 Introduction
 
 The process for notifying authorities of an emergency is standardized and dates back to the 1960s.  The process for communicating into a crisis to the persons affected, however, is fragmented and not optimized.  Project Edison, a Safe Buildings solution, is a platform designed to manage this process and a way to speak into and monitor areas during a crisis event.
 
-### 1.1.	The Internet of Things (IoT)
+### 1.1 The Internet of Things (IoT)
 
 The Internet of Things (IoT) has created a buzz in the marketplace in the recent years. The IOT brings with it a concept of connecting any device to the internet and other connected devices to the network. 
 
 IOT becomes a pivotal component which helps to have safer cities, homes and businesses; IOT enables both the private and public organizations to monitor facilities on a real-time basis. The IoT brings with it the secure connections of devices such as sensors, Gateway Devices to the smartphones to mention a few here. The combination of the connected devices would enable IoT solutions to “gather data, analyze the data and create an action” which enables to perform a task in near real time.
 
-### 1.2.	Overview of Smart Buildings Solution
+### 1.2 Overview of Smart Buildings Solution
 
 Project Edison provides a template for a Microsoft Azure-based system for enabling rapid response to nearby community events that might increase the danger level of persons in the nearby vicinity. SmartBulbs, SmartButtons, and SmartSensors are used to enable rapid notification of nearby persons regarding impending or ongoing events of interest/concern.
 
-### 1.3.	Core components 
+### 1.3 Core components 
 
 Project Edison solution is based on three core components.
 
@@ -78,7 +78,7 @@ IoT Button is used by user for pushing a button to signal a crisis event.
 
 Azure Kubernetes Service will host the microservices for event processing, storing data, sending notifications to mobile applications (User and Admin) and managing devices (SmartBulb, Sound Sensor, IoT Button).
 
-## 2.	IoT Solutions
+## 2 IoT Solutions
 
 ### 2.1.	Core Architecture (Current)
 
