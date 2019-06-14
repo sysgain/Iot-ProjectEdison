@@ -36,7 +36,7 @@
                         "[concat('Microsoft.Cache/Redis/', parameters('redisSettings').redisCacheNameDr)]"
                     ],
                     "properties": {
-                        "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageBlobSettings').storageAccountNameDr)]",
+                        "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageBlobSettings').storageAccountName)]",
                         "logs": [],
                         "metrics": [
                             {
