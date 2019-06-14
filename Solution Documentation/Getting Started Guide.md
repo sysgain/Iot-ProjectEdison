@@ -35,10 +35,19 @@
         - [2.5.13 Redis Cache](#2513-redis-cache)
         - [2.5.14 Azure Bot](#2514-azure-bot)
         - [2.5.15 Application Insights](#2515-application-insights)
-  - [4.0 What are paired regions](#40-what-are-paired-regions)
-  - [5.0 Deployment Guide for the Solution](#50-deployment-guide-for-the-solution)
-  - [6.0 User Guide for the Solution](#60-user-guide-for-the-solution)
-  - [7.0 Admin Guide for the Solution](#70-admin-guide-for-the-solution)
+- [3.0 Solution Type and Cost Mechanism](#30-solution-type-and-cost-mechanism)
+   - [3.1 Solutions and Associated Costs](#31-solutions-and-associated-costs)
+        - [3.1.1 Basic](#311-basic)
+        - [3.1.2 Standard](#312-standard)
+        - [3.1.3 Premium](#313-premium)
+   - [3.2 Cost Comparison](#32-cost-comparison)
+        - [3.2.1 In terms of features](#321-in-terms-of-features)
+        - [3.2.2 Dollar Impact](#322-dollar-impact)
+        - [3.2.3 Estimated Monthly Cost for each Solution](#323-estimated-monthly-cost-for-each-solution)
+- [4.0 What are paired regions](#40-what-are-paired-regions)
+- [5.0 Deployment Guide for the Solution](#50-deployment-guide-for-the-solution)
+- [6.0 User Guide for the Solution](#60-user-guide-for-the-solution)
+- [7.0 Admin Guide for the Solution](#70-admin-guide-for-the-solution)
  <!--te--> 
     
     
