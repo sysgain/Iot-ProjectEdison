@@ -857,35 +857,7 @@
         {
             "name": "IotHubR1",
             "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Standard')]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [
-                "OMSWorkSpace",
-                "ServiceBusR1"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/iothub-ha-wm.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "iotHubSettings": {
-                        "value": "[variables('iotHubSettings')]"
-                    },
-                    "serviceBusProperties": {
-                        "value": "[variables('serviceBusProperties')]"
-                    },
-                    "omsSettings": {
-                        "value": "[variables('omsSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "IotHubR2",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
+            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
             "apiVersion": "2016-02-01",
             "dependsOn": [
                 "OMSWorkSpace",
