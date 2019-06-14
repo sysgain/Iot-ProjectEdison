@@ -502,8 +502,8 @@ The Basic solution requires minimum Azure components with minimal available SKU�
 Prices are calculated by considering Location as **East US** and Pricing Model as **“PAYG”**.
 
 
-| **Resource Name**           | **Size**        | **Azure Cost/month**                                                                                   
-| -------------              | -------------       | --------------------      | -------------------                                                                
+| **Resource Name**                   | **Size**                    | **Azure Cost/month**                                                                                   
+| -------------                     | -------------                  | --------------------                                                                    
 | **Application Insights**       | 5 GB ingested, 0 Multi-step Web Tests         | $0.00  
 | **Notification Hub**   | Free Includes 1 million pushes for 500 active devices.      | $0.00  
 | **IoT Hub**        | S1, Unlimited devices, 1 Unit-$25.00/per month 400,000 messages/day                    | $25.00    
@@ -535,8 +535,8 @@ The Estimated Monthly Azure cost is: **$1228.61**
 Prices are calculated by Location as **East US** and Pricing Model as **“PAYG”**.
 
 
-| **Resource Name**           | **Size**        | **Azure Cost/month**                                                                        
-| -------------              | -------------       | --------------------      | -------------------                                                                                                   
+| **Resource Name**               | **Size**              | **Azure Cost/month**                                                                        
+| -------------              | -------------                  | --------------------                                                                                                  
 | **Application Insights**       | 2 * Basic, 1GB * $2.30 First 5GB free per month          | $4.60  
 | **Notification Hub**   | 2 * (Free Includes 1 million pushes for 500 active devices.)     | $0.00  
 | **IoT Hub**        | S1, Unlimited devices, 1 Unit-$25.00/per month 400,000 messages/day                    | $25.00    
@@ -568,8 +568,8 @@ This solution also provides (Core + Monitoring +Hardening), the difference betwe
 Prices are calculated by Considering Location as **East US** and Pricing Model as **“PAYG”**.
 
 
-| **Resource Name**           | **Size**        | **Azure Cost/month**                                                                                         
-| -------------              | -------------       | --------------------      | -------------------                                                                                                    
+| **Resource Name**               | **Size**                | **Azure Cost/month**                                                                                         
+| -------------                  | -------------                 | --------------------                                                                                                      
 | **Application Insights**       | 2 * Basic, 1GB * $2.30 First 5GB free per month          | $4.60  
 | **Notification Hub**   | 2 * (Free Includes 1 million pushes for 500 active devices.)     | $0.00  
 | **IoT Hub**        | S1, Unlimited devices, 1 Unit-$25.00/per month 400,000 messages/day                    | $25.00    
