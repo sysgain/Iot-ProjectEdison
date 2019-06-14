@@ -375,6 +375,7 @@
             "locationDr": "[variables('locationDr')]",
             "containerName": "logs",
             "storageAccountType": "Standard_LRS",
+            "storageAccountType1": "Standard_GRS",
             "storageAccountNameDr": "[variables('storageAccountNameDr')]",
             "containerNameDr": "logsdr"
         },
@@ -798,25 +799,6 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "uri": "[concat(variables('baseUrl'), 'nested/storageblob-r1.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "storageBlobSettings": {
-                        "value": "[variables('storageBlobSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "StorageBlobR2",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/storageblob-r2.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -1292,7 +1274,7 @@
             "apiVersion": "2016-02-01",
             "condition": "[equals(parameters('deploymenttype'),'Premium')]",
             "dependsOn": [
-                "StorageBlobR2"
+                "StorageBlobR1"
             ],
             "properties": {
                 "mode": "Incremental",
