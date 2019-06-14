@@ -647,7 +647,7 @@ The below Table explains the $ impact for the solutions by resources.
 | -------------              | ------------------------       | --------------------      | ------------ 
 | **Estimated monthly cost**            | **$ 603.36**            | **$ 1228.61**  	             | **$ 1228.61**
 
-## 4 What are paired regions
+## 4.0 What are paired regions
 
 Azure operates in multiple geographies around the world. An Azure geography is a defined area of the world that contains at least one Azure Region. An Azure region is an area within a geography, containing one or more datacenters. 
 
@@ -674,14 +674,14 @@ Each Azure region is paired with another region within the same geography, toget
 | 17                 | UK          | UK South           |  UK West
 | 18                 | UK          | UK West          |  UK South
 
-## 5 Deployment Guide for the Solution
+## 5.0 Deployment Guide for the Solution
 
 To Deploy Basic, Standard or Premium Solution please refer **Deployment Guide Documentation**. 
 
-## 6 User Guide for the Solution
+## 6.0 User Guide for the Solution
 
 For Device Configuration, Running Simulator and verifying Edison Admin Portal please refer **User Guide Documentation**. 
 
-## 7 Admin Guide for the Solution
+## 7.0 Admin Guide for the Solution
 
 To configure and validate the Standard and Premium Solution please refer **Admin Guide**. 
