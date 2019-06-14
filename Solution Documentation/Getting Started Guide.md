@@ -108,7 +108,7 @@ Core Architecture components:
 
 *	1- Redis Cache
 
-### 2.2.	Automated Solution
+### 2.2 Automated Solution
 
 Automated IOT Solution is designed on the top of current core architecture. In addition, this solution also provides **Monitoring** and **High availability**.
 
