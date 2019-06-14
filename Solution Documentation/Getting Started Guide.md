@@ -84,7 +84,7 @@ Azure Kubernetes Service will host the microservices for event processing, stori
 
 Below Diagram explains the Core architecture for Smart Buildings solution.
 
---------
+![alt text](https://github.com/Iot-ProjectEdison/blob/master/Solution%20Documentation/Documentation/Images/g1.png)
  
 Core Architecture components:
 
