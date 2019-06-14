@@ -186,7 +186,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "...................Used for Bot deployment"
+                "description": "Used for Bot deployment"
             }
         },
         "adObjectId": {
