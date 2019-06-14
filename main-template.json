@@ -461,7 +461,7 @@
             "networkSecurityGroupName": "nsg",
             "giturl": "[parameters('githuburl')]",
             "tag": "latest",
-            "fileUri": "[concat(variables('baseUrl'),'scripts/scripts-download.sh')]"
+            "fileUri": "[concat(variables('baseUrl'),'edison-scripts/scripts-download.sh')]"
         },
         "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]",
