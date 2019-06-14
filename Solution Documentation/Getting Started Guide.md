@@ -10,7 +10,7 @@
      - [1.2 Overview of Smart Buildings Solution](#12-overview-of-smart-buildings-solution)
      - [1.3 Core components](#13-core-components)
   - [2.0 IoT Solutions](#20-iot-solutions)
-    - [2.1 Core Architecture (Current)](#21-core-architecture-(current))
+    - [2.1 Core Architecture](#21-core-architecture)
     - [2.2 Automated Solution](#22-automated-solution)
     - [2.3 Architectures](#23-architectures)
         - [2.3.1 Basic Architecture](#231-basic-architecture)
@@ -78,9 +78,9 @@ IoT Button is used by user for pushing a button to signal a crisis event.
 
 Azure Kubernetes Service will host the microservices for event processing, storing data, sending notifications to mobile applications (User and Admin) and managing devices (SmartBulb, Sound Sensor, IoT Button).
 
-## 2 IoT Solutions
+## 2.0 IoT Solutions
 
-### 2.1 Core Architecture (Current)
+### 2.1 Core Architecture
 
 Below Diagram explains the Core architecture for Smart Buildings solution.
 
