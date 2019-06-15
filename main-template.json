@@ -311,14 +311,14 @@
         },
         "azureAdPreviewModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/AzureADPreview.zip",
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/AzureADPreview.zip",
             "metadata": {
                 "description": "Provide the url to install azure active directory preview module in azure automation from the github"
             }
         },
         "cosmosdbModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/cosmos.zip"
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/cosmos.zip"
         },
         "siteName": {
             "type": "string",
@@ -738,7 +738,6 @@
                 }
             }
         },
-       
         {
             "name": "StorageBlob",
             "type": "Microsoft.Resources/deployments",
