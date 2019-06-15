@@ -433,8 +433,90 @@ After the Account is created, Navigate to settings (icon) and note down the Auth
 
 In the parameters section of the template, specify the values as inputs when deploying the ARM Template. These parameter values enable you to customize the deployment by providing values that are tailored for your environment.
 
-
-
+|   **Parameter name**    |    **Description**                               |    **Allowed Values**    |     **Default Values**   |      
+|-------------------------|--------------------------------------------------|------------------------- |--------------------------- |   
+| **solution type**       | The type of Solution                 |                 | Project-Edison                  |
+| **DeploymentType**      | choose your deploymenttype to deploy     | Basic or Standard or Premium |              |
+| **geo-paired-region**       | For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)     | EastUS2,
+CentralUS,
+WestUS2,,
+WestCentralUS
+CanadaCentral,
+CanadaEast,
+AustraliaEast,
+AustraliaSout,hEast,
+CentralIndia,
+SouthIndia,
+EastAsia,
+SouthEastAsia,
+JapanWest,
+JapanEast,
+KoreaCentral,
+KoreaSouth,
+UKSouth,
+UKWest             |            |
+| **signalRlocation**            | Choose location for signalR to deploy         | AustraliaEast
+CanadaEast
+CentralUS
+EastUS2
+EastUS
+JapanEast
+NorthEurope
+SouthCentralUS
+SoutheastAsia
+UKSouth
+WestEurope
+WestUS2
+WestUS           | EastUS2         |   
+| **signalRlocationDr**          | If deploymenttype is choosen as standard or premium, enter location for signalRlocationDr for disaster recovery.                | AustraliaEast
+CanadaEast
+CentralUS
+EastUS2
+EastUS
+JapanEast
+NorthEurope,
+SouthCentralUS
+SoutheastAsia
+UKSouth, 
+WestEurope, 
+WestUS2
+ WestUS              | CentralUS      |                                                                    
+| **acrDeploymentLocation** | Choose location for Azure container Registry to deploy.         | JapanEast
+JapanWest
+AustraliaSouthEast AustraliaEast
+CanadaCentral
+CanadaEast
+CentralIndia
+SouthIndia
+CentralUS
+EastUS2
+SouthEastAsia
+EastAsia
+WestCentralUS
+,WestUS2       |               |                                                                                                           
+|**omsWorkspaceRegion**    | Choose location for OMS Log Analytics to deploy. For more information, see https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-overview     | Australiasoutheast,  Canadacentral, Centralindia, Eastus, Japaneast, Southeastasia, Uksouth, westeurope           | southeastasia     |      
+| **appInsightsLocation** | Location for the instance of App Insights     | Southcentralus, westeurope, eastus, NorthEurope      | eastus       |                                      
+|   **appInsightsLocationDr**        | If deploymenttype is choosen as standard or premium, enter location for application insights for disaster recovery   | Southcentralus, Westeurope, Eastus, NorthEurope      |   southcentralus   |
+|   **Tenant Id **   | Tenant Id of the created Azure active directory application. Refer section 3.1.5 to get tenant id. For instructions, see (https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-howto-tenant)  in the Microsoft documentation  |          |            |                      
+| **botAdClientId** | Client Id of the AD user. Refer section 3.3 to get bot client id. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets.Used for Bot deployment |        |            |                              
+|   **adObject Id**       | Object Id of the AD user. Refer section 3.1.2 to get ad object id. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets      |           |             |
+|**adClient Secret** |  Client Secret of the created Azure active directory application.  Refer section 3.1.2 to get ad client secret. For instructions, see (https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key)  in the Microsoft documentation.                   |         |                  |
+| **azureAccount Name**    | azure portal login username.                                   |                |                        |
+|**azurePassword**| azure portal login password.        |         |               |                                    
+| **adminName**        | Name of the AdminPortal used as hosts while executing the Ingress_Custom Script     |       |        |
+|  **sessionId** | Provide the guid prefix for the runbook job to be created. Generate using https://www.guidgenerator.com/online-guid-generator.aspx). Refer section 3.2   |      |          |                                  
+| **vmUsername**| Username to login into Virtual Machine     |      |        |                                 
+|   **vmPassword**    |  Password to login into Virtual Machine |    |       |
+|  **aksServicePrincipalClientId** |  Client ID (used by cloudprovider). Refer section 3.5 to get ad Service principal client id     |      |         |
+| **aksServicePrincipalClientSecret**      | The Service Principal Client Secret. Refer section 3.5. to get ad Service principal client secret      |        |         |
+|   **aksServicePrincipalClientIdDr**        | If deploymenttype is choosen as premium, enter Client ID of the newly created service principal       |       |     |
+|  **aksServicePrincipalClientSecretDr**           |  If deploymenttype is choosen as premium, enter Client secret of the newly created service principal     |      |          |
+|  **signalrCapacity**      | The number of SignalR Unit.      | 1, 2, 5, 10, 20, 50, 100       | 1         |
+|  **dockerVM**      |  Choose Yes/No to add Docker VM as part of Solution deployment                         | Yes, No             |           |
+|  **githuburl**        |  GitHub url used to clone the repository to build the images in docker VM                      |             | https://github.com/litebulb/ProjectEdison.git        |
+|  **azureAdPreviewModuleUri**     |  Provide the url to install azure active directory preview module in azure automation from github    |        | https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/AzureADPreview.zip     |
+|  **cosmosdbModuleUri**  |  Provide the url to install azure active directory preview module in azure automation from the github         |     | https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/cosmos.zip       |
+|  **siteName**     | The name of Bot Direct line channel site         |                | edisonwebapp     |
 
 
 ## 5 Getting Started
