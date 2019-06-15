@@ -458,4 +458,6 @@ We need to create an application in the Firebase from which will get an API Key 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/68.png)
 
+22. Similarly, we can validate the User Mobile application functionality on IOS Platform.
 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/69.png)
