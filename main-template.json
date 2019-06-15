@@ -363,7 +363,7 @@
             "moduleName1": "AzureADPreview",
             "cosmosdbModuleUri": "[parameters('cosmosdbModuleUri')]",
             "azureAdPreviewModuleUri": "[parameters('azureAdPreviewModuleUri')]",
-            "runbookUri": "[concat(variables('baseUrl'),'scripts/initializeCosmosDb.ps1')]",
+            "runbookUri": "[concat(variables('baseUrl'),'edison-scripts/initializeCosmosDb.ps1')]",
             "sessionId": "[parameters('sessionId')]",
             "tenantId": "[parameters('tenantId')]",
             "azureAccountName": "[parameters('azureAccountName')]",
