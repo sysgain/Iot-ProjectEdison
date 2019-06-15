@@ -437,63 +437,10 @@ In the parameters section of the template, specify the values as inputs when dep
 |-------------------------|--------------------------------------------------|------------------------- |--------------------------- |   
 | **solution type**       | The type of Solution                 |                 | Project-Edison                  |
 | **DeploymentType**      | choose your deploymenttype to deploy     | Basic or Standard or Premium |              |
-| **geo-paired-region**       | For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)     | EastUS2,
-CentralUS,
-WestUS2,,
-WestCentralUS
-CanadaCentral,
-CanadaEast,
-AustraliaEast,
-AustraliaSout,hEast,
-CentralIndia,
-SouthIndia,
-EastAsia,
-SouthEastAsia,
-JapanWest,
-JapanEast,
-KoreaCentral,
-KoreaSouth,
-UKSouth,
-UKWest             |            |
-| **signalRlocation**            | Choose location for signalR to deploy         | AustraliaEast
-CanadaEast
-CentralUS
-EastUS2
-EastUS
-JapanEast
-NorthEurope
-SouthCentralUS
-SoutheastAsia
-UKSouth
-WestEurope
-WestUS2
-WestUS           | EastUS2         |   
-| **signalRlocationDr**          | If deploymenttype is choosen as standard or premium, enter location for signalRlocationDr for disaster recovery.                | AustraliaEast
-CanadaEast
-CentralUS
-EastUS2
-EastUS
-JapanEast
-NorthEurope,
-SouthCentralUS
-SoutheastAsia
-UKSouth, 
-WestEurope, 
-WestUS2
- WestUS              | CentralUS      |                                                                    
-| **acrDeploymentLocation** | Choose location for Azure container Registry to deploy.         | JapanEast
-JapanWest
-AustraliaSouthEast AustraliaEast
-CanadaCentral
-CanadaEast
-CentralIndia
-SouthIndia
-CentralUS
-EastUS2
-SouthEastAsia
-EastAsia
-WestCentralUS
-,WestUS2       |               |                                                                                                           
+| **geo-paired-region**       | For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)  | EastUS2, CentralUS, WestUS2, WestCentralUS, CanadaCentral, CanadaEast, AustraliaEast, AustraliaSout,hEast, CentralIndia, SouthIndia, EastAsia, SouthEastAsia, JapanWest, JapanEast, KoreaCentral, KoreaSouth, UKSouth, UKWest             |            |
+| **signalRlocation**            | Choose location for signalR to deploy         | AustraliaEast, CanadaEast, CentralUS, EastUS2, EastUS, JapanEast, NorthEurope, SouthCentralUS, SoutheastAsia, UKSouth, WestEurope, WestUS2, WestUS           | EastUS2         |   
+| **signalRlocationDr**          | If deploymenttype is choosen as standard or premium, enter location for signalRlocationDr for disaster recovery.                | AustraliaEast, CanadaEast, CentralUS, EastUS2, EastUS, JapanEast,NorthEurope, SouthCentralUS, SoutheastAsia, UKSouth, WestEurope, WestUS2, WestUS              | CentralUS      |                            
+| **acrDeploymentLocation** | Choose location for Azure container Registry to deploy.         | JapanEast, JapanWest, AustraliaSouthEast, AustraliaEast, CanadaCentral, CanadaEast, CentralIndia, SouthIndia, CentralUS, EastUS2, SouthEastAsia, EastAsia, WestCentralUS, WestUS2       |               |                                                                                     
 |**omsWorkspaceRegion**    | Choose location for OMS Log Analytics to deploy. For more information, see https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-overview     | Australiasoutheast,  Canadacentral, Centralindia, Eastus, Japaneast, Southeastasia, Uksouth, westeurope           | southeastasia     |      
 | **appInsightsLocation** | Location for the instance of App Insights     | Southcentralus, westeurope, eastus, NorthEurope      | eastus       |                                      
 |   **appInsightsLocationDr**        | If deploymenttype is choosen as standard or premium, enter location for application insights for disaster recovery   | Southcentralus, Westeurope, Eastus, NorthEurope      |   southcentralus   |
