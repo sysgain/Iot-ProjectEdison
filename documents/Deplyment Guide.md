@@ -187,7 +187,7 @@ Select user then you will redirect to selected user profile and copy the Object 
 ],
 "displayName": "Admin",
 
-"id": **"<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>"**,
+"id": "<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>",
 	
 "isEnabled": true,
 
@@ -207,7 +207,7 @@ Select user then you will redirect to selected user profile and copy the Object 
 
 "displayName": "Consumer",
 
-"id": **"<xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx>"**,
+"id": "<xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx>",
 
 "isEnabled": true,
 
@@ -406,17 +406,17 @@ Follow Below steps to create Azure AD B2C Tenant:
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d49.png)
 
 3.	Set your subscription with below command
-**az account set --subscription <subscription ID>**
+az account set --subscription <subscription ID>
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d50.png)
  
 4.	Create without a default role assignment.
-**az ad sp create-for-rbac -n <appname> --skip-assignment**
+az ad sp create-for-rbac -n <appname> --skip-assignment
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d51.png)
  
 5.	To retrieve the object ID of the created application.
-**az ad sp show --id <created app id> --query "objectId"**
+az ad sp show --id <created app id> --query "objectId"
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d52.png)
 
@@ -618,7 +618,7 @@ Deployment can proceed within the Azure Portal via Windows PowerShell.
 1.	Clone the Master branch and save it locally, refer **section 4.1** of this document for Git hub URL
 
 2.	Open **Windows PowerShell** and run the following command
-       ** az login**
+       **az login**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d81.png)
 
