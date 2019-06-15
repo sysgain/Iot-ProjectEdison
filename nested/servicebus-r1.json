@@ -11,15 +11,15 @@
     },
     "resources": [
         {
-            "name": "[parameters('serviceBusProperties').serviceBusNamespaceName]",
+            "name": "[parameters('serviceBusProperties').serviceBusNamespaceNameDr]",
             "type": "Microsoft.ServiceBus/namespaces",
             "apiVersion": "2017-04-01",
-            "location": "[parameters('serviceBusProperties').location]",
+            "location": "[parameters('serviceBusProperties').locationDr]",
             "tags": {
                 "IotSuiteType": "[parameters('serviceBusProperties').solutionType]"
             },
             "sku": {
-                "name": "[parameters('serviceBusProperties').skuName1]"
+                "name": "[parameters('serviceBusProperties').skuName]"
             },
             "properties": {},
             "resources": [
@@ -28,7 +28,7 @@
                     "apiVersion": "2017-04-01",
                     "type": "Queues",
                     "dependsOn": [
-                        "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusProperties').serviceBusNamespaceName)]"
+                        "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusProperties').serviceBusNamespaceNameDr)]"
                     ],
                     "properties": {
                         "lockDuration": "PT5M",
@@ -69,57 +69,10 @@
                     "type": "providers/diagnosticSettings",
                     "apiVersion": "2015-07-01",
                     "dependsOn": [
-                        "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusProperties').serviceBusNamespaceName)]"
-                    ],
-                    "properties": {
-                        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('omsSettings').omsWorkspaceName)]",
-                        "logs": [
-                            {
-                                "category": "OperationalLogs",
-                                "enabled": true,
-                                "retentionPolicy": {
-                                    "days": 0,
-                                    "enabled": false
-                                }
-                            }
-                        ],
-                        "metrics": [
-                            {
-                                "timeGrain": "AllMetrics",
-                                "category": "AllMetrics",
-                                "enabled": true,
-                                "retentionPolicy": {
-                                    "enabled": false,
-                                    "days": 0
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "name": "[parameters('serviceBusProperties').serviceBusNamespaceNameDr]",
-            "type": "Microsoft.ServiceBus/namespaces",
-            "apiVersion": "2017-04-01",
-            "location": "[parameters('serviceBusProperties').locationDr]",
-            "tags": {
-                "IotSuiteType": "[parameters('serviceBusProperties').solutionType]"
-            },
-            "sku": {
-                "name": "[parameters('serviceBusProperties').skuName1]"
-            },
-            "properties": {},
-            "resources": [
-                {
-                    "name": "Microsoft.Insights/service",
-                    "type": "providers/diagnosticSettings",
-                    "apiVersion": "2015-07-01",
-                    "dependsOn": [
                         "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusProperties').serviceBusNamespaceNameDr)]"
                     ],
                     "properties": {
-                        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('omsSettings').omsWorkspaceName)]",
+                        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('omsSettings').omsWorkspaceNameDr)]",
                         "logs": [
                             {
                                 "category": "OperationalLogs",
@@ -143,18 +96,6 @@
                         ]
                     }
                 }
-            ]
-        },
-        {
-            "type": "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs",
-            "name": "[parameters('serviceBusProperties').aliasName]",
-            "apiVersion": "2017-04-01",
-            "scale": null,
-            "properties": {
-                "partnerNamespace": "[resourceId('Microsoft.ServiceBus/namespaces', parameters('serviceBusProperties').serviceBusNamespaceNameDr)]"
-            },
-            "dependsOn": [
-                "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusProperties').serviceBusNamespaceName)]"
             ]
         }
     ],

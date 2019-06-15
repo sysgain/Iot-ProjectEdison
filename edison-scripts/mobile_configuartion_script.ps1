@@ -4,16 +4,11 @@
 #$date= ((Get-Date).ToString('dd MMM yyyy hh_mm_ss' ))
 #New-Item -ItemType Directory -Path "$location\IPE-$date"
 
-$folderName = (Get-Date).tostring("dd-MM-yyyyThh-mm-ss")            
-New-Item -itemType Directory -Path C:\Tmp -Name $folderName
 
 #clone the github repository
-$githubUrl = "https://github.com/litebulb/ProjectEdison.git"
-$location = "C:\Tmp\$folderName"
-git clone $githubUrl $location
-Start-Sleep -s 180
+$location = "$1"
 
-$Path = "C:\Users\omanduri\Desktop\values.txt"
+$Path = "$2"
 $values = Get-Content $Path | Out-String | ConvertFrom-StringData
 $values.TENANTID
 $values.DOMAIN

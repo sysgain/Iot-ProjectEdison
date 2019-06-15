@@ -26,7 +26,7 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
+                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region which was entered for primary deployment, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
             }
         },
         "solutionType": {
@@ -83,7 +83,7 @@
         },
         "appInsightsLocationDr": {
             "type": "string",
-            "defaultValue": "eastus",
+            "defaultValue": "southcentralus",
             "allowedValues": [
                 "southcentralus",
                 "westeurope",
@@ -216,8 +216,24 @@
             "botIdDr": "[variables('botId2')]",
             "appInsightsLocationDr": "[parameters('appInsightsLocationDr')]"
         },
+        "serviceBusProperties": {
+            "solutionType": "[parameters('solutionType')]", 
+            "serviceBusNamespaceNameDr": "[variables('serviceBusNamespaceNameDr1')]",
+            "location": "[parameters('geo-paired-region')]",
+            "locationDr": "[variables('locationDr')]",
+            "serviceBusDefaultSASKeyName": "[variables('serviceBusDefaultSASKeyName1')]",
+            "serviceBusAuthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', variables('serviceBusNamespaceNameDr1'), variables('serviceBusDefaultSASKeyName1'))]",
+            "skuName": "Standard",
+            "serviceBusQueueName1": "edison_input",
+            "servicebusEndPoint": "[concat('Endpoint=sb://',variables('serviceBusNamespaceNameDr1'),'.servicebus.windows.net/')]",
+            "routesSharedAccessKeyName": "SharedAccessKeyName=edison_inputsend",
+            "entity": "EntityPath=edison_input",
+            "serviceBusRabbitMQUsername": "Admin",
+            "serviceBusRabbitMQPassword": "Edison1234",
+            "aliasName": "[concat('servicebusgeo-alias',variables('suffix'))]"
+        },
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
         "EastUS2": "CentralUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
@@ -236,6 +252,8 @@
         "KoreaSouth": "KoreaCentral",
         "UKSouth": "UKWest",
         "UKWest": "UKSouth",
+        "serviceBusNamespaceNameDr1": "[concat('snamespace',variables('suffix'),'Dr')]",
+        "serviceBusDefaultSASKeyName1": "RootManageSharedAccessKey",
         "locationDr": "[variables(parameters('geo-paired-region'))]",
         "aksClusterNameDr": "[concat('aks' , variables('suffix'), 'Dr')]",
         "storageAccountNameDr": "[concat('edisonstrgeacc',variables('suffix'),'dr')]",
@@ -246,7 +264,7 @@
     },
     "resources": [
         {
-            "name": "OmsWorkSpaceR2",
+            "name": "OmsWorkSpaceStandard",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2015-01-01",
             "dependsOn": [],
@@ -363,7 +381,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "dependsOn": [
-                "OmsWorkSpaceR2"
+                "OmsWorkSpaceStandard"
             ],
             "properties": {
                 "mode": "Incremental",
@@ -377,6 +395,29 @@
                     },
                     "kubernetesSettings": {
                         "value": "[variables('kubernetesSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "ServiceBusR2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2015-01-01",
+            "dependsOn": [
+                "OmsWorkSpaceStandard"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'),'nested/servicebus-r1.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "serviceBusProperties": {
+                        "value": "[variables('serviceBusProperties')]"
+                    },
+                    "omsSettings": {
+                        "value": "[variables('omsSettings')]"
                     }
                 }
             }

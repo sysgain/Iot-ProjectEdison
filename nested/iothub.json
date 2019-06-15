@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "iothubSettings": {
+        "iotHubSettings": {
             "type": "object"
         },
         "serviceBusProperties": {
@@ -15,22 +15,22 @@
     "variables": {},
     "resources": [
         {
-            "name": "[parameters('iothubSettings').iotHubName]",
+            "name": "[parameters('iotHubSettings').iotHubName]",
             "type": "Microsoft.Devices/IotHubs",
             "apiVersion": "2016-02-03",
-            "location": "[parameters('iothubSettings').location]",
+            "location": "[parameters('iotHubSettings').location]",
             "tags": {
-                "IotSuiteType": "[parameters('iothubSettings').solutionType]"
+                "IotSuiteType": "[parameters('iotHubSettings').solutionType]"
             },
             "sku": {
-                "name": "[parameters('iothubSettings').skuName]",
-                "capacity": "[parameters('iothubSettings').capacityUnits]"
+                "name": "[parameters('iotHubSettings').skuName]",
+                "capacity": "[parameters('iotHubSettings').capacityUnits]"
             },
             "properties": {
                 "eventHubEndpoints": {
                     "events": {
-                        "retentionTimeInDays": "[parameters('iothubSettings').d2cMessageRetentionInDaysPeriod]",
-                        "partitionCount": "[parameters('iothubSettings').d2cPartitionCount]"
+                        "retentionTimeInDays": "[parameters('iotHubSettings').d2cMessageRetentionInDaysPeriod]",
+                        "partitionCount": "[parameters('iotHubSettings').d2cPartitionCount]"
                     }
                 },
                 "routing": {
@@ -224,11 +224,11 @@
             ]
         },
         {
-            "name": "[concat(parameters('iothubSettings').iotHubName, '/events/',parameters('iothubSettings').d2cConsumerGroupName)]",
+            "name": "[concat(parameters('iotHubSettings').iotHubName, '/events/',parameters('iotHubSettings').d2cConsumerGroupName)]",
             "type": "Microsoft.Devices/iotHubs/eventhubEndpoints/ConsumerGroups",
             "apiVersion": "2016-02-03",
             "dependsOn": [
-                "[concat('Microsoft.Devices/iothubs/',parameters('iothubSettings').iotHubName)]"
+                "[concat('Microsoft.Devices/iothubs/',parameters('iotHubSettings').iotHubName)]"
             ]
         }
     ],
