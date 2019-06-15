@@ -257,7 +257,7 @@ Check **status of services** using the namespace kube-system
 
 2. Update in the **messaging endpoint** of **Bot Channel** Registration and click on **Save**.
 
-![alt text]https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/24.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/24.png)
 
 3. Update the **reply URL** of the **azure active directory** application with admin URL from Hosts and Click on **Save**.
 
