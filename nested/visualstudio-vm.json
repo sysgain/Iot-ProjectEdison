@@ -142,11 +142,7 @@
                 "osProfile": {
                     "computerName": "[parameters('visualStudioVm').vmName]",
                     "adminUsername": "[parameters('visualStudioVm').vmUsername]",
-                    "adminPassword": "[parameters('visualStudioVm').vmPassword]",
-                    "windowsConfiguration": {
-                        "enableAutomaticUpdates": true,
-                        "provisionVmAgent": true
-                    }
+                    "adminPassword": "[parameters('visualStudioVm').vmPassword]"
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
