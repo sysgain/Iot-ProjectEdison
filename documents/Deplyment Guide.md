@@ -43,7 +43,7 @@
  <!--te--> 
     
 
-## 1 Deployment Guide
+## 1.0 Deployment Guide
 
 This Document explains about how to deploy Project-Edison solution using ARM Template. In this Document explained about two ways of deploying solution.
 
@@ -53,7 +53,7 @@ This Document explains about how to deploy Project-Edison solution using ARM Tem
 
 This document explains about input parameters, output parameters and points to be noted while deploying ARM Template.
 
-## 2 What are Paired Regions
+## 2.0 What are Paired Regions
 
 Azure operates in multiple geographies around the world. An Azure geography is a defined area of the world that contains at least one Azure Region. An Azure region is an area within a geography, containing one or more datacenters. 
 
@@ -82,7 +82,7 @@ IoT Hub Manual Failover Support Geo-Paired Regions:
 | 17                 | UK          | UK South           |  UK West
 | 18                 | UK          | UK West          |  UK South
 
-## 3 Prerequisites for Deploying ARM Template
+## 3.0 Prerequisites for Deploying ARM Template
 
 Create an application in Azure Active Directory.
 
@@ -100,7 +100,7 @@ Create Twilio Account
 
 Any application that wants to use the capabilities of Azure AD must first be registered in an Azure AD tenant. This registration process involves giving Azure AD details about your application, such as the URL where it’s located, the URL to send replies after a user is authenticated, the URI that identifies the app, and so on.
 
-#### 3.1.1.	To register a new application in Azure AD using the Azure portal
+#### 3.1.1 To register a new application in Azure AD using the Azure portal
 
 1.	Sign in to the **Azure portal**.
 
@@ -429,7 +429,7 @@ After the Account is created, Navigate to settings (icon) and note down the Auth
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d53.png)
 
-## 4 ARM Template Input Parameters
+## 4.0 ARM Template Input Parameters
 
 In the parameters section of the template, specify the values as inputs when deploying the ARM Template. These parameter values enable you to customize the deployment by providing values that are tailored for your environment.
 
@@ -466,7 +466,7 @@ In the parameters section of the template, specify the values as inputs when dep
 |  **siteName**     | The name of Bot Direct line channel site         |                | edisonwebapp     |
 
 
-## 5 Getting Started
+## 5.0 Getting Started
 
 Azure Resource Manager allows you to provision your applications using a declarative template. In a single template, you can deploy multiple services along with their dependencies. The template consists of JSON and expressions that you can use to construct values for your deployment. You use the same template to repeatedly deploy your application during every stage of the application lifecycle.
 
@@ -486,7 +486,7 @@ Resource manager provides the following feature:
 
 *	Apply tags to resources to logically organize all the resources in your subscription.
 
-### 4.1 ARM Template Deployment Using Azure Portal
+### 5.1 ARM Template Deployment Using Azure Portal
 
 1.	Click the below **Git hub** repo URL.
 
@@ -532,7 +532,7 @@ https://github.com/sysgain/Iot-ProjectEdison/blob/dev-ha
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d63.png)
 
-#### 4.1.1 Inputs
+#### 5.1.1 Inputs
 
 These parameter values enable you to customize the deployment by providing values. There parameters allow to choose the solution type, region and AD Application details.  
 
@@ -625,7 +625,7 @@ Expect IoT Hub, Cosmos DB, OMS Log Analytics, Automation Account, Run Book and S
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d78.png)
 
-#### 4.1.2 Output
+#### 5.1.2 Output
 
 1.	Go to **Resource Group -> Click Deployments> Click on Microsoft.Template**
 
@@ -636,7 +636,7 @@ Expect IoT Hub, Cosmos DB, OMS Log Analytics, Automation Account, Run Book and S
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d80.png)
 
 
-### 4.2 ARM Template Deployment Using Azure CLI 
+### 5.2 ARM Template Deployment Using Azure CLI 
 
 Azure CLI is used to deploy your resources to Azure. The Resource Manager template you deploy, can either be a local file on your machine, or an external file that is in a repository like GitHub.   
 
@@ -732,7 +732,7 @@ https://github.com/sysgain/Iot-ProjectEdison/blob/dev-ha/main-template.parameter
 
 *	siteName
 
-#### 4.2.1 Create Resource Group using Azure CLI
+#### 5.2.1 Create Resource Group using Azure CLI
 
 Use the **az group create** command to create a **Resource Group** in your region.
 
@@ -744,7 +744,7 @@ It uses the name parameter to specify the name for resource group (-n) and locat
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d87.png)
 
-4.2.2.	Execute the Template Deployment  
+#### 5.2.2 Execute the Template Deployment  
 
 Use the **az group deployment create** command to deploy the ARM template  
 
@@ -764,9 +764,9 @@ Use the **az group deployment create** command to deploy the ARM template
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d89.png)
 
-## 5 Post Deployment
+## 6.0 Post Deployment
 
-### 5.1 Adding messaging endpoint in Bot
+### 6.1 Adding messaging endpoint in Bot
 
 Go to resource group -> click on **Bot Channel Registration -> Settings -> add the api url** as the messaging endpoint under configuration.
 
@@ -776,7 +776,7 @@ Save the API URL , will be used to update the values in environment file.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d90.png)
  
-### 5.2 Enable Enhance authentication options.
+### 6.2 Enable Enhance authentication options.
 
 1.	Navigate to **Resource Group >click on Bot Channel Registration > Channels>Click** on **Edit** in Azure portal.
 
@@ -796,7 +796,7 @@ Save the API URL , will be used to update the values in environment file.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d95.png)
  
-### 5.3 Login to Edison Virtual Machine
+### 6.3 Login to Edison Virtual Machine
 
 1.	Navigate to deployed Virtual Machine and click on it.
 
@@ -837,9 +837,9 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d103.png)
 
-### 5.4	Setting up the Environment
+### 6.4	Setting up the Environment
 
-#### 5.4.1 Execute configupdate2.sh
+#### 6.4.1 Execute configupdate2.sh
 
 **Configupdate2.sh** script: To update all config files. Use the below command to execute the script.
 
@@ -847,7 +847,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d104.png)
  
-#### 5.4.2 Execute commonupdate3.sh 
+#### 6.4.2 Execute commonupdate3.sh 
 
 **Commonupdae3.sh** script: To update the values in the common.secrets file. Use the below command to execute the script.
 
@@ -855,7 +855,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d105.png)
  
-#### 5.4.3 Execute edsionwebenvupdate4.sh
+#### 6.4.3 Execute edsionwebenvupdate4.sh
 
 **edsionwebenvupdate4.sh script**: To update the values in the environment files. Use the below command to execute the script.
 
@@ -863,7 +863,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d106.png)
  
-#### 5.4.4 Execute updateappsettings5.sh 
+#### 6.4.4 Execute updateappsettings5.sh 
 
 **updateappsettings5.sh** script: To update the values in the appsettings.json file of all the microservices. Use the below command to execute the script.
 
