@@ -220,6 +220,7 @@
         },
         "visualStudioVm": {
             "networkInterfaceNameDr": "vs-nicDr",
+            "storageAccountType": "Standard_LRS",
             "locationDr": "[variables('locationDr')]",
             "networkSecurityGroupNameDr": "[variables('networkSecurityGroupNameDr')]",
             "virtualNetworkNameDr": "[variables('vsVnetNameDr')]",
@@ -231,7 +232,8 @@
             "subnetPrefixDr": "30.0.1.0/24",
             "publicIPdnsPrefixDr": "[concat('vsdns',variables('suffix'),'Dr')]",
             "storageAccountNameDr": "[variables('vsStorageAccountNameDr')]",
-            "vmNameDr": "vsVMDr"
+            "vmNameDr": "vsVMDr",
+            "virtualMachineNameDr": "visualStudio-VMDr"
         },
                 "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]", 
@@ -279,7 +281,7 @@
         "acrName2": "[concat('acr',variables('suffix'), 'Dr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
         "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]",
-        "networkSecurityGroupNameDr": "vs-nsgDr",
+        "networkSecurityGroupNameDr": "vsnsgDr",
         "vsVnetNameDr": "[concat('vs-vnet', variables('suffix'),'Dr')]",
         "vsSubnetNameDr": "vsSubnetDr",
         "vsVnetIdDr": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetNameDr'))]",
