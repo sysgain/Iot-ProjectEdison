@@ -464,6 +464,7 @@
             "fileUri": "[concat(variables('baseUrl'),'edison-scripts/scripts-download.sh')]"
         },
         "visualStudioVm": {
+            "vmName": "vsvmname",
             "networkInterfaceName": "vs-nic",
             "location": "[parameters('geo-paired-region')]",
             "networkSecurityGroupName": "[variables('networkSecurityGroupName1')]",
@@ -472,13 +473,15 @@
             "subnetRef": "[concat(variables('vsVnetId'), '/subnets/', variables('vsSubnetName1'))]",
             "subnetName": "[variables('vsSubnetName1')]",
             "nsgId": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName1'))]",
-            "addressPrefixes": "20.0.0.0/16",
+            "addressPrefix": "20.0.0.0/16",
             "subnetPrefix": "20.0.1.0/24",
             "publicIPdnsPrefix": "[concat('vsdns',variables('suffix'))]",
             "virtualMachineName": "visualStudio-VM",
             "storageAccountName": "[variables('vsStorageAccountName1')]",
             "virtualMachineSize": "Standard_D1_V2",
-            "storageAccountType": "Standard_LRS"
+            "storageAccountType": "Standard_LRS",
+            "vmUsername": "adminuser",
+            "vmPassword": "Password@1234"
         },
         "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]",

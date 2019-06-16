@@ -81,7 +81,9 @@
             "location": "[parameters('visualStudioVm').location]",
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": "[parameters('visualStudioVm').addressPrefixes]"
+                    "addressPrefixes": [
+                        "[parameters('visualStudioVm').addressPrefix]"
+                    ]
                 },
                 "subnets": [
                     {
@@ -142,7 +144,11 @@
                 "osProfile": {
                     "computerName": "[parameters('visualStudioVm').vmName]",
                     "adminUsername": "[parameters('visualStudioVm').vmUsername]",
-                    "adminPassword": "[parameters('visualStudioVm').vmPassword]"
+                    "adminPassword": "[parameters('visualStudioVm').vmPassword]",
+                    "windowsConfiguration": {
+                        "enableAutomaticUpdates": true,
+                        "provisionVmAgent": true
+                    }                    
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
