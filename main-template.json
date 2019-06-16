@@ -478,10 +478,11 @@
             "publicIPdnsPrefix": "[concat('vsdns',variables('suffix'))]",
             "virtualMachineName": "visualStudio-VM",
             "storageAccountName": "[variables('vsStorageAccountName1')]",
-            "virtualMachineSize": "Standard_D1_V2",
+            "virtualMachineSize": "Standard_D4s_V3",
             "storageAccountType": "Standard_LRS",
             "vmUsername": "adminuser",
             "vmPassword": "Password@1234",
+
             "networkInterfaceNameDr": "vs-nicDr",
             "locationDr": "[variables('locationDr')]",
             "networkSecurityGroupNameDr": "[variables('networkSecurityGroupNameDr')]",
@@ -1201,7 +1202,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-r1.json')]",
+                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-vm.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
