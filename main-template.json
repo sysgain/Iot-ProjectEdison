@@ -481,23 +481,7 @@
             "virtualMachineSize": "Standard_D4s_V3",
             "storageAccountType": "Standard_LRS",
             "vmUsername": "adminuser",
-            "vmPassword": "Password@1234",
-
-            "networkInterfaceNameDr": "vs-nicDr",
-            "locationDr": "[variables('locationDr')]",
-            "networkSecurityGroupNameDr": "[variables('networkSecurityGroupNameDr')]",
-            "virtualNetworkNameDr": "[variables('vsVnetNameDr')]",
-            "publicIpAddressNameDr": "[concat('vspip',variables('suffix'),'Dr')]",
-            "subnetRefDr": "[concat(variables('vsVnetIdDr'), '/subnets/', variables('vsSubnetNameDr'))]",
-            "subnetNameDr": "[variables('vsSubnetNameDr')]",
-            "nsgIdDr": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupNameDr'))]",
-            "addressPrefixDr": "30.0.0.0/16",
-            "subnetPrefixDr": "30.0.1.0/24",
-            "publicIPdnsPrefixDr": "[concat('vsdns',variables('suffix'),'Dr')]",
-            "virtualMachineNameDr": "visualStudio-VM-Dr",
-            "storageAccountNameDr": "[variables('vsStorageAccountNameDr')]",
-            "vmNameDr": "vsVMDr"
-
+            "vmPassword": "Password@1234"
         },
         "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]",
@@ -1203,25 +1187,6 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "uri": "[concat(variables('baseUrl'),'nested/visualstudio-vm.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "visualStudioVm": {
-                        "value": "[variables('visualStudioVm')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "VisualStudioR2",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-r1.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {

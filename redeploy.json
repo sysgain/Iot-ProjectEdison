@@ -218,24 +218,7 @@
             "botIdDr": "[variables('botId2')]",
             "appInsightsLocationDr": "[parameters('appInsightsLocationDr')]"
         },
-        "visualStudioVm": {
-            "networkInterfaceNameDr": "vs-nicDr",
-            "storageAccountType": "Standard_LRS",
-            "locationDr": "[variables('locationDr')]",
-            "networkSecurityGroupNameDr": "[variables('networkSecurityGroupNameDr')]",
-            "virtualNetworkNameDr": "[variables('vsVnetNameDr')]",
-            "publicIpAddressNameDr": "[concat('vspip',variables('suffix'),'Dr')]",
-            "subnetRefDr": "[concat(variables('vsVnetIdDr'), '/subnets/', variables('vsSubnetNameDr'))]",
-            "subnetNameDr": "[variables('vsSubnetNameDr')]",
-            "nsgIdDr": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupNameDr'))]",
-            "addressPrefixDr": "30.0.0.0/16",
-            "subnetPrefixDr": "30.0.1.0/24",
-            "publicIPdnsPrefixDr": "[concat('vsdns',variables('suffix'),'Dr')]",
-            "storageAccountNameDr": "[variables('vsStorageAccountNameDr')]",
-            "vmNameDr": "vsVMDr",
-            "virtualMachineNameDr": "visualStudio-VMDr"
-        },
-                "serviceBusProperties": {
+        "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]", 
             "serviceBusNamespaceNameDr": "[variables('serviceBusNamespaceNameDr1')]",
             "location": "[parameters('geo-paired-region')]",
@@ -280,13 +263,7 @@
         "storageAccountNameDr": "[concat('edisonstrgeacc',variables('suffix'),'dr')]",
         "acrName2": "[concat('acr',variables('suffix'), 'Dr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
-        "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]",
-        "networkSecurityGroupNameDr": "vsnsgDr",
-        "vsVnetNameDr": "[concat('vs-vnet', variables('suffix'),'Dr')]",
-        "vsSubnetNameDr": "vsSubnetDr",
-        "vsVnetIdDr": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetNameDr'))]",
-        "vsStorageAccountNameDr": "[concat('vstorage',variables('suffix'),'Dr')]"
-
+        "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]"
     },
     "resources": [
         {
@@ -444,24 +421,6 @@
                     },
                     "omsSettings": {
                         "value": "[variables('omsSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "VisualStudioR2",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-r1.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "visualStudioVm": {
-                        "value": "[variables('visualStudioVm')]"
                     }
                 }
             }
