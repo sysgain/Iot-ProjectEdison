@@ -493,6 +493,7 @@
             "addressPrefixDr": "30.0.0.0/16",
             "subnetPrefixDr": "30.0.1.0/24",
             "publicIPdnsPrefixDr": "[concat('vsdns',variables('suffix'),'Dr')]",
+            "virtualMachineNameDr": "visualStudio-VM-Dr",
             "storageAccountNameDr": "[variables('vsStorageAccountNameDr')]",
             "vmNameDr": "vsVMDr"
 
