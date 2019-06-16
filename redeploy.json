@@ -6,6 +6,8 @@
             "type": "string",
             "defaultValue": "EastUS2",
             "allowedValues": [
+                "EastUS",
+                "WestUS",
                 "EastUS2",
                 "CentralUS",
                 "WestUS2",
@@ -216,7 +218,22 @@
             "botIdDr": "[variables('botId2')]",
             "appInsightsLocationDr": "[parameters('appInsightsLocationDr')]"
         },
-        "serviceBusProperties": {
+        "visualStudioVm": {
+            "networkInterfaceNameDr": "vs-nicDr",
+            "locationDr": "[variables('locationDr')]",
+            "networkSecurityGroupNameDr": "[variables('networkSecurityGroupNameDr')]",
+            "virtualNetworkNameDr": "[variables('vsVnetNameDr')]",
+            "publicIpAddressNameDr": "[concat('vspip',variables('suffix'),'Dr')]",
+            "subnetRefDr": "[concat(variables('vsVnetIdDr'), '/subnets/', variables('vsSubnetNameDr'))]",
+            "subnetNameDr": "[variables('vsSubnetNameDr')]",
+            "nsgIdDr": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupNameDr'))]",
+            "addressPrefixDr": "30.0.0.0/16",
+            "subnetPrefixDr": "30.0.1.0/24",
+            "publicIPdnsPrefixDr": "[concat('vsdns',variables('suffix'),'Dr')]",
+            "storageAccountNameDr": "[variables('vsStorageAccountNameDr')]",
+            "vmNameDr": "vsVMDr"
+        },
+                "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]", 
             "serviceBusNamespaceNameDr": "[variables('serviceBusNamespaceNameDr1')]",
             "location": "[parameters('geo-paired-region')]",
@@ -233,7 +250,9 @@
             "aliasName": "[concat('servicebusgeo-alias',variables('suffix'))]"
         },
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-ha/",
+        "EastUS": "WestUS",
+        "WestUS": "EastUS",
         "EastUS2": "CentralUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
@@ -259,8 +278,13 @@
         "storageAccountNameDr": "[concat('edisonstrgeacc',variables('suffix'),'dr')]",
         "acrName2": "[concat('acr',variables('suffix'), 'Dr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
-        "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]"
-      
+        "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]",
+        "networkSecurityGroupNameDr": "vs-nsgDr",
+        "vsVnetNameDr": "[concat('vs-vnet', variables('suffix'),'Dr')]",
+        "vsSubnetNameDr": "vsSubnetDr",
+        "vsVnetIdDr": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetNameDr'))]",
+        "vsStorageAccountNameDr": "[concat('vstorage',variables('suffix'),'Dr')]"
+
     },
     "resources": [
         {
@@ -418,6 +442,24 @@
                     },
                     "omsSettings": {
                         "value": "[variables('omsSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "VisualStudioR2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-r1.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "visualStudioVm": {
+                        "value": "[variables('visualStudioVm')]"
                     }
                 }
             }

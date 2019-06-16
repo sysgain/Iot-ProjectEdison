@@ -9,14 +9,14 @@
     "variables": {},
     "resources": [
         {
-            "name": "[parameters('visualStudioVm').networkInterfaceName]",
+            "name": "[parameters('visualStudioVm').networkInterfaceNameDr]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2018-10-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('visualStudioVm').networkSecurityGroupName)]",
-                "[concat('Microsoft.Network/virtualNetworks/', parameters('visualStudioVm').virtualNetworkName)]",
-                "[concat('Microsoft.Network/publicIpAddresses/', parameters('visualStudioVm').publicIpAddressName)]"
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('visualStudioVm').networkSecurityGroupNameDr)]",
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('visualStudioVm').virtualNetworkNameDr)]",
+                "[concat('Microsoft.Network/publicIpAddresses/', parameters('visualStudioVm').publicIpAddressNameDr)]"
             ],
             "properties": {
                 "ipConfigurations": [
@@ -24,25 +24,25 @@
                         "name": "ipconfig1",
                         "properties": {
                             "subnet": {
-                                "id": "[parameters('visualStudioVm').subnetRef]"
+                                "id": "[parameters('visualStudioVm').subnetRefDr]"
                             },
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIpAddress": {
-                                "id": "[resourceId(resourceGroup().name, 'Microsoft.Network/publicIpAddresses', parameters('visualStudioVm').publicIpAddressName)]"
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', parameters('visualStudioVm').publicIpAddressNameDr)]"
                             }
                         }
                     }
                 ],
                 "networkSecurityGroup": {
-                    "id": "[parameters('visualStudioVm').nsgId]"
+                    "id": "[parameters('visualStudioVm').nsgIdDr]"
                 }
             }
         },
         {
-            "name": "[parameters('visualStudioVm').networkSecurityGroupName]",
+            "name": "[parameters('visualStudioVm').networkSecurityGroupNameDr]",
             "type": "Microsoft.Network/networkSecurityGroups",
             "apiVersion": "2019-02-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "properties": {
                 "securityRules": [
                     {
@@ -75,46 +75,46 @@
             }
         },
         {
-            "name": "[parameters('visualStudioVm').virtualNetworkName]",
+            "name": "[parameters('visualStudioVm').virtualNetworkNameDr]",
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2019-02-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
-                        "[parameters('visualStudioVm').addressPrefix]"
+                        "[parameters('visualStudioVm').addressPrefixDr]"
                     ]
                 },
                 "subnets": [
                     {
-                        "name": "[parameters('visualStudioVm').subnetName]",
+                        "name": "[parameters('visualStudioVm').subnetNameDr]",
                         "properties": {
-                            "addressPrefix": "[parameters('visualStudioVm').subnetPrefix]"
+                            "addressPrefix": "[parameters('visualStudioVm').subnetPrefixDr]"
                         }
                     }
                 ]
             }
         },
         {
-            "name": "[parameters('visualStudioVm').publicIpAddressName]",
+            "name": "[parameters('visualStudioVm').publicIpAddressNameDr]",
             "type": "Microsoft.Network/publicIpAddresses",
             "apiVersion": "2019-02-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "properties": {
                 "publicIPAllocationMethod": "Static",
                 "dnsSettings": {
-                    "domainNameLabel": "[parameters('visualStudioVm').publicIpdnsPrefix]"
+                    "domainNameLabel": "[parameters('visualStudioVm').publicIpdnsPrefixDr]"
                 }
             }
         },
         {
-            "name": "[parameters('visualStudioVm').virtualMachineName]",
+            "name": "[parameters('visualStudioVm').virtualMachineNameDr]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2018-10-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', parameters('visualStudioVm').networkInterfaceName)]",
-                "[concat('Microsoft.Storage/storageAccounts/', parameters('visualStudioVm').storageAccountName)]"
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('visualStudioVm').networkInterfaceNameDr)]",
+                "[concat('Microsoft.Storage/storageAccounts/', parameters('visualStudioVm').storageAccountNameDr)]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -137,32 +137,32 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('visualStudioVm').networkInterfaceName)]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('visualStudioVm').networkInterfaceNameDr)]"
                         }
                     ]
                 },
                 "osProfile": {
-                    "computerName": "[parameters('visualStudioVm').vmName]",
+                    "computerName": "[parameters('visualStudioVm').vmNameDr]",
                     "adminUsername": "[parameters('visualStudioVm').vmUsername]",
                     "adminPassword": "[parameters('visualStudioVm').vmPassword]",
                     "windowsConfiguration": {
                         "enableAutomaticUpdates": true,
                         "provisionVmAgent": true
-                    }                    
+                    }
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https://', parameters('visualStudioVm').StorageAccountName, '.blob.core.windows.net/')]"
+                        "storageUri": "[concat('https://', parameters('visualStudioVm').StorageAccountNameDr, '.blob.core.windows.net/')]"
                     }
                 }
             }
         },
         {
-            "name": "[parameters('visualStudioVm').StorageAccountName]",
+            "name": "[parameters('visualStudioVm').StorageAccountNameDr]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
-            "location": "[parameters('visualStudioVm').location]",
+            "location": "[parameters('visualStudioVm').locationDr]",
             "properties": {},
             "kind": "StorageV2",
             "sku": {
