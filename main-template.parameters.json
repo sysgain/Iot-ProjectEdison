@@ -6,21 +6,27 @@
             "value": "Project-Edison"
         },
         "deploymenttype": {
-            "value": ""
+            "value": "xxxxxxx"
         },
         "geo-paired-region": {
-            "value": "EastUS2"
+            "value": "EastUS"
+        },
+        "visualStudioLocation":{
+            "value": "EastUS"
         },
         "signalRlocation": {
-            "value": "eastus2"
+            "value": "eastus"
         },
         "signalRlocationDr": {
-            "value": "CentralUS"
+            "value": "WestUS"
         },
         "acrDeploymentLocation": {
             "value": "CanadaCentral"
         },
         "omsWorkspaceRegion": {
+            "value": "eastus"
+        },
+        "omsWorkspaceRegionDr": {
             "value": "southeastasia"
         },
         "appInsightsLocation": {
@@ -30,64 +36,64 @@
             "value": "southcentralus"
         },
         "tenantId": {
-            "value": ""
+            "value": "xxsxxxaxx-x8xxe-xcdxxx36xx3-xxxa1xxx4dxx"
         },
         "botAdClientId": {
-            "value": ""
+            "value": "x0xxxx0xxe4-x8cxx-4xx9-x87x-x45wuixxxx8xo"
         },
         "adObjectId": {
-            "value": ""
+            "value": "xjxxh24-xxxxx-xg6xhxx-xxjfxxx-guiexxxxxxx"
         },
         "adClientSecret": {
-            "value": ""
+            "value": "xxxxx-x8xx-xh99xx-xx6xx-xhxxxx-xxg8xx0xxh"
         },
         "azureAccountName": {
-            "value": ""
+            "value": "user@noreply.com"
         },
         "azurePassword": {
-            "value": ""
+            "value": "xxxxxxxxx"
         },
         "adminName": {
-            "value": ""
+            "value": "adminedison"
         },
         "sessionId": {
-            "value": ""
+            "value": "xsxxxx-c8xxh-xxxne-86xxx-jwx6xxhxxx87xxxjix"
         },
         "vmUsername": {
-            "value": ""
+            "value": "adminuser"
         },
         "vmPassword": {
-            "value": "Password@1234"
+            "value": "xxxxxxxxx"
         },
         "aksServicePrincipalClientId": {
-            "value": ""
+            "value": "3xxc8-xx4x5e-x70xxx8-4x1xcxf-ffxxxxxxxxxx"
         },
         "aksServicePrincipalClientSecret": {
-            "value": ""
+            "value": "dxxx80xxx17-xfxx0xxx79-xx4xx67c-b3xxxxxx26"
         },
         "aksServicePrincipalClientIdDr": {
-            "value": ""
+            "value": "xxx8017-f0xxx-x7xxxxx9-b32xx6-4xxxb1cxxce"
         },
         "aksServicePrincipalClientSecretDr": {
-            "value": ""
+            "value": "dxx608-xxxxx017-f07xxxx9x-xxx4xxx-xxxxx6"
         },
         "signalrCapacity":  {
             "value": 1
         },
         "dockerVM": {
-            "value": ""
+            "value": "Yes"
         },
         "githuburl": {
             "value": "https://github.com/litebulb/ProjectEdison.git"
         },
         "azureAdPreviewModuleUri": {
-            "value": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/AzureADPreview.zip"
+            "value": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/AzureADPreview.zip"
         },
         "cosmosdbModuleUri": {
-            "value": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/cosmos.zip"
+            "value": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/cosmos.zip"
         },
         "siteName": {
-            "value": "edisonwebapp"
+            "value": "botchannel"
         }
     }
 }

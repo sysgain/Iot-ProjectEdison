@@ -11,16 +11,11 @@ BOTSECRETTOKEN=""
 BotStorageep=""
 NotificationHubSRT=""
 TENANTID=""
-DOMAIN=""
+B2CDOMAIN=""
 SIGNUPSIGNINPOLICYID=""
-AdAppName=""
+AdDomainName=""
 ADCLIENTID=""
 BASEURL_VALUE=""
 NOTIFICATIONHUBPATH=""
 B2CCLIENTID=""
 package = ""
-
-
-
-
-

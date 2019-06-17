@@ -47,12 +47,45 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
+                "description": "Select the geopaired region as deployment region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/GettingStarted.md)"
+            }
+        },
+        "visualStudioLocation":{
+            "type":"string",
+            "dafaultValue":"EastUS",
+            "allowedValues": [
+                "EastUS2",
+                "SouthCentralUS",
+                "SoutheastAsia",
+                "WestUS2",
+                "WestUS",
+                "CentralUS",
+                "NorthCentralUS",
+                "AustraliaEast",
+                "SouthEastAsia",
+                "CanadaCentral",
+                "EastAsia",
+                "JapanEast",
+                "CanadaCentral",
+                "WestCentralUS",
+                "UKSouth",
+                "AustraliaSouthEast",
+                "JapanWest",
+                "SouthIndia",
+                "WestIndia",
+                "CanadaEast",
+                "UKSouth",
+                "UKWest",
+                "BrazilSouth",
+                "FranceCentral"
+            ],
+            "metadata": {
+                "description": "Select the location to deploy Visual Studio Virtual Machine"
             }
         },
         "signalRlocation": {
             "type": "string",
-            "defaultValue": "EastUS2",
+            "defaultValue": "EastUS",
             "allowedValues": [
                 "AustraliaEast",
                 "CanadaEast",
@@ -74,7 +107,7 @@
         },
         "signalRlocationDr": {
             "type": "string",
-            "defaultValue": "CentralUS",
+            "defaultValue": "WestUS",
             "allowedValues": [
                 "AustraliaEast",
                 "CanadaEast",
@@ -91,12 +124,12 @@
                 "WestUS"
             ],
             "metadata": {
-                "description": "If deploymenttype is choosen as Standard or premium, enter location for signalRlocationDr for disaster recovery."
+                "description": "If deploymenttype is choosen as premium, enter location for signalRlocationDr for disaster recovery."
             }
         },
         "acrDeploymentLocation": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "CanadaCentral",
             "allowedValues": [
                 "JapanEast",
                 "JapanWest",
@@ -119,7 +152,7 @@
         },
         "omsWorkspaceRegion": {
             "type": "string",
-            "defaultValue": "southeastasia",
+            "defaultValue": "eastus",
             "allowedValues": [
                 "australiasoutheast",
                 "canadacentral",
@@ -136,7 +169,7 @@
         },
         "omsWorkspaceRegionDr": {
             "type": "string",
-            "defaultValue": "eastus",
+            "defaultValue": "southeastasia",
             "allowedValues": [
                 "australiasoutheast",
                 "canadacentral",
@@ -188,14 +221,14 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Used for Bot deployment"
+                "description": "Application ID deployed for Bot, used for Bot deployment. Use https://apps.dev.microsoft.com to deploy application"
             }
         },
         "adObjectId": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Object Id of the AD user. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets"
+                "description": "Object Id of the deployed Application in Azure Active Directry. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets"
             }
         },
         "adClientSecret": {
@@ -209,21 +242,21 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "azure portal login username"
+                "description": "Azure Portal Login UserName"
             }
         },
         "azurePassword": {
             "type": "securestring",
             "defaultValue": "",
             "metadata": {
-                "description": "azure portal login password"
+                "description": "Azure Portal Login Password"
             }
         },
         "adminName": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Name of Admin Portal used as hosts while executing the Ingress_Custom Script"
+                "description": "Name of Admin Portal used as hosts while executing the Ingress_Custom Script and will be updated in reply URL of Active Directory application"
             }
         },
         "sessionId": {
@@ -288,7 +321,7 @@
                 100
             ],
             "metadata": {
-                "description": "The number of SignalR Unit."
+                "description": "The value of SignalR Unit."
             }
         },
         "dockerVM": {
@@ -322,7 +355,7 @@
         },
         "siteName": {
             "type": "string",
-            "defaultValue": "edisonwebapp",
+            "defaultValue": "botchannel",
             "metadata": {
                 "description": "The name of Bot Direct line channel site"
             }
@@ -466,7 +499,7 @@
         "visualStudioVm": {
             "vmName": "vsVM",
             "networkInterfaceName": "vs-nic",
-            "location": "[parameters('geo-paired-region')]",
+            "location": "[parameters('visualStudioLocation')]",
             "networkSecurityGroupName": "[variables('networkSecurityGroupName1')]",
             "virtualNetworkName": "[variables('vsVnetName1')]",
             "publicIpAddressName": "[concat('vspip',variables('suffix'))]",
