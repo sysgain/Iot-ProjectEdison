@@ -311,14 +311,14 @@
         },
         "azureAdPreviewModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/AzureADPreview.zip",
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/AzureADPreview.zip",
             "metadata": {
                 "description": "Provide the url to install azure active directory preview module in azure automation from the github"
             }
         },
         "cosmosdbModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev/code/cosmos.zip"
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/cosmos.zip"
         },
         "siteName": {
             "type": "string",
@@ -363,7 +363,7 @@
             "moduleName1": "AzureADPreview",
             "cosmosdbModuleUri": "[parameters('cosmosdbModuleUri')]",
             "azureAdPreviewModuleUri": "[parameters('azureAdPreviewModuleUri')]",
-            "runbookUri": "[concat(variables('baseUrl'),'scripts/initializeCosmosDb.ps1')]",
+            "runbookUri": "[concat(variables('baseUrl'),'edison-scripts/initializeCosmosDb.ps1')]",
             "sessionId": "[parameters('sessionId')]",
             "tenantId": "[parameters('tenantId')]",
             "azureAccountName": "[parameters('azureAccountName')]",
@@ -461,7 +461,7 @@
             "networkSecurityGroupName": "nsg",
             "giturl": "[parameters('githuburl')]",
             "tag": "latest",
-            "fileUri": "[concat(variables('baseUrl'),'scripts/scripts-download.sh')]"
+            "fileUri": "[concat(variables('baseUrl'),'edison-scripts/scripts-download.sh')]"
         },
         "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]",
@@ -527,7 +527,7 @@
             "trafficRoutingMethod": "Priority",
             "solutionType": "[parameters('solutionType')]"
         },
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-kub-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 4)]",
         "virtualNetworkName1": "[concat('edisonVnet', variables('suffix'))]",
         "subnetName1": "edisonSubnet",
