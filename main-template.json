@@ -463,6 +463,26 @@
             "tag": "latest",
             "fileUri": "[concat(variables('baseUrl'),'edison-scripts/scripts-download.sh')]"
         },
+        "visualStudioVm": {
+            "vmName": "vsVM",
+            "networkInterfaceName": "vs-nic",
+            "location": "[parameters('geo-paired-region')]",
+            "networkSecurityGroupName": "[variables('networkSecurityGroupName1')]",
+            "virtualNetworkName": "[variables('vsVnetName1')]",
+            "publicIpAddressName": "[concat('vspip',variables('suffix'))]",
+            "subnetRef": "[concat(variables('vsVnetId'), '/subnets/', variables('vsSubnetName1'))]",
+            "subnetName": "[variables('vsSubnetName1')]",
+            "nsgId": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName1'))]",
+            "addressPrefix": "20.0.0.0/16",
+            "subnetPrefix": "20.0.1.0/24",
+            "publicIPdnsPrefix": "[concat('vsdns',variables('suffix'))]",
+            "virtualMachineName": "visualStudio-VM",
+            "storageAccountName": "[variables('vsStorageAccountName1')]",
+            "virtualMachineSize": "Standard_D4s_V3",
+            "storageAccountType": "Standard_LRS",
+            "vmUsername": "adminuser",
+            "vmPassword": "Password@1234"
+        },
         "serviceBusProperties": {
             "solutionType": "[parameters('solutionType')]",
             "serviceBusNamespaceName": "[variables('serviceBusNamespaceName1')]",
@@ -571,6 +591,11 @@
         "locationDr": "[variables(parameters('geo-paired-region'))]",
         "readRegionLocation": "[variables('locationDr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
+        "networkSecurityGroupName1": "vsnsg",
+        "vsSubnetName1": "vsSubnet",
+        "vsVnetName1": "[concat('vs-vnet', variables('suffix'))]",
+        "vsVnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetName1'))]",
+        "vsStorageAccountName1": "[concat('vstorage',variables('suffix'))]",
         "rgName": "[resourceGroup().name]",
         "subscriptionid": "[subscription().subscriptionId]"
     },
@@ -1115,6 +1140,44 @@
                 "parameters": {
                     "vm": {
                         "value": "[variables('vm')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "VisualStudio",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[equals(parameters('deploymenttype'),'Basic')]",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-vm.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "visualStudioVm": {
+                        "value": "[variables('visualStudioVm')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "VisualStudioR1",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'),'nested/visualstudio-vm.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "visualStudioVm": {
+                        "value": "[variables('visualStudioVm')]"
                     }
                 }
             }
