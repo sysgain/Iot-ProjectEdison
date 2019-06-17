@@ -298,16 +298,14 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal else leave it blank.
-                                In case of Standard deployment enter the value in redeploy template deployment."
+                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal else leave it blank.In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "aksServicePrincipalClientSecretDr": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal else leave it blank.
-                                In case of Standard deployment enter the value in redeploy template deployment."
+                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal else leave it blank.In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "signalrCapacity": {
