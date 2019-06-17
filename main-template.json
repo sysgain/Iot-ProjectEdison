@@ -52,7 +52,7 @@
         },
         "visualStudioLocation":{
             "type":"string",
-            "dafaultValue":"EastUS",
+            "defaultValue":"EastUS",
             "allowedValues": [
                 "EastUS2",
                 "SouthCentralUS",
@@ -207,7 +207,7 @@
                 "North Europe"
             ],
             "metadata": {
-                "description": "If deployment type is choosen as standard or premium, enter location for application insights for disaster recovery. In case of Standard deployment use it for redeploy template deployment."
+                "description": "If deployment type is choosen as premium, enter location for application insights for disaster recovery. In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "tenantId": {
@@ -298,14 +298,16 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal"
+                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal else leave it blank.
+                                In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "aksServicePrincipalClientSecretDr": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal"
+                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal else leave it blank.
+                                In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "signalrCapacity": {

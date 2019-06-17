@@ -58,7 +58,7 @@
                 "WestUS2"
             ],
             "metadata": {
-                "description": "Choose location for Azure container Registry to deploy."
+                "description": "Choose location same as the one used for primary deployment for Azure container Registry to deploy for disaster recovery."
             }
         },
         "signalRlocationDr": {
