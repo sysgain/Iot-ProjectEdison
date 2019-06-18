@@ -344,14 +344,14 @@
         },
         "azureAdPreviewModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/AzureADPreview.zip",
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/AzureADPreview.zip",
             "metadata": {
                 "description": "Provide the url to install azure active directory preview module in azure automation from the github"
             }
         },
         "cosmosdbModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/cosmos.zip"
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/cosmos.zip"
         },
         "siteName": {
             "type": "string",
@@ -580,7 +580,7 @@
             "trafficRoutingMethod": "Priority",
             "solutionType": "[parameters('solutionType')]"
         },
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-ha/",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 4)]",
         "virtualNetworkName1": "[concat('edisonVnet', variables('suffix'))]",
         "subnetName1": "edisonSubnet",
