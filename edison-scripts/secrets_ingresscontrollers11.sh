@@ -14,14 +14,14 @@ LOG="/tmp/deployhelm.log.`date +%d%m%Y_%T`"
     sleep 20
     unzip Kubernetes_certs.zip
     ls
-    cat 2289f3206db82816.crt gd_bundle-g2-g1.crt > qloudable-npr.com.chained.crt
+    cat 2289f3206db82816.crt gd_bundle-g2-g1.crt > kuberenets-cert.com.chained.crt
     sudo -i
 
 #2-  Create the secret in the cluster
 
     cd /var/lib/waagent/custom-script/download/0
-    kubectl create secret tls $ADMINSECRET --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key 
-    kubectl create secret tls $APISECRET --cert /home/adminuser/qloudable-npr.com.chained.crt --key /home/adminuser/qloudable-npr.key
+    kubectl create secret tls $ADMINSECRET --cert /home/adminuser/kuberenets-cert.com.chained.crt --key /home/adminuser/kuberenets-cert.key 
+    kubectl create secret tls $APISECRET --cert /home/adminuser/kuberenets-cert.com.chained.crt --key /home/adminuser/kuberenets-cert.key
     kubectl get secrets
 
 #3-update name of hosts and secrets
