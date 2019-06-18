@@ -5,6 +5,7 @@ BASEURL_VALUE=`head -24 input.txt | awk -F "\"" '{print $2}'| tail -1`
 ADMINURL=`head -37 input.txt | awk -F "\"" '{print $2}'| tail -1`
 ADMINSECRET=`head -38 input.txt | awk -F "\"" '{print $2}'| tail -1`
 APISECRET=`head -39 input.txt | awk -F "\"" '{print $2}'| tail -1`
+ClusterResourceGrpName=`head -40 input.txt | awk -F "\"" '{print $2}'| tail -1`
 LOG="/tmp/deployhelm.log.`date +%d%m%Y_%T`"
 
 #1- copy the certificates from local to host 
@@ -34,11 +35,11 @@ LOG="/tmp/deployhelm.log.`date +%d%m%Y_%T`"
 
 #4-InstallIngressControllers
 
-    az network public-ip create -g $MC_MO_basic_2304_akswih6_eastus2 -n $adminbotip --dns-name $dnsbotapi --allocation-method static
+    az network public-ip create -g $ClusterResourceGrpName -n $adminbotip --dns-name $dnsbotapi --allocation-method static
     sleep 10
     helm install --name nginx-ingress-admin stable/nginx-ingress --namespace kube-system --set rbac.create=false --set rbac.createRole=false --set rbac.createClusterRole=false --set controller.ingressClass=nginx-admin --set controller.service.loadBalancerIP=$ip
     sleep 10
-    az network public-ip create -g $MC_MO_basic_2304_akswih6_eastus2 -n $apibotip --dns-name $dnsbotapi1 --allocation-method static
+    az network public-ip create -g $ClusterResourceGrpName -n $apibotip --dns-name $dnsbotapi1 --allocation-method static
     sleep 10
     helm install --name nginx-ingress-api stable/nginx-ingress --namespace kube-system --set rbac.create=false --set rbac.createRole=false --set rbac.createClusterRole=false --set controller.ingressClass=nginx-api --set controller.service.loadBalancerIP=$ip
     sleep 20
