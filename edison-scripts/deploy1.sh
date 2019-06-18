@@ -4,7 +4,7 @@
 
 AZ_REPO=$(lsb_release -cs)
 LOG="/tmp/install.log.`date +%d%m%Y_%T`"
-GIT_URL="$1"
+GIT_URL="https://github.com/litebulb/ProjectEdison.git"
 GIT_PATH=`pwd`
 
 #Installing Azure CLI

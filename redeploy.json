@@ -4,7 +4,7 @@
     "parameters": {
         "geo-paired-region": {
             "type": "string",
-            "defaultValue": "EastUS2",
+            "defaultValue": "EastUS",
             "allowedValues": [
                 "EastUS",
                 "WestUS",
@@ -28,7 +28,7 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region which was entered for primary deployment, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
+                "description": "Select the geopaired region as deployment region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/GettingStarted.md)"
             }
         },
         "solutionType": {
@@ -40,7 +40,7 @@
         },
         "acrDeploymentLocation": {
             "type": "string",
-            "defaultValue": "CentralUS",
+            "defaultValue": "CanadaCentral",
             "allowedValues": [
                 "JapanEast",
                 "JapanWest",
@@ -58,12 +58,12 @@
                 "WestUS2"
             ],
             "metadata": {
-                "description": "Choose location for Azure container Registry to deploy."
+                "description": "Choose location same as the one used for primary deployment for Azure container Registry to deploy for disaster recovery."
             }
         },
         "signalRlocationDr": {
             "type": "string",
-            "defaultValue": "CentralUS",
+            "defaultValue": "WestUS",
             "allowedValues": [
                 "AustraliaEast",
                 "CanadaEast",
@@ -98,7 +98,7 @@
         },
         "omsWorkspaceRegionDr": {
             "type": "string",
-            "defaultValue": "eastus",
+            "defaultValue": "southeastasia",
             "allowedValues": [
                 "australiasoutheast",
                 "canadacentral",
@@ -235,10 +235,10 @@
             "aliasName": "[concat('servicebusgeo-alias',variables('suffix'))]"
         },
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
+        "EastUS2": "CentralUS",
         "EastUS": "WestUS",
         "WestUS": "EastUS",
-        "EastUS2": "CentralUS",
         "CentralUS": "EastUS2",
         "WestUS2": "West Central US",
         "WestCentralUS": "WestUS2",
@@ -264,6 +264,7 @@
         "acrName2": "[concat('acr',variables('suffix'), 'Dr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
         "botId2": "[concat('edisonbot', variables('suffix'),'Dr')]"
+      
     },
     "resources": [
         {

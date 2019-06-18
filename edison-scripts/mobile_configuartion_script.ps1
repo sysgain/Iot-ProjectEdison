@@ -1,19 +1,12 @@
-#store the variables to clone github repository
-#$githubUrl = "https://github.com/litebulb/ProjectEdison.git"
-#$location = "E:\ProjectEdison"
-#$date= ((Get-Date).ToString('dd MMM yyyy hh_mm_ss' ))
-#New-Item -ItemType Directory -Path "$location\IPE-$date"
-
-
 #clone the github repository
 $location = "$1"
 
 $Path = "$2"
 $values = Get-Content $Path | Out-String | ConvertFrom-StringData
 $values.TENANTID
-$values.DOMAIN
+$values.B2CDOMAIN
 $values.SIGNUPSIGNINPOLICYID 
-$values.AdAppName
+$values.AdDomainName
 $values.ADCLIENTID 
 $values.BASEURL_VALUE
 $values.NotificationHubSRT
@@ -38,9 +31,9 @@ $path12 = "$location\Edison.Mobile\Edison.Mobile.Admin.Client\Droid\Properties\A
 
 # Update Edison.mobile.common\AuthConfig.cs file values
 (Get-Content -path $path2 -Raw) -replace '1114b48d-24b1-4492-970a-d07d610a741c', $values.TENANTID.Trim('"') | Set-Content -Path $path2
-(Get-Content -path $path2 -Raw) -replace 'edisondevb2c', $values.DOMAIN.Trim('"') | Set-Content -Path $path2
+(Get-Content -path $path2 -Raw) -replace 'edisondevb2c', $values.B2CDOMAIN.Trim('"') | Set-Content -Path $path2
 (Get-Content -path $path2 -Raw) -replace 'b2c_1_edision_signinandsignup', $values.SIGNUPSIGNINPOLICYID.Trim('"') | Set-Content -Path $path2
-(Get-Content -path $path2 -Raw) -replace 'edisonadmin', $values.AdAppName.Trim('"') | Set-Content -Path $path2
+(Get-Content -path $path2 -Raw) -replace 'com.onmicrosoft.edisonadmin', $values.AdDomainName.Trim('"') | Set-Content -Path $path2
 (Get-Content -path $path2 -Raw) -replace '2373be1e-6d0b-4e38-9115-e0bd01dadd61', $values.ADCLIENTID.Trim('"') | Set-Content -Path $path2
 
 # Update Edison.Mobile.Common\constants.cs file values
@@ -66,12 +59,12 @@ $path12 = "$location\Edison.Mobile\Edison.Mobile.Admin.Client\Droid\Properties\A
 (Get-Content -path $path9 -Raw) -replace '2373be1e-6d0b-4e38-9115-e0bd01dadd61', $values.ADCLIENTID.Trim('"')| Set-Content -Path $path9
 
 # Update Edison.Mobile.User.Client.Droid\AndroidManifest.xml file values
-(Get-Content -path $path10 -Raw) -replace 'edisondevb2c', $values.DOMAIN.Trim('"') | Set-Content -Path $path10
+(Get-Content -path $path10 -Raw) -replace 'edisondevb2c', $values.B2CDOMAIN.Trim('"') | Set-Content -Path $path10
 (Get-Content -path $path10 -Raw) -replace 'com.bluemetal.Edison_Mobile_User_Client', $values.package.Trim('"')  | Set-Content -Path $path10
 
 # Update Edison.Mobile.User.Client.iOS\Info.plist file values
-(Get-Content -path $path11 -Raw) -replace 'edisondevb2c', $values.DOMAIN.Trim('"') | Set-Content -Path $path11
+(Get-Content -path $path11 -Raw) -replace 'edisondevb2c', $values.B2CDOMAIN.Trim('"') | Set-Content -Path $path11
 
 # Update Edison.Mobile.Admin.Client.Droid\AndroidManifest.xml file values 
 (Get-Content -path $path12 -Raw) -replace '2373be1e-6d0b-4e38-9115-e0bd01dadd61', $values.ADCLIENTID.Trim('"') | Set-Content -Path $path12
-(Get-Content -path $path12 -Raw) -replace 'edisonbluemetal', $values.DOMAIN.Trim('"') | Set-Content -Path $path12
+(Get-Content -path $path12 -Raw) -replace 'com.onmicrosoft.edisonbluemetal', $values.B2CDOMAIN.Trim('"') | Set-Content -Path $path12

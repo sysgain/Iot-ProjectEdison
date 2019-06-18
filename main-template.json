@@ -47,12 +47,45 @@
                 "UKWest"
             ],
             "metadata": {
-                "description": "For Basic solution select the geopaired region as deployment region.If solution type is choosen as standard and premium, enter location for geo-paired-region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/MSIotDeviceManagement/blob/master/MSIotDeviceManagement-wiki/GettingStarted.md)"
+                "description": "Select the geopaired region as deployment region, for more information about the geo-paired-region navigate to section 4 in the Getting Started Document(https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/GettingStarted.md)"
+            }
+        },
+        "visualStudioLocation":{
+            "type":"string",
+            "defaultValue":"EastUS",
+            "allowedValues": [
+                "EastUS2",
+                "SouthCentralUS",
+                "SoutheastAsia",
+                "WestUS2",
+                "WestUS",
+                "CentralUS",
+                "NorthCentralUS",
+                "AustraliaEast",
+                "SouthEastAsia",
+                "CanadaCentral",
+                "EastAsia",
+                "JapanEast",
+                "CanadaCentral",
+                "WestCentralUS",
+                "UKSouth",
+                "AustraliaSouthEast",
+                "JapanWest",
+                "SouthIndia",
+                "WestIndia",
+                "CanadaEast",
+                "UKSouth",
+                "UKWest",
+                "BrazilSouth",
+                "FranceCentral"
+            ],
+            "metadata": {
+                "description": "Select the location to deploy Visual Studio Virtual Machine"
             }
         },
         "signalRlocation": {
             "type": "string",
-            "defaultValue": "EastUS2",
+            "defaultValue": "EastUS",
             "allowedValues": [
                 "AustraliaEast",
                 "CanadaEast",
@@ -74,7 +107,7 @@
         },
         "signalRlocationDr": {
             "type": "string",
-            "defaultValue": "CentralUS",
+            "defaultValue": "WestUS",
             "allowedValues": [
                 "AustraliaEast",
                 "CanadaEast",
@@ -91,12 +124,12 @@
                 "WestUS"
             ],
             "metadata": {
-                "description": "If deploymenttype is choosen as Standard or premium, enter location for signalRlocationDr for disaster recovery."
+                "description": "If deploymenttype is choosen as premium, enter location for signalRlocationDr for disaster recovery."
             }
         },
         "acrDeploymentLocation": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "CanadaCentral",
             "allowedValues": [
                 "JapanEast",
                 "JapanWest",
@@ -119,7 +152,7 @@
         },
         "omsWorkspaceRegion": {
             "type": "string",
-            "defaultValue": "southeastasia",
+            "defaultValue": "eastus",
             "allowedValues": [
                 "australiasoutheast",
                 "canadacentral",
@@ -136,7 +169,7 @@
         },
         "omsWorkspaceRegionDr": {
             "type": "string",
-            "defaultValue": "eastus",
+            "defaultValue": "southeastasia",
             "allowedValues": [
                 "australiasoutheast",
                 "canadacentral",
@@ -174,7 +207,7 @@
                 "North Europe"
             ],
             "metadata": {
-                "description": "If deployment type is choosen as standard or premium, enter location for application insights for disaster recovery. In case of Standard deployment use it for redeploy template deployment."
+                "description": "If deployment type is choosen as premium, enter location for application insights for disaster recovery. In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "tenantId": {
@@ -188,14 +221,14 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Used for Bot deployment"
+                "description": "Application ID deployed for Bot, used for Bot deployment. Use https://apps.dev.microsoft.com to deploy application"
             }
         },
         "adObjectId": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Object Id of the AD user. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets"
+                "description": "Object Id of the deployed Application in Azure Active Directry. Get using Get-AzureRmADUser or Get-AzureRmADServicePrincipal cmdlets"
             }
         },
         "adClientSecret": {
@@ -209,21 +242,21 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "azure portal login username"
+                "description": "Azure Portal Login UserName"
             }
         },
         "azurePassword": {
             "type": "securestring",
             "defaultValue": "",
             "metadata": {
-                "description": "azure portal login password"
+                "description": "Azure Portal Login Password"
             }
         },
         "adminName": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Name of Admin Portal used as hosts while executing the Ingress_Custom Script"
+                "description": "Name of Admin Portal used as hosts while executing the Ingress_Custom Script and will be updated in reply URL of Active Directory application"
             }
         },
         "sessionId": {
@@ -265,14 +298,14 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal"
+                "description": "If deploymenttype is choosen as premium, enter Client ID of the newly created service principal else leave it blank.In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "aksServicePrincipalClientSecretDr": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal"
+                "description": "If deploymenttype is choosen as premium, enter Client secret of the newly created service principal else leave it blank.In case of Standard deployment enter the value in redeploy template deployment."
             }
         },
         "signalrCapacity": {
@@ -288,7 +321,7 @@
                 100
             ],
             "metadata": {
-                "description": "The number of SignalR Unit."
+                "description": "The value of SignalR Unit."
             }
         },
         "dockerVM": {
@@ -311,18 +344,18 @@
         },
         "azureAdPreviewModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/AzureADPreview.zip",
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/AzureADPreview.zip",
             "metadata": {
                 "description": "Provide the url to install azure active directory preview module in azure automation from the github"
             }
         },
         "cosmosdbModuleUri": {
             "type": "string",
-            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/cosmos.zip"
+            "defaultValue": "https://github.com/sysgain/Iot-ProjectEdison/raw/master/code/cosmos.zip"
         },
         "siteName": {
             "type": "string",
-            "defaultValue": "edisonwebapp",
+            "defaultValue": "botchannel",
             "metadata": {
                 "description": "The name of Bot Direct line channel site"
             }
@@ -466,7 +499,7 @@
         "visualStudioVm": {
             "vmName": "vsVM",
             "networkInterfaceName": "vs-nic",
-            "location": "[parameters('geo-paired-region')]",
+            "location": "[parameters('visualStudioLocation')]",
             "networkSecurityGroupName": "[variables('networkSecurityGroupName1')]",
             "virtualNetworkName": "[variables('vsVnetName1')]",
             "publicIpAddressName": "[concat('vspip',variables('suffix'))]",
@@ -547,21 +580,11 @@
             "trafficRoutingMethod": "Priority",
             "solutionType": "[parameters('solutionType')]"
         },
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/dev-ha/",
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 4)]",
         "virtualNetworkName1": "[concat('edisonVnet', variables('suffix'))]",
-        "vsVnetName1": "[concat('vs-vnet', variables('suffix'))]",
-        "vsVnetNameDr": "[concat('vs-vnet', variables('suffix'),'Dr')]",
         "subnetName1": "edisonSubnet",
-        "vsSubnetName1": "vsSubnet",
-        "vsSubnetNameDr": "vsSubnetDr",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName1'))]",
-        "vsVnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetName1'))]",
-        "vsVnetIdDr": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetNameDr'))]",
-        "networkSecurityGroupName1": "vsnsg",
-        "networkSecurityGroupNameDr": "vsnsgDr",
-        "vsStorageAccountName1": "[concat('vstorage',variables('suffix'))]",
-        "vsStorageAccountNameDr": "[concat('vstorage',variables('suffix'),'Dr')]",
         "serviceBusDefaultSASKeyName1": "RootManageSharedAccessKey",
         "serviceBusNamespaceName1": "[concat('snamespace',variables('suffix'))]",
         "serviceBusNamespaceNameDr1": "[concat('snamespace',variables('suffix'),'Dr')]",
@@ -601,6 +624,11 @@
         "locationDr": "[variables(parameters('geo-paired-region'))]",
         "readRegionLocation": "[variables('locationDr')]",
         "acrDeploymentLocationDr": "[variables(parameters('acrDeploymentLocation'))]",
+        "networkSecurityGroupName1": "vsnsg",
+        "vsSubnetName1": "vsSubnet",
+        "vsVnetName1": "[concat('vs-vnet', variables('suffix'))]",
+        "vsVnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('vsVnetName1'))]",
+        "vsStorageAccountName1": "[concat('vstorage',variables('suffix'))]",
         "rgName": "[resourceGroup().name]",
         "subscriptionid": "[subscription().subscriptionId]"
     },
@@ -638,6 +666,63 @@
                 "parameters": {
                     "omsSettings": {
                         "value": "[variables('omsSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "NotificationHub",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[equals(parameters('deploymenttype'),'Basic')]",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/notification-hub.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "notificationHub": {
+                        "value": "[variables('notificationHub')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "NotificationHubR1",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/notification-hub.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "notificationHub": {
+                        "value": "[variables('notificationHub')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "NotificationHubR2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/notificationhub-r2.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "notificationHub": {
+                        "value": "[variables('notificationHub')]"
                     }
                 }
             }
@@ -797,72 +882,6 @@
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
-                    "storageBlobSettings": {
-                        "value": "[variables('storageBlobSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "Rediscache",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "condition": "[equals(parameters('deploymenttype'),'Basic')]",
-            "dependsOn": [
-                "StorageBlob"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "redisSettings": {
-                        "value": "[variables('redisSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "RediscacheR1",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [
-                "StorageBlobR1"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "redisSettings": {
-                        "value": "[variables('redisSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "RediscacheR2",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
-            "dependsOn": [
-                "StorageBlobR2"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache-r2.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "redisSettings": {
-                        "value": "[variables('redisSettings')]"
-                    },
                     "storageBlobSettings": {
                         "value": "[variables('storageBlobSettings')]"
                     }
@@ -1326,6 +1345,72 @@
             }
         },
         {
+            "name": "Rediscache",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "condition": "[equals(parameters('deploymenttype'),'Basic')]",
+            "dependsOn": [
+                "StorageBlob"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "redisSettings": {
+                        "value": "[variables('redisSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "RediscacheR1",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [
+                "StorageBlobR1"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "redisSettings": {
+                        "value": "[variables('redisSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "RediscacheR2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
+            "dependsOn": [
+                "StorageBlobR2"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'), 'nested/redisCache-r2.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "redisSettings": {
+                        "value": "[variables('redisSettings')]"
+                    },
+                    "storageBlobSettings": {
+                        "value": "[variables('storageBlobSettings')]"
+                    }
+                }
+            }
+        },
+        {
             "name": "Bot",
             "type": "Microsoft.Resources/deployments",
             "condition": "[equals(parameters('deploymenttype'),'Basic')]",
@@ -1378,63 +1463,6 @@
                 "parameters": {
                     "botSettings": {
                         "value": "[variables('botSettings')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "NotificationHub",
-            "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(parameters('deploymenttype'),'Basic')]",
-            "apiVersion": "2016-02-01",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/notification-hub.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "notificationHub": {
-                        "value": "[variables('notificationHub')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "NotificationHubR1",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "condition": "[or(equals(parameters('deploymenttype'),'Standard'), equals(parameters('deploymenttype'),'Premium'))]",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/notification-hub.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "notificationHub": {
-                        "value": "[variables('notificationHub')]"
-                    }
-                }
-            }
-        },
-        {
-            "name": "NotificationHubR2",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "condition": "[equals(parameters('deploymenttype'),'Premium')]",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('baseUrl'), 'nested/notificationhub-r2.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "notificationHub": {
-                        "value": "[variables('notificationHub')]"
                     }
                 }
             }

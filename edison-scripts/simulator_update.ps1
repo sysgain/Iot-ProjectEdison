@@ -8,7 +8,7 @@ $location = "C:\Tmp\$folderName"
 git clone $githubUrl $location
 Start-Sleep -s 180
 
-$Path = "C:\Users\omanduri\Desktop\values.txt"
+$Path = "C:\Tmp\values.txt"
 $values = Get-Content $Path | Out-String | ConvertFrom-StringData
 $values.COSMOSDBEP
 $values.CosmosDbSRT
