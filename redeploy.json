@@ -260,7 +260,7 @@
             "pipNameDr": "[concat('edisonpip',variables('suffix'),'Dr')]",
             "locationDr": "[variables('locationDr')]",
             "publicIpAddressType": "Static",
-            "dnsLabelPrefixDr": "[concat('edisondns',variables('suffix'),'Dr')]",
+            "dnsLabelPrefixDr": "[concat('edisondns',variables('suffix'),'dr')]",
             "virtualNetworkNameDr": "[variables('virtualNetworkNameDr1')]",
             "addressPrefixDr": "30.0.0.0/16",
             "subnetNameDr": "[variables('subnetNameDr1')]",
