@@ -1,0 +1,184 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vm": {
+            "type": "object"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-04-01",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('vm').pipNameDr]",
+            "location": "[parameters('vm').locationDr]",
+            "properties": {
+                "publicIPAllocationMethod": "[parameters('vm').publicIPAddressType]",
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('vm').dnsLabelPrefixDr]"
+                }
+            }
+        },
+        {
+            "apiVersion": "2017-04-01",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('vm').virtualNetworkNameDr]",
+            "location": "[parameters('vm').locationDr]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('vm').addressPrefixDr]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[parameters('vm').subnetNameDr]",
+                        "properties": {
+                            "addressPrefix": "[parameters('vm').subnetPrefix]"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "[parameters('vm').networkSecurityGroupNameDr]",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2016-09-01",
+            "location": "[parameters('vm').locationDr]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "custom",
+                        "properties": {
+                            "priority": 1001,
+                            "sourceAddressPrefix": "*",
+                            "protocol": "*",
+                            "destinationPortRange": "22",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2017-04-01",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('vm').nicNameDr]",
+            "location": "[parameters('vm').locationDr]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses/', parameters('vm').pipNameDr)]",
+                "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vm').virtualNetworkNameDr)]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('vm').pipNameDr)]"
+                            },
+                            "subnet": {
+                                "id": "[parameters('vm').subnetRefDr]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2017-03-30",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('vm').vmNameDr]",
+            "location": "[parameters('vm').locationDr]",
+            "tags": {
+                "IotSuiteType": "[parameters('vm').solutionType]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces/', parameters('vm').nicNameDr)]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vm').vmSize]"
+                },
+                "osProfile": {
+                    "computerName": "[parameters('vm').vmNameDr]",
+                    "adminUsername": "[parameters('vm').vmUsername]",
+                    "adminPassword": "[parameters('vm').vmPassword]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[parameters('vm').imagePublisher]",
+                        "offer": "[parameters('vm').imageOffer]",
+                        "sku": "[parameters('vm').ubuntuOSVersion]",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    },
+                    "dataDisks": [
+                        {
+                            "diskSizeGB": 30,
+                            "lun": 0,
+                            "createOption": "Empty"
+                        }
+                    ]
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('vm').nicNameDr)]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('vm').vmNameDr,'/Extensions')]",
+            "location": "[parameters('vm').locationDr]",
+            "apiVersion": "2017-03-30",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/',parameters('vm').vmNameDr)]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "[parameters('vm').fileUri]"
+                    ],
+                    "commandToExecute": "sh scripts-download.sh"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "hostname": {
+            "type": "string",
+            "value": "[reference(parameters('vm').pipNameDr).dnsSettings.fqdn]"
+        },
+        "sshCommand": {
+            "type": "string",
+            "value": "[concat('ssh ', parameters('vm').vmUsername, '@', reference(parameters('vm').pipNameDr).dnsSettings.fqdn)]"
+        },
+        "pipadd": {
+            "type": "string",
+            "value": "[reference(concat('Microsoft.Network/publicIpAddresses/', parameters('vm').pipNameDr)).ipAddress]"
+        },
+        "vmAdminUser": {
+            "type": "string",
+            "value": "[parameters('vm').vmUsername]"
+        },
+        "vmPassword": {
+            "type": "string",
+            "value": "[parameters('vm').vmPassword]"
+        }
+    }
+}

@@ -125,6 +125,20 @@
                 "description": "ClientSecret of the service principal."
             }
         },
+        "vmUsername": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Username to login into Virtual Machine"
+            }
+        },
+        "vmPassword": {
+            "type": "securestring",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Password to login into Virtual Machine"
+            }
+        },
         "signalrCapacity": {
             "type": "int",
             "defaultValue": 1,
@@ -139,6 +153,13 @@
             ],
             "metadata": {
                 "description": "The number of SignalR Unit."
+            }
+        },
+        "githuburl": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "GitHub url used to clone the repository"
             }
         }
     },
@@ -234,6 +255,30 @@
             "serviceBusRabbitMQPassword": "Edison1234",
             "aliasName": "[concat('servicebusgeo-alias',variables('suffix'))]"
         },
+        "vm": {
+            "solutionType": "[parameters('solutionType')]",
+            "pipNameDr": "[concat('edisonpip',variables('suffix'),'Dr')]",
+            "locationDr": "[variables('locationDr')]",
+            "publicIpAddressType": "Static",
+            "dnsLabelPrefixDr": "[concat('edisondns',variables('suffix'),'Dr')]",
+            "virtualNetworkNameDr": "[variables('virtualNetworkNameDr1')]",
+            "addressPrefixDr": "30.0.0.0/16",
+            "subnetNameDr": "[variables('subnetNameDr1')]",
+            "subnetPrefixDr": "30.0.1.0/24",
+            "nicNameDr": "edison-nicDr",
+            "subnetRefDr": "[concat(variables('vnetIdDr'), '/subnets/', variables('subnetNameDr1'))]",
+            "vmNameDr": "edisonVmDr",
+            "vmUsername": "[parameters('vmUsername')]",
+            "vmPassword": "[parameters('vmPassword')]",
+            "vmSize": "standard_A2",
+            "imagePublisher": "Canonical",
+            "imageOffer": "UbuntuServer",
+            "ubuntuOSVersion": "18.04-LTS",
+            "networkSecurityGroupNameDr": "nsgDr",
+            "giturl": "[parameters('githuburl')]",
+            "tag": "latest",
+            "fileUri": "[concat(variables('baseUrl'),'edison-scripts/scripts-download.sh')]"
+        },
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "baseUrl": "https://raw.githubusercontent.com/sysgain/Iot-ProjectEdison/master/",
         "EastUS2": "CentralUS",
@@ -256,6 +301,9 @@
         "KoreaSouth": "KoreaCentral",
         "UKSouth": "UKWest",
         "UKWest": "UKSouth",
+        "virtualNetworkNameDr1": "[concat('edisonVnet', variables('suffix'),'Dr')]",
+        "subnetNameDr1": "edisonSubnetDr",
+        "vnetIdDr": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkNameDr1'))]",
         "serviceBusNamespaceNameDr1": "[concat('snamespace',variables('suffix'),'Dr')]",
         "serviceBusDefaultSASKeyName1": "RootManageSharedAccessKey",
         "locationDr": "[variables(parameters('geo-paired-region'))]",
@@ -440,6 +488,27 @@
                 "parameters": {
                     "botSettings": {
                         "value": "[variables('botSettings')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "DockerVMR2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-02-01",
+            "dependsOn": [
+                "AzureContainerRegistryR2",
+                "StorageBlobR2"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('baseUrl'),'nested/dockerVm-r2.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "vm": {
+                        "value": "[variables('vm')]"
                     }
                 }
             }
