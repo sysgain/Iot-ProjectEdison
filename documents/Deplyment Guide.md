@@ -15,8 +15,9 @@
         - [3.1.3 To Add Reply url](#313-to-add-reply-url)
         - [3.1.4 Add app Roles to Manifest File of Application](#313-add-app-roles-to-manifest-file-of-application)
         - [3.1.5 To get Tenant ID](#315-to-get-tenant-id)
-        - [3.1.6 To Assign owner permissions to the Application](#316-to-assign-owner-permissions-to-the-application)
-        - [3.1.7 Add User to the Application](#317-add-user-to-the-application)
+	- [3.1.6 To get the User ID from Directory](#316-to-get-the-user-id-from-directory)
+        - [3.1.7 To Assign owner permissions to the Application](#317-to-assign-owner-permissions-to-the-application)
+        - [3.1.8 Add User to the Application](#318-add-user-to-the-application)
     - [3.2 Creating session ID](#32-creating-session-id)
     - [3.3 To register a new application in Microsoft Bot Framework](#33-to-register-a-new-application-in-microsoft-bot-framework)
     - [3.4 Azure B2C Tenant Creation and Configuration](#34-azure-b2c-tenant-creation-and-configuration)
@@ -84,17 +85,17 @@ IoT Hub Manual Failover Support Geo-Paired Regions:
 
 ## 3.0 Prerequisites for Deploying ARM Template
 
-Create an application in Azure Active Directory.
+* Create an application in Azure Active Directory.
 
-Create a session ID
+* Create a session ID
 
-Create an application in Bot Frame work portal.
+* Create an application in Bot Frame work portal.
 
-Create an application in Azure B2C.
+* Create an application in Azure B2C.
 
-Create an application in Service principle using Azure CLI.
+* Create an application in Service principle using Azure CLI.
 
-Create Twilio Account
+* Create Twilio Account
 
 ### 3.1 Integrating applications with Azure Active Directory
 
@@ -143,31 +144,36 @@ Any application that wants to use the capabilities of Azure AD must first be reg
 
  ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d6.png)
 
-6.	The right-most column will contain the key value, after you save the configuration changes. **Be sure to copy the key** for use in your client application code, as it is not accessible once you leave this page.
+6.	The right-most column will contain the key value, after you save the configuration changes. **Make sure to copy the key** for use in your client application code, as it is not accessible once you leave this page.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d7.png)
 
 #### 3.1.3 To Add Reply url
 
-1.	Click on **Settings -> Reply URLs**
+1.   Open the AD application and from the Overview menu, click on Redirect URIs as shown below
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d8.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d110.png)
  
-2.	Add the URL **<https://adminapp.cloudapp.azure.com>** and click Save. 
+2. Add the admin app URL **<https://adminapp.cloudapp.azure.com>** and click Save.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d9.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d111.png)
  
 #### 3.1.4 Add appRoles to Manifest File of Application
 
-1.	Click on **Manifest** of the created application and **click on Edit**.
+1. Click on **Manifest** of the created application and click on **Edit**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d10.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d112.png)
  
-2.	Paste the below content in the appRoles with your user object id under the allowedMemberTypes as shown below.
+2. Paste the below content in the appRoles with Admin and Comsumer user object id under the allowedMemberTypes as shown below.
 
-**Note**: Make sure that the user must have Global Administrator permissions to get the object ID of particular user to give access.
+**Note**: 
 
-**To get the User ID from Directory:** 
+1.	Make sure that the user must have Global Administrator permissions to get the object ID of user to give access.
+
+2.	We need to add one user object id for Admin role and another user object id for Consumer role.
+
+
+#### 3.1.5 To get the User ID from Directory
 
 Go to **Azure Active Directory -> Users -> All users** 
 
@@ -175,7 +181,7 @@ Enter the user id to which you want to add in roles.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d11.png)
  
-Select user then you will redirect to selected user profile and copy the Object ID. 
+Select user then you will redirect to selected **user profile** and copy the **Object ID**. 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d12.png)
  
@@ -187,7 +193,7 @@ Select user then you will redirect to selected user profile and copy the Object 
 ],
 "displayName": "Admin",
 
-"id": "<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>",
+"id": **"<xxxxxx-f3ef-xxxxx-axx5-xxxxxxxx>"**,
 	
 "isEnabled": true,
 
@@ -207,7 +213,7 @@ Select user then you will redirect to selected user profile and copy the Object 
 
 "displayName": "Consumer",
 
-"id": "<xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx>",
+"id": **"<xxxx4xxxxx-xxxx-xxxx-xxxx-cxxxxxxa0daxxx>"**,
 
 "isEnabled": true,
 
@@ -219,53 +225,61 @@ Select user then you will redirect to selected user profile and copy the Object 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d13.png)
 
+Update Here
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d113.png)
+
 3.	Click on **Save**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d14.png)
 
-#### 3.1.5 To get Tenant ID
+#### 3.1.6 To get Tenant ID
 
-1.	Select Azure Active Directory.
+1.	Select **Azure Active Directory**.
 
-2.	To get the tenant ID, select **Properties** for your Azure AD tenant and **Copy** the **Directory ID**. This value is your **tenant ID**.
+2.   scroll down left-hand side menu and select **Properties** for your Azure AD tenant and **Copy** the **Directory ID** (Tenant ID).
 
-3.	**Note down** the Copied **Directory ID** which is highlighted in the below figure, this will be used while deploying the **ARM template**.
+3. **Make a note  of** the Copied **Directory ID** which will be used while deploying the **ARM template**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d15.png)
  
-#### 3.1.6 To Assign owner permissions to the Application
+#### 3.1.7 To Assign owner permissions to the Application
 
-1.	Click on the **Managed application in local directory -> Owners**
+1.	Click on the **Owners**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d16.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d114.png)
  
 2.	Click on **+Add**. Assign the owner permission to the member by entering the name in search tab and click on **Select**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d17.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d115.png)
  
 3.	Then view the added member under Owners.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d18.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d116.png)
  
-#### 3.1.7 Add User to the Application
+#### 3.1.8 Add User to the Application
 
-1.	Click on **Users and Groups -> Add user**
+1. From the Overview menu  click on Managed application in local Directory 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d19.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d117.png)
+
+2.	Click on **Users and Groups -> Add user**
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d118.png)
  
-2.	Select **User**.
+3.	Select **User**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d20.png)
  
-3.	Select role as **Admin**.
+4.	Select role as **Admin**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d21.png)
  
-4.	Click **Assign**.
+5.	Click **Assign**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d22.png)
  
-5.	Now you can see the added user under Users and Groups.
+6.	Now you can see the added user under Users and Groups.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d23.png)
  
@@ -280,7 +294,7 @@ Session ID is used to generate a unique id for creating a new job in Automation 
 
 2.	Click **Generate some GUIDs!** This will generate GUID in Results box. 
 
-3.	**Copy** and **Note down** the generated GUID which is highlighted in the below figure, this will be used while deploying the **ARM template**.
+3.	**Make a Note of** the generated GUID GUID which will be used while deploying the **ARM template**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d25.png)
 
@@ -296,7 +310,7 @@ https://apps.dev.microsoft.com/?referrer=https://portal.azure.com/#/appList
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d27.png)
  
-3.	You will be redirected to a page, Click on **Add an app** to register new app in application registration portal.
+3.	This will be redirected to a page, Click on **Add an app** to register new app in application registration portal.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d28.png)
  
@@ -304,7 +318,7 @@ https://apps.dev.microsoft.com/?referrer=https://portal.azure.com/#/appList
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d29.png)
  
-5.	To view the app in Azure Portal, Click on View this ap in the Azure portal else click on **Not now**.
+5.	To view the app in Azure Portal, Click on **View this ap in the Azure portal** else click on **Not now**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d30.png)
  
@@ -356,7 +370,7 @@ Follow Below steps to create Azure AD B2C Tenant:
 
 8.	Provide the **name** and enter the details as shown below.
 
-9.	Note down the policy name that you are creating now, this will be used later.
+9.	Make a note of the policy name that you are creating now, this will be used later.
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d41.png)
 
@@ -400,23 +414,27 @@ Follow Below steps to create Azure AD B2C Tenant:
 
 1.	Open Power shell with **Run as administrator**.
 
-2.	Login to your azure account using below command.
-    **az login**
+Login to your azure account using below command.
+
+ **Command: az login**
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d49.png)
 
-3.	Set your subscription with below command
-az account set --subscription <subscription ID>
+2. Set your subscription with below command
+
+**Command: az account set --subscription <subscription ID>**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d50.png)
  
-4.	Create without a default role assignment.
-az ad sp create-for-rbac -n <appname> --skip-assignment
+3.	Create without a default role assignment.
+
+**Command: az ad sp create-for-rbac -n <appname> --skip-assignment**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d51.png)
  
-5.	To retrieve the object ID of the created application.
-az ad sp show --id <created app id> --query "objectId"
+4.	To retrieve the object ID of the created application.
+
+**Command: az ad sp show --id <created app id> --query "objectId"**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d52.png)
 
@@ -490,11 +508,9 @@ Resource manager provides the following feature:
 
 1.	Click the below **Git hub** repo URL.
 
-https://github.com/sysgain/Iot-ProjectEdison/blob/dev-ha
+2. https://github.com/sysgain/Iot-ProjectEdison/tree/master Select **main-template.json** from **Master** branch as shown in the following figure.
 
-2.	Select **main-template.json** from **dev-ha** branch as shown in the following figure.
-
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d54.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d119.png)
  
 3.	Select **Raw** from the top right corner.
 
@@ -613,6 +629,8 @@ For **Premium solution**, select the geo-paired region for your template deploym
 
 *	1 Storage Account
 
+*       1 Windows VM
+
 The above resources are deployed for Basic Solution.
 
 Expect IoT Hub, Cosmos DB, OMS Log Analytics, Automation Account, Run Book and Storage Account the rest of the resources are created additionally along with Traffic manager as disaster recovery for Standard and Premium Solution deployment.
@@ -644,18 +662,19 @@ Azure Cloud Shell is an interactive, browser-accessible shell for managing Azure
 
 Deployment can proceed within the Azure Portal via Windows PowerShell.  
 
-1.	Clone the Master branch and save it locally, refer **section 4.1** of this document for Git hub URL
+1.	Clone the Master branch and save it locally, refer **section 5.1** of this document for Git hub URL
 
 2.	Open **Windows PowerShell** and run the following command
-       **az login**
+
+     **az login**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d81.png)
 
-3.	It will redirect to the login page. 
+3.	It will redirect to the login page, provide Azure Portal credentials. 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d82.png)
  
-4.	Enter your azure account user name then click **Next**.
+4.	Enter user name then click **Next**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d83.png)
  
@@ -740,7 +759,7 @@ Use the **az group create** command to create a **Resource Group** in your regio
 
 It uses the name parameter to specify the name for resource group (-n) and location parameter to specify the location (-l).  
 
-**Syntax:   az group create -n <resource group name> -l <location> **
+**Syntax:   az group create -n <resource group name> -l <location>** 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d87.png)
 
@@ -754,13 +773,11 @@ Use the **az group deployment create** command to deploy the ARM template
 
 **main-template.parameters.json** –contains the input values that are required to provision respective SKU & Others details, for more details on the input parameter values navigate to Section 3.2 (6th point) of this document.  
 
-**Syntax:  az group deployment create --template-file './<main-template.json filename>' --parameters '@./<main-template.parameters.json filename>' -g < provide resource group name> -n deploy >> <provide the outputs filename>** 
+**az group deployment create --template-file './<main-template.json filename>' --parameters '@./<main-template.parameters.json filename>' -g < provide resource group name> -n deploy >> <provide the outputs filename>**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d88.png)
 
- Deployment may take between 2 minutes depending on deployment size.  
-
- After successful deployment you can see the deployment outputs as follows. 
+After successful deployment you can see the deployment outputs as follows. 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d89.png)
 
@@ -782,7 +799,7 @@ Save the API URL , will be used to update the values in environment file.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d91.png)
  
-2.	Scroll up the Page, Click on **Show** to copy and note the secret keys.
+2.	Scroll up the Page, Click on **Show** to copy and note the **secret keys**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d92.png)
  
@@ -792,7 +809,7 @@ Save the API URL , will be used to update the values in environment file.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d94.png)
 
-4.	Click on **Add a trusted origin** and enter the **API URL** saved from step 5.1. Click on Done.
+4.	Click on **Add a trusted origin** and enter the **API URL** saved from step **5.1.** Click on **Done**.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d95.png)
  
@@ -817,22 +834,40 @@ Save the API URL , will be used to update the values in environment file.
 **sudo -i**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d100.png)
- 
-5.	Check the docker version using **docker -v** command.
+
+5.	List the files with the following 
+
+**cd /var/lib/waagent/custom-script/download/0**
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d120.png)
+
+6.	Execute deploy1.sh script by passing the git uri as an argument
+
+**./deploy1.sh https://github.com/litebulb/ProjectEdison.git**
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d121.png)
+
+7.	One pop up will be opened, click on **yes** to Restart services during package upgrades without asking.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d122.png)
+
+
+8.	Check the docker version using **docker -v** command.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d101.png)
  
-6.	Change the directory to view the downloaded scripts.
+9.	Change the directory to view the downloaded scripts.
 
-**Cd /var/lib/waagent/custom-script/download/0**
+**Command: Cd /var/lib/waagent/custom-script/download/0**
 
-**ls**
+**Command: s**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d102.png)
  
-7.	Open the **input.txt** file and Update the values to the corresponding key from the Azure Portal and Follow 4.1.2 section to see few values of Keys.
+10.	Open the **input.txt** file and Update the values to the corresponding key from the Azure Portal and Follow 4.1.2 section to see few values of Keys.
 
-Below is the link table containing the keys and references of the value to be taken from.
+11. Below is the link table containing the keys and references of the value to be taken from.
+
 https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d103.png)
