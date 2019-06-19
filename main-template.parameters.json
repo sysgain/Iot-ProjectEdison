@@ -83,6 +83,9 @@
         "dockerVM": {
             "value": "Yes"
         },
+        "trafficManager": {
+            "value": "No"
+        },
         "githuburl": {
             "value": "https://github.com/litebulb/ProjectEdison.git"
         },
