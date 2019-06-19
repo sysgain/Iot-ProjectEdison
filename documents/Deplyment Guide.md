@@ -872,7 +872,7 @@ https://github.com/sysgain/Iot-ProjectEdison/raw/dev-ha/code/input_values.docx
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Images/d103.png)
 
-### 6.4	Setting up the Environment
+### 6.4 Setting up the Environment
 
 #### 6.4.1 Execute configupdate2.sh
 
