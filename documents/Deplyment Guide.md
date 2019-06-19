@@ -300,7 +300,7 @@ Session ID is used to generate a unique id for creating a new job in Automation 
 
 ### 3.3 To register a new application in Microsoft Bot Framework
 
-1.	Browse with below link to sign in to the Microsoft Bot Framework Application Registration portal.
+1. Browse with below link to sign in to the Microsoft Bot Framework Application Registration portal.
 
 https://apps.dev.microsoft.com/?referrer=https://portal.azure.com/#/appList
 
