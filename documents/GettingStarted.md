@@ -684,7 +684,7 @@ The below Table explains the $ impact for the solutions by resources.
 
 | **Resource Name**           | **Basic**                  | **Standard**                 | **Premium**                                                                                                                
 | -------------              | ------------------         | --------------------                       | ------------ 
-| **Application Insights**                  | $0.00          | $4.60          | $4.60
+| **Application Insights**                  | $2.30          | $2.30          | $4.60
 | **Notification Hub**                  | $0.00          | $0.00          | $0.00
 | **IoT Hub**                      | $25.00           | $25.00	          | $25.00
 | **Storage Account**           | $1.25	         | $1.25	          | $1.25
@@ -697,15 +697,16 @@ The below Table explains the $ impact for the solutions by resources.
 | **Azure Container Registry**              | $5.00	         | $20.45           | $40.90
 | **Service Bus**              | $9.82	         | $9.82           | $19.64
 | **Virtual Machine**              | $90.72	         | $90.72           | $90.72
-| **Signal R**              | $0.00	         | $97.94           | $97.94
-| **Redis Cache**              | $16.06	         | $80.3           | $80.3
+| **Signal R**              | $0.00	         | $48.97           | $97.94
+| **Redis Cache**              | $16.06	         | $40.15           | $80.3
 | **Bot**              | $0.00	         | $0.50           | $0.50
 
 #### 3.2.3 Estimated Monthly Cost for each Solution:
 
 | **Resource Name**           | **Basic**                    | **Standard**                 | **Premium**                                                                                                                
 | -------------              | ------------------------       | --------------------      | ------------ 
-| **Estimated monthly cost**            | **$ 603.36**            | **$ 1228.61**  	             | **$ 1228.61**
+| **Estimated monthly cost (With Traffic Manager)**            | **NA**            | **$369.66**  	             | **$602.39**
+| **Estimated monthly cost (Without Traffic Manager)**            | **$282.95**            | **$367.86**  	             | **$600.59**
 
 ## 4.0 What are paired regions
 
@@ -736,7 +737,7 @@ Each Azure region is paired with another region within the same geography, toget
 
 ## 5.0 Deployment Guide for the Solution
 
-To Deploy Basic, Standard or Premium Solution please refer [Deployment Guide Documentation](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/Deplyment%20Guide.md). 
+To Deploy Basic, Standard or Premium Solution please refer [Deployment Guide Documentation](https://github.com/sysgain/Iot-ProjectEdison/blob/master/documents/GettingStarted.md). 
 
 ## 6.0 User Guide for the Solution
 
