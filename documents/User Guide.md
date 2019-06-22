@@ -11,7 +11,7 @@
    - [2.3 Create Config Maps](#23-create-config-maps)
    - [2.4 Create Pods and Services](#24-create-pods-and-services)
    - [2.5 Certification and Ingress Installation](#25-certification-and-ingress-installation)
- - [3.0 Building Edison. Simulators. Sensors Project](#30-building-edison.-simulators.-sensors-project)
+ - [3.0 Building Edison.Simulators.Sensors Project](#30-building-edison.simulators.sensors-project)
  - [4.0 Create a Firebase project](#40-create-a-firebase-project)
  - [5.0 Mobile Application Configuration](#50-mobile-application-configuration)
 
