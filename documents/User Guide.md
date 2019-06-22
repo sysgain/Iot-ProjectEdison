@@ -7,7 +7,7 @@
  - [1.0 Introduction to User Guide](#10-introduction-to-user-guide)
  - [2.0 Kubernetes](#20-kubernetes)
    - [2.1 Build images](#21-build-images)
-   - [2.2 Connect to Kubernetes Cluster](#22-connect-to-kubernetes-cluster)
+   - [2.2 Connect to Kubenetes Cluster](#22-connect-to-kubenetes-cluster)
    - [2.3 Create Config Maps](#23-create-config-maps)
    - [2.4 Create Pods and Services](#24-create-pods-and-services)
    - [2.5 Certification and Ingress Installation](#25-certification-and-ingress-installation)
