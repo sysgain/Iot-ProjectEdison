@@ -276,7 +276,7 @@ Click on **Live Metric Stream** to view the incoming requests, outgoing requests
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a50.png) 
 
-## 5.0 Hardening Components (Standard Solution Type)
+## 5.0 Standard Solution Type
 
 ### 5.1 Primary region Configuration 
 
