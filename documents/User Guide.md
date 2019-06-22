@@ -111,7 +111,7 @@ Switch user to **adminuser** and install **unzip** using the below command.
 
 6. Update name of **hosts** and ****Secrets** in nginix config files.
 
-a.  sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<admin URL>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
+a. sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'**<admin URL>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
 
 **Ex:**
 
@@ -120,18 +120,18 @@ sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'**<basicadmin.xxxxx-xx
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/12.png)
 
-b.  **sed -i -e 's/tls-secret-adminportal/'<adminsecret name>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml**
+b.  **sed -i -e 's/tls-secret-adminportal/'<**adminsecret name**>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/13.png)
 
-c.  **sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<api URL>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
+c.  **sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<**api URL**>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
   
 Ex:  
-sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<basicapi.xxxxx-xxx.com>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml
+sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'**<basicapi.xxxxx-xxx.com>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/14.png)
 
-d.  **sed -i -e 's/tls-secret-api/'<apisecret>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
+d.  **sed -i -e 's/tls-secret-api/**'**<apisecret>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/d.png)
 
