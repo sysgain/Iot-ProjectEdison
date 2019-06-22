@@ -16,7 +16,7 @@
  - [4.0 Monitoring Component](#40-monitoring-component)
     - [4.1 Application Insights](#41-application-insights)
     - [4.2 OMS Log Analytics](#42-oms-log-analytics)
- - [5. Hardening Components (Standard Solution Type)](#50-hardening-components(standard-solution-type))
+ - [5.o Hardening Components (Standard Solution Type)](#50-hardening-components(standard-solution-type))
     - [5.1 Primary region Configuration](#51-primary-region-configuration)
     - [5.2 Kubernates HA](#52-kubernates-ha)
       - [5.2.1 Re-Deploy the Region-2 ARM Temple](#521-re-deploy-the-region-2-arm-temple)
