@@ -37,7 +37,7 @@
       - [5.2.16 Manual configuration](#5216-manual-configuration)
      - [5.3 IoThub Failover](#53-iothub-failover)
      - [5.4 Cosmos DB Failover](#54-cosmos-db-failover)
- - [6. Premium Solution Type](#6-Premium Solution Type)
+ - [6. Premium Solution Type](#6-premium-solution-type)
      - [6.1 Primary Region Configuration](#61-primary-region-configuration)
      - [6.2 Performing DR Strategies](#62-performing-dr-strategies)
      - [6.3 Dr Region Configuration](#63-dr-region-configuration)
@@ -368,7 +368,7 @@ Navigate to **Resource Group > click on Bot Channel Registration > Channels > Cl
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a70.png)
 
-#### 5.2.3 Login to the Edison Dr Virtual Machine.
+#### 5.2.4 Login to the Edison Dr Virtual Machine.
 
 1.	Navigate to deployed Dr Virtual Machine and click on it.
 
@@ -406,7 +406,7 @@ ACRvalues,signallrvalue, Notificationhubpath, NotificationHubSRT, AzureServiceBu
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a77.png)
 
-#### 5.2.4 Execute deploy1.sh
+#### 5.2.5 Execute deploy1.sh
 
 Go to below path in the Virtual Machine
 
@@ -416,7 +416,7 @@ deploy1.sh script: To install the required packages Use the below command to exe
 
 ***sh deploy1.sh**
 
-#### 5.2.5 Execute configupdate2.sh
+#### 5.2.6 Execute configupdate2.sh
 
 Go to below path in the Virtual Machine
 
@@ -429,7 +429,7 @@ Go to below path in the Virtual Machine
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a78.png)
  
-#### 5.2.6 Execute commonupdate3.sh 
+#### 5.2.7 Execute commonupdate3.sh 
 
 **Commonupdae3.sh** script: To update the values in the common.secrets file. Use the below command to execute the script.
 
@@ -437,7 +437,7 @@ Go to below path in the Virtual Machine
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a79.png)
  
-#### 5.2.7 Execute edsionwebenvupdate4.sh
+#### 5.2.8 Execute edsionwebenvupdate4.sh
 
 **edsionwebenvupdate4.sh** script: To update the values in the environment files. Use the below command to execute the script.
 
@@ -445,7 +445,7 @@ Go to below path in the Virtual Machine
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a80.png)
  
-#### 5.2.8. Execute updateappsettings5.sh 
+#### 5.2.9 Execute updateappsettings5.sh 
 
 **updateappsettings5.sh** script: To update the values in the appsettings.json file of all the microservices. Use the below command to execute the script.
 
@@ -453,7 +453,7 @@ Go to below path in the Virtual Machine
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a81.png)
  
-#### 5.2.9 Execute imageupdate6.sh
+#### 5.2.10 Execute imageupdate6.sh
 
 **Imagesupdate6.sh** script: To build the images and push them to ACR container repositories.
  
@@ -463,13 +463,13 @@ Navigate to **Azure portal > Container Registry > Repositories** and check for t
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a82.png)
 
-#### 5.2.10 Execute clusterconnect7.sh
+#### 5.2.11 Execute clusterconnect7.sh
 
 **clusterconnect7.sh** script: Connect to the Dr cluster
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a83.png)
  
-#### 5.2.11 Execute set-kubernetes-config8.sh
+#### 5.2.12 Execute set-kubernetes-config8.sh
 
 **set-kubernetes-config8.sh** script: Creates config maps.
 
@@ -481,7 +481,7 @@ Check the config maps using the below command
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a85.png)
 
-#### 5.2.12 Execute updateyaml9.sh
+#### 5.2.13 Execute updateyaml9.sh
 
 **Updateyaml9.sh** script: Creates Pods and Services
  
@@ -489,7 +489,7 @@ Check the config maps using the below command
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a87.png)
  
-#### 5.2.13 Execute ingress_custom10.sh
+#### 5.2.14 Execute ingress_custom10.sh
 
 **ingress_custom10.sh** script:  Installs helm
 
@@ -531,7 +531,7 @@ Install unzip command using the below command
   
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a93.png)
 
-#### 5.2.14 Update nginx-config-adminportal.yaml & nginx-config-api.yaml
+#### 5.2.15 Update nginx-config-adminportal.yaml & nginx-config-api.yaml
 
 Update the names of **hosts** and **Secrets** in **nginix config** files.
 
@@ -627,7 +627,7 @@ Check status of services using the namespace kube-system
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a105.png)
 
-#### 5.2.15 Manual configuration
+#### 5.2.16 Manual configuration
 
 1. Copy the API URL from Hosts.
 
@@ -721,6 +721,74 @@ initially there are no events triggered. Once any event gets triggered from devi
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a127.png)
 
+## 6.0 Premium Solution Type
 
+To perform HA when the primary region fails, we need to use secondary region (DR) components from the same resource group where all DR components were deployed as part of the Premium solution
 
+### 6.1 Primary Region Configuration
 
+ Refer the Section 6.4 in Deployment guide and refer section 2 in User Guide for configure the primary region. 
+ 
+**Note:** We need to add the **Admin** and **API** URL in the domain registry along with the external IP address for both, before accessing the Edison Admin Portal.   
+
+Access the Admin Portal with **Admin Url**. Initially there are no events triggered.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a128.png)
+ 
+Follow the section 4 in user guide to send the simulator data.
+
+Once the simulator data is sent the devices are created in admin portal.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a129.png)
+
+Once any event gets triggered from devices or simulator it will get reflected in the Edison admin portal as shown below.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a130.png) 
+
+By follow the section 4 in userguide you can acticvate the responces.Once activated will be shown in Responses like below.
+ 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a131.png)
+
+### 6.2 Performing DR Strategies 
+
+Perform the IoT Hub, Cosmos DB failovers as discussed in 5.3 and 5.4 section in above.
+
+### 6.3 Dr Region Configuration
+
+1.	Create a new direcotry "ProjectEdisonDr" for building the images in Dr region
+
+2.	Copy the scripts-download.sh from /var/lib/waagent/custom-script/download/0/ to /var/lib/waagent/custom-script/download/0/ProjectEdisonDr/
+
+3.	 Change directory to ProjectEdisonDr
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a132.png)
+
+4.	To change the path for the downloading scripts, execute the below command.
+
+**sed -i -e 's:'/var/lib/waagent/custom-script/download/0':'/var/lib/waagent/custom-script/download/0/ProjectEdisonDr':g' scripts-download.sh**
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a133.png)
+
+5.	Execute the scripts-download.sh file and clone the git hub repo in the current directory.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a134.png)
+ 
+6.	Update the input.txt file inside the ProjectEdisonDr directory with Dr Region resource values.
+
+**Note:** Keep the same **BASEURL_VALUE** and  **ADMINURL** for Dr Region.
+
+7.	Refer the Section 6.4 in Deployment guide and refer section 2 in User Guide for configuring the Dr region configuration.
+
+**Note:** We need to add the **Admin** and **API** URL in the domain registry along with the external IP address for both, before accessing the Edison Admin Portal.
+
+As we are using same **Admin** and **API** Uris for **Primary and Dr Premium solutions,** Remove the Primary external IP address and update the Dr External IP address for Admin and API URL in the domain registry to access Dr region Edison Admin Portal.
+
+Once we open Edison Portal Application, we will get the same "Activation Responses" and Devices which we created in Primary region.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a135.png) 
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a136.png)
+ 
+Refer the User Guide section4 to run simulator for getting events.
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a137.png)
