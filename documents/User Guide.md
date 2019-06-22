@@ -22,7 +22,7 @@ This Document explains about how to use the solution. In this we are building th
 
 ## 2.0 Kubernetes
 
-### 2.1. Build images
+### 2.1 Build images
 
 To build the images and push them to ACR container repositories execute the below script.
 
@@ -36,7 +36,7 @@ Navigate to **Azure portal > Resource Group > Container Registry > Repositories*
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/2.png)
 
-### 2.2. Connect to Kubenetes Cluster
+### 2.2 Connect to Kubenetes Cluster
 
 Connect to the cluster using the below script. 
 
@@ -44,7 +44,7 @@ Connect to the cluster using the below script.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/3.png)
 
-### 2.3. Create Config Maps 
+### 2.3 Create Config Maps 
 
 For creating config maps, execute the below script. 
 
@@ -59,7 +59,7 @@ Once the script gets executed successfully, we can see the created config maps u
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/5.png)
 
-### 2.4. Create Pods and Services. 
+### 2.4 Create Pods and Services. 
 
 To create Pods and Services execute the below script. 
 
@@ -67,7 +67,7 @@ To create Pods and Services execute the below script.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/6.png)
 
-### 2.5. Certification and Ingress Installation 
+### 2.5 Certification and Ingress Installation 
 
 To install helm, execute the below command. 
 
