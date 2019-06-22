@@ -1,22 +1,19 @@
-# Microsoft
-
 # Safe Buildings Solution
 
 ## User Guide
 
 ### Contents
  
- - [1. Introduction to User Guide](#1-introduction-to-user-guide)
- - [2. Kubernetes Setup](#2-kubernetes-setup)
-   - [2.1 Execute imageupdate6.sh ](#21-execute-imageupdate6.sh)
-   - [2.2 Execute clusterconnect7.sh](#22-execute-clusterconnect7.sh)
-   - [2.3 Execute set-kubernetes-config8.sh](#23-execute-set-kubernetes-config8.sh)
-   - [2.4 Execute updateyaml9.sh](#24-execute-updateyaml9.sh)
-   - [2.5 Execute ingress_custom10.sh](#25-execute-ingress-_custom10.sh)
- - [3. Manual configuration](#3-manual-configuration)
- - [4. Building Edison.Simulators.Sensors Project](#4-building-edison.-simulators.-sensors-project)
- - [5. Create a Firebase project](#5-create-a-firebase-project)
- - [6. Mobile Application Configuration](#6-mobile-application-configuration)
+ - [1.0 Introduction to User Guide](#10-introduction-to-user-guide)
+ - [2.0 Kubernetes](#20-kubernetes)
+   - [2.1 Build images](#21-build-images)
+   - [2.2 Connect to Kubernetes Cluster](#22-connect-to-kubernetes-cluster)
+   - [2.3 Create Config Maps](#23-create-config-maps)
+   - [2.4 Create Pods and Services](#24-create-pods-and-services)
+   - [2.5 Certification and Ingress Installation](#25-certification-and-ingress-installation)
+ - [3.0 Building Edison. Simulators. Sensors Project](#30-building-edison.-simulators.-sensors-project)
+ - [4.0 Create a Firebase project](#40-create-a-firebase-project)
+ - [5.0 Mobile Application Configuration](#50-mobile-application-configuration)
 
    
 ## 1. Introduction to User Guide
@@ -84,9 +81,9 @@ Switch user to **adminuser** and install **unzip** using the below command.
 
 **Command: sudo apt install unzip**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/8.png)
+**Note:** Refer 3.7 Section of Deployment Guide Document for certificate.
 
-Note: Refer 3.7 Section of Deployment Guide Document for certificate. 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/8.png) 
 
 2. Unzip the certificate using the below command.
 
@@ -110,14 +107,15 @@ Note: Refer 3.7 Section of Deployment Guide Document for certificate.
 
 **Command: kubectl get secrets**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/11.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/ug1.png)
 
 6. Update name of **hosts** and ****Secrets** in nginix config files.
 
-a.  **sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<admin URL>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml**
+a.  sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<admin URL>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
 
-Ex:   
-sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<basicadmin.xxxxx-xxx.com>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
+**Ex:**
+
+sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'**<basicadmin.xxxxx-xxx.com>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/12.png)
