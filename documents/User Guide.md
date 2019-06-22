@@ -111,11 +111,11 @@ Switch user to **adminuser** and install **unzip** using the below command.
 
 6. Update name of **hosts** and ****Secrets** in nginix config files.
 
-a. sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'**<admin URL>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
+a. sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<**admin URL**>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
 
 **Ex:**
 
-sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'**<basicadmin.xxxxx-xxx.com>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
+sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'basicadmin.xxxxx-xxx.com'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml
 
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/12.png)
@@ -131,7 +131,7 @@ sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'**<basicapi.xxxxx-xxx.com>**'/
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/14.png)
 
-d.  **sed -i -e 's/tls-secret-api/**'**<apisecret>**'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
+d.  **sed -i -e 's/tls-secret-api/**'<**apisecret**>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/d.png)
 
@@ -139,10 +139,11 @@ d.  **sed -i -e 's/tls-secret-api/**'**<apisecret>**'/g' ProjectEdison/Edison.We
 
 a.  **On Admin:**
 
-**az network public-ip create -g <Cluster Resource Group Name>-n <name of admin ip> --dns-name <admin dns name> --allocation-method static**
+**az network public-ip create -g** <**Cluster Resource Group Name**>-n <**name of admin ip**> --dns-name <**admin dns name**> --allocation-method static**
 
-Ex:
-az network public-ip create -g **<MC_MO_basic_2304_akswih6_eastus2>** -n **<adminbotip>** --dns-name **<dnsbotadmin>** --allocation-method static
+**Ex:**
+
+**az network public-ip create -g MC_MO_basic_2304_akswih6_eastus2 -n adminbotip --dns-name dnsbotadmin --allocation-method static**
 
 **Copy** the **admin static IP** and **save** it.
 
@@ -150,10 +151,11 @@ az network public-ip create -g **<MC_MO_basic_2304_akswih6_eastus2>** -n **<admi
 
 b.  **On API:**
 
-**az network public-ip create -g <Cluster Resource Group Name>-n <name of api ip> --dns-name <api dns name> --allocation-method static** 
+**az network public-ip create -g <**Cluster Resource Group Name**>-n <**name of api ip**> --dns-name <**api dns name**> --allocation-method static** 
  
-Ex:  
-az network public-ip create -g **<MC_MO_basic_2304_akswih6_eastus2>** -n **<apibotip>** --dns-name **<dnsbotapi>** --allocation-method static 
+**Ex:**
+
+**az network public-ip create -g MC_MO_basic_2304_akswih6_eastus2 -n apibotip --dns-name dnsbotapi --allocation-method static** 
 
 **Copy** the **api static IP** and **save** it.
 
