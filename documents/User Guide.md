@@ -16,11 +16,11 @@
  - [5.0 Mobile Application Configuration](#50-mobile-application-configuration)
 
    
-## 1. Introduction to User Guide
+## 1.0 Introduction to User Guide
 
 This Document explains about how to use the solution. In this we are building the docker images, pushing them to Azure Container Registry to configure the Edison Admin portal and monitoring the resources of the solution.  
 
-## 2. Kubernetes
+## 2.0 Kubernetes
 
 ### 2.1. Build images
 
