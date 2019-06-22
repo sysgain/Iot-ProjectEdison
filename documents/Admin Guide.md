@@ -356,39 +356,39 @@ Navigate to **Resource Group > click on Bot Channel Registration > Channels > Cl
 
 1.	Scroll up the Page, Click on **Show** to copy and note the secret keys.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a66.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a67.png)
  
 2.	Scroll down and **Enable** the Enhanced authentication options.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a67.png)
-
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a68.png)
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a69.png)
 
 3.	Click on **Add a trusted origin** and enter the seconday **API URL** saved from step **5.1.** Click on **Done**.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a69.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a70.png)
 
 #### 5.2.3 Login to the Edison Dr Virtual Machine.
 
 1.	Navigate to deployed Dr Virtual Machine and click on it.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a70.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a71.png)
  
 2.	Copy the public IP Address
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a71.png)
-
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a72.png)
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a73.png)
  
 3.	Enter the credentials to log in to VM.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a73.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a74.png)
 
 4.	Switch to root user using below command.
 
 ***sudo -i***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a74.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a75.png)
  
 5.	Change the directory to view the downloaded scripts.
 
@@ -396,7 +396,7 @@ Navigate to **Resource Group > click on Bot Channel Registration > Channels > Cl
 
 ***ls***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a75.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a76.png)
  
 6.	Open the **input.txt** file and Update the values as mentioned in the Deployment Guide. For below the values, Use secondary region resources only.
 
@@ -404,7 +404,7 @@ ACRvalues,signallrvalue, Notificationhubpath, NotificationHubSRT, AzureServiceBu
 
 7.	But update the **BASEURL_VALUE** with API secondary DNS name Uri and update **ADMINURL** with secondary DNS name.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a76.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a77.png)
 
 #### 5.2.4 Execute deploy1.sh
 
@@ -427,7 +427,7 @@ Go to below path in the Virtual Machine
 
 ***sh configupdate2.sh***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a77.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a78.png)
  
 #### 5.2.6 Execute commonupdate3.sh 
 
@@ -435,7 +435,7 @@ Go to below path in the Virtual Machine
 
 ***sh commonupdate3.sh***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a78.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a79.png)
  
 #### 5.2.7 Execute edsionwebenvupdate4.sh
 
@@ -443,7 +443,7 @@ Go to below path in the Virtual Machine
 
 ***sh edsionwebenvupdate4.sh***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a79.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a80.png)
  
 #### 5.2.8. Execute updateappsettings5.sh 
 
@@ -451,7 +451,7 @@ Go to below path in the Virtual Machine
 
 ***sh updateappsettings5.sh***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a80.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a81.png)
  
 #### 5.2.9 Execute imageupdate6.sh
 
@@ -461,43 +461,43 @@ Navigate to **Azure portal > Container Registry > Repositories** and check for t
 
 **Note:** If you got any issues to push the images to ACR  just rerun the deploy1.sh script and again run the imageupdate6.sh script.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a81.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a82.png)
 
 #### 5.2.10 Execute clusterconnect7.sh
 
 **clusterconnect7.sh** script: Connect to the Dr cluster
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a81.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a83.png)
  
 #### 5.2.11 Execute set-kubernetes-config8.sh
 
 **set-kubernetes-config8.sh** script: Creates config maps.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a82.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a84.png)
  
 Check the config maps using the below command
 
 **kubectl get cm**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a83.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a85.png)
 
 #### 5.2.12 Execute updateyaml9.sh
 
 **Updateyaml9.sh** script: Creates Pods and Services
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a84.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a86.png)
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a85.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a87.png)
  
 #### 5.2.13 Execute ingress_custom10.sh
 
 **ingress_custom10.sh** script:  Installs helm
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a86.png) 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a88.png) 
 
 1.	Using **WINSCP** push your certificates to the virtual machine.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a87.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a89.png)
  
 Switch user to **adminuser**
 
@@ -505,13 +505,13 @@ Install unzip command using the below command
 
 ***sudo apt install unzip***
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a88.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a90.png)
  
 2.	Unzip the certificate using the below command
 
 **unzip Kubernetes_certs.zip**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a89.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a91.png)
  
 3.	Copy the file to another file.
 
@@ -519,7 +519,7 @@ Install unzip command using the below command
 
 4.	switch to **root** user and go to **/var/lib/waagent/custom-script/download/0**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a90.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a92.png)
 
 2.	Create secrets using the below commands: 
 
@@ -529,7 +529,7 @@ Install unzip command using the below command
 
 **Command: kubectl get secrets** 
   
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a91.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a93.png)
 
 #### 5.2.14 Update nginx-config-adminportal.yaml & nginx-config-api.yaml
 
@@ -541,11 +541,11 @@ a.	**sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<Dr admin URL>'/g
 
 **sed -i -e 's/edisonadminportal.eastus.cloudapp.azure.com/'<edisonadmin2.xxxxx-xxx.com>'/g'** **ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a92.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a94.png)
 
 b.	**sed -i -e 's/tls-secret-adminportal/'<adminsecret2 name>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-adminportal.yaml**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a93.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a95.png)
 
 c.	**sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<Dr api URL>'/g'** **ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
 
@@ -553,11 +553,11 @@ c.	**sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<Dr api URL>'/g'** **Proj
 
 sed -i -e 's/edisonapi.eastus.cloudapp.azure.com/'<edisonapi2.xxxxx-xxx.com>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a94.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a96.png)
 
 d.	**sed -i -e 's/tls-secret-api/'<apisecret2>'/g' ProjectEdison/Edison.Web/Kubernetes/qa/Deployment/Ingress_Custom/nginx-config-api.yaml**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a95.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a97.png)
  
 7.	Assign a static-IP to an Ingress on through the Nginx controller
 
@@ -569,7 +569,7 @@ a.	**On Admin:**
 
 az network public-ip create -g **MC_MO_basic_2304_akswih6_eastus2** -n **adminbotip2** --dns-name **dnsbotadmin2** --allocation-method static
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a96.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a98.png)
  
 Copy the admin static IP and save it.
 
@@ -581,7 +581,7 @@ b.	**On API:**
 
 **az network public-ip create -g MC_MO_basic_2304_akswih6_eastus2 -n apibotip2 --dns-name dnsbotapi2 --allocation-method static**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a97.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a99.png)
  
 Copy the api static IP and save it.
 
@@ -591,13 +591,13 @@ Copy the api static IP and save it.
 
 **helm install --name nginx-ingress-admin stable/nginx-ingress --namespace kube-system --set rbac.create=false --set rbac.createRole=false --set rbac.createClusterRole=false --set controller.ingressClass=nginx-admin --set controller.service.loadBalancerIP=”<admin Static IP2 address>”**
   
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a98.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a100.png)
 
 **On API:**
 
 **helm install --name nginx-ingress-api stable/nginx-ingress --namespace kube-system --set rbac.create=false --set rbac.createRole=false --set rbac.createClusterRole=false --set controller.ingressClass=nginx-api --set controller.service.loadBalancerIP="<apiStatic IP2 address>”**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a99.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a101.png)
 
 9.	For creating config file navigate to Ingress_Custom folder.
 
@@ -607,71 +607,71 @@ Create admin config file by running the below command
 
 **kubectl create -f ./nginx-config-adminportal.yaml**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a100.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a102.png)
  
 Create API config file by running the below command
 
 **kubectl create -f ./nginx-config-api.yaml**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a101.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a103.png)
  
 To get ingress give the below command
 
 **kubectl get ing**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a102.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a104.png)
  
 Check status of services using the namespace kube-system
 
 **kubectl get svc -n kube-system**
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a103.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a105.png)
 
 #### 5.2.15 Manual configuration
 
 1. Copy the API URL from Hosts.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a104.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a106.png)
  
 3.	Update in the messaging endpoint with Dr api url of Bot Channel Registration and click on Save.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a105.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a107.png)
  
 4.	Update the reply URL of the azure active directory application with Dr admin URL from Hosts and Click on Save.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a106.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a108.png)
 
 ### 5.3 IoThub Failover
 
 1.	Go to the IoThub in the deployed resource group.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a107.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a109.png)
 
 2.	In IoThub overview go down click on IoT devices and check if there are devices or not.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a108.png) 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a110.png) 
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a109.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a111.png)
 
 3.	In IoThub overview click on manual failover option then click on **Initiate failover**
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a110.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a112.png)
  
 4.	It will ask for the confirm manual failover in that enter iothub name and click on **Ok**.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a111.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a113.png)
  
 5.	It will take few minutes to complete the failover operation.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a112.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a114.png)
 
 6.	After completion of IoThub failover you can see the notification like below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a113.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a115.png)
  
 7.	Now if you observed that the primary location changed to secondary location and the secondary changed to primary location.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a114.png) 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a116.png) 
 
 ### 5.4 Cosmos DB Failover
 
@@ -679,35 +679,35 @@ By doing the cosmos DB failover the read region becomes the write region and the
 
 1.	Go to the Cosmos DB resource in the deployed resource group.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a115.png)
-
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a116.png)
- 
-2.	In cosmos DB over view click on Replicate data globally option. Now you can see the write regions and read regions.
- 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a117.png)
-
-3.	click on manual failover.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a118.png)
  
-4.	then it will show the pop up like below select the read region and tick the check box click on **OK**.
+2.	In cosmos DB over view click on Replicate data globally option. Now you can see the write regions and read regions.
  
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a119.png)
 
+3.	click on manual failover.
+
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a120.png)
+ 
+4.	then it will show the pop up like below select the read region and tick the check box click on **OK**.
+ 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a121.png)
+
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a122.png)
 
 5.	It will take few minutes to complete the manual failover operation.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a121.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a123.png)
  
 6.	After completion of manual failover you can get the notification with green mark like below.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a122.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a124.png)
  
 7.	If you observed after manual failover the write region becomes the read region and the read region becomes as write region.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a123.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a125.png)
 
 Refer the **4 section** of the user guide to run the simulator.
 
@@ -715,11 +715,11 @@ Refer the **4 section** of the user guide to run the simulator.
 
 To view the devices which got created or onboarded, Access the Edison Admin Portal and click on the wi-fi icon as shown below. Here you can also see the location, type, current response of the devices.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a124.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a126.png)
 
 initially there are no events triggered. Once any event gets triggered from devices or simulator it will get reflected in the Edison admin portal as shown below.
  
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a125.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a127.png)
 
 
 
