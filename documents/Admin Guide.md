@@ -531,7 +531,7 @@ Install unzip command using the below command
   
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/a93.png)
 
-#### 5.2.15 Update nginx-config-adminportal.yaml & nginx-config-api.yaml
+#### 5.2.15 Update nginx-config-adminportal.yaml and nginx-config-api.yaml
 
 Update the names of **hosts** and **Secrets** in **nginix config** files.
 
