@@ -203,24 +203,12 @@ For checking status of services using the namespace kube-system
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/22.png)
 
--------## 3.Manual configuration
 
-----------1. Copy the **API URL** from Hosts.
+## 3.0 Building Edison.Simulators.Sensors Project
 
------------![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/23.png)
+Browse to the **Admin Portal** using the **Admin URL** also can be taken from step 1 of **section 3.1.4.** in deployment Guide.
 
--------------2. Update in the **messaging endpoint** of **Bot Channel** Registration and click on **Save**.
-
-------------![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/24.png)
-
-------------3. Update the **reply URL** of the **azure active directory** application with admin URL from Hosts and Click on **Save**.
-
---------------![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/25.png)
-
-## 4. Building Edison.Simulators.Sensors Project
-
-Browse to the **Admin Portal** using the **Admin URL** also can be taken from step 1 of section 3.1.4. in deployment Guide.
-Note: We need to add the Admin and API URL in the domain registry along with the external IP address for both, before accessing the Edison Admin Portal.  
+**Note:** We need to add the Admin and API URL in the domain registry along with the external IP address for both, before accessing the Edison Admin Portal.  
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/26.png)
 
@@ -288,7 +276,7 @@ Initially there are no events triggered.
 
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/40.png)
 
-## 4. Create a Firebase project
+## 4.0 Create a Firebase project
 
 We need to create an application in the Firebase from which will get an API Key and google-services.json file, these are used in the User Mobile application configuration.
 
@@ -310,18 +298,17 @@ We need to create an application in the Firebase from which will get an API Key 
 
 5. **Copy** and **save** the **Legacy Server key** for later use. You use this value to configure your notification hub.
 
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/44.png)
+
 ![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/45.png)
 
-## 6. Mobile Application Configuration
+## 5.0 Mobile Application Configuration
 
 1. Follow the below link to configure and build the User mobile application.
 
 [Mobile Application Configuration](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/mobile_application.docx)
 
 2. Navigate to Portal -> **Notification Hub** -> Select **Google** from Settings and **paste** the **Legacy Server Key** copied from step 6 of section 5 in API Key. Click on **Save**.
-
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/44.png)
-
 
 3. We need to create **Emulator** of Android Version 8.1 in visual studio. Open Visual Studio and select the **Tools** -> **Android** -> **Android Device Manager**.
 
@@ -371,7 +358,7 @@ We need to create an application in the Firebase from which will get an API Key 
 
 12. Once you mail is verified, click on **verify** code after entering the code for verification.
 
-![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/Solution%20Documentation/Images/58.png)
+![alt text](https://github.com/sysgain/Iot-ProjectEdison/raw/master/documents/Images/ug2.png)
 
 13.	**Sign in** with the created username and password.
 
